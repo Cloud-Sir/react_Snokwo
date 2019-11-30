@@ -1,4 +1,4 @@
-import {Index,Headlines,Community,Cart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail} from "pages";
+import {Index,Headlines,Community,Cart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail,Fruitpastedetail,Groups,Allsearch, Articledetail,Headlinesform} from "pages";
 
 export const TabBarRoute = [
     {
@@ -65,11 +65,11 @@ export const NoTabBarRoute = [
         component:Benefit,
         meta:{}
     },
-    // {
-    //     path:"/peripheral",
-    //     component:Peripheral,
-    //     meta:{}
-    // },
+    {
+        path:"/peripheral",
+        component:Peripheral,
+        meta:{}
+    },
     {
         path:"/publisher",
         component:Publisher,
@@ -86,7 +86,31 @@ export const NoTabBarRoute = [
         meta:{}
     },
     
-    
+    {
+        path:"/articledetail",
+        component:Articledetail,
+        meta:{}
+    },
+    {
+        path:"/headlinesform",
+        component:Headlinesform,
+        meta:{}
+    },
+    {
+        path:"/allsearch",
+        component:Allsearch,
+        meta:{}
+    },
+    {
+        path:"/fruitpastedetail",
+        component:Fruitpastedetail,
+        meta:{}
+    },
+    {
+        path:"/groups",
+        component:Groups,
+        meta:{}
+    }
 ]
 
 export const RouteConfig = TabBarRoute.concat(NoTabBarRoute);
