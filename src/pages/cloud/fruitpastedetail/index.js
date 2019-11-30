@@ -1,12 +1,14 @@
 import React from "react";
 import { Header, Detailinfo } from "./styled"
 
+import {withRouter} from "react-router-dom";
+@withRouter
 class Fruitpastedetail extends React.Component {
     render() {
         return (
             <div>
                 <Header>
-                    <i className="iconfont left">{"\ue645"}</i>
+                    <i className="iconfont left" onClick={this.handleToBack.bind(this)}>{"\ue645"}</i>
                     <div>果贴详情</div>
                     <i className="iconfont right">{"\ue6a7"}</i>
                 </Header>
@@ -37,6 +39,9 @@ class Fruitpastedetail extends React.Component {
                 </Detailinfo>
             </div>
         )
+    }
+    handleToBack(){
+        this.props.history.goBack()
     }
 }
 

@@ -1,6 +1,8 @@
 import React from "react";
 import {Searchcontainer,Header,Searchhistory} from "./styled";
+import {withRouter} from "react-router-dom"
 
+@withRouter
 class Search extends React.Component{
     render(){
         return(
@@ -10,7 +12,7 @@ class Search extends React.Component{
                         <i className="iconfont">{"\ue609"}</i>
                         <input type="text" placeholder="请输入关键字"/>
                     </div>
-                    <div className="cancle">取消</div>
+                    <div className="cancle" onClick={this.handleToBack.bind(this)}>取消</div>
                 </Header>
                 <Searchhistory>
                     <div className="history-record">
@@ -25,6 +27,9 @@ class Search extends React.Component{
                 </Searchhistory>
             </Searchcontainer>
         )
+    }
+    handleToBack(){
+        this.props.history.goBack()
     }
 }
 

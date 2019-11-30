@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {Header,Downextrusion,Groupspagecontainer,Groupposts} from "./styled";
 
+import {withRouter} from "react-router-dom";
+@withRouter
 class Groups extends Component {
     render() {
         return (
             <div>
                  <Header>
-                    <i className="iconfont left">{"\ue645"}</i>
+                    <i className="iconfont left" onClick={this.handleToBack.bind(this)}>{"\ue645"}</i>
                     <div>小组页</div>
                     <i className="iconfont right">{"\ue6a7"}</i>
                 </Header>
@@ -209,6 +211,9 @@ class Groups extends Component {
                 </Groupspagecontainer>
             </div>
         );
+    }
+    handleToBack(){
+        this.props.history.goBack()
     }
 }
 

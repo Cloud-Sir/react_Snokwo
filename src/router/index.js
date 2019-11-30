@@ -1,4 +1,4 @@
-import {Index,Headlines,Community,Cart,Mine,Login} from "pages";
+import {Index,Headlines,Community,Fruitpastedetail,Groups,Allsearch,Cart,Mine,Login, Articledetail,Headlinesform} from "pages";
 
 export const TabBarRoute = [
     {
@@ -53,6 +53,31 @@ export const NoTabBarRoute = [
     {
         path:"/login",
         component:Login,
+        meta:{}
+    },
+    {
+        path:"/articledetail",
+        component:Articledetail,
+        meta:{}
+    },
+    {
+        path:"/headlinesform",
+        component:Headlinesform,
+        meta:{}
+    },
+    {
+        path:"/allsearch",
+        component:Allsearch,
+        meta:{}
+    },
+    {
+        path:"/fruitpastedetail",
+        component:Fruitpastedetail,
+        meta:{}
+    },
+    {
+        path:"/groups",
+        component:Groups,
         meta:{}
     }
 ]

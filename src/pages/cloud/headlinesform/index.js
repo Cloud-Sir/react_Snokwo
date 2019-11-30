@@ -1,13 +1,15 @@
 import React,{Fragment} from 'react';
 import {Header,Article} from "./styled"
+import {withRouter} from "react-router-dom";
 
+@withRouter
 
 class HeadlinesForm extends React.Component {
     render() {
         return (
             <Fragment>
                 <Header>
-                    <i className="iconfont left">{"\ue645"}</i>
+                    <i className="iconfont left" onClick={this.handleBack.bind(this)}>{"\ue645"}</i>
                     <div>折扣信息</div>
                     <i className="iconfont right">{"\ue6a7"}</i>
                 </Header>
@@ -57,6 +59,9 @@ class HeadlinesForm extends React.Component {
                     </Article>
             </Fragment>
         );
+    }
+    handleBack(){
+        this.props.history.goBack()
     }
 }
 
