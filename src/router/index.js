@@ -1,4 +1,4 @@
-import {Index,Headlines,Community,Cart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail,Fruitpastedetail,Groups,Allsearch, Articledetail,Headlinesform} from "pages";
+import {Index,Headlines,Community,Cart,AroundCart,GameCart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail,Fruitpastedetail,Groups,Allsearch, Articledetail,Headlinesform} from "pages";
 
 export const TabBarRoute = [
     {
@@ -35,7 +35,23 @@ export const TabBarRoute = [
             flag:true
         },
         icon:"\ue639",
-        text:"购物车"
+        text:"购物车",
+        children:[
+            {
+                path:"/cart/gameCart",
+                component:GameCart,
+                meta:{
+                    flag:true
+                },
+            },
+            {
+                path:"/cart/aroundCart",
+                component:AroundCart,
+                meta:{
+                    flag:true
+                },
+            }
+        ]
     },
     {
         path:"/mine",

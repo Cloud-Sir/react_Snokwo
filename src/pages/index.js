@@ -14,7 +14,7 @@ export const Benefit = Loadable({//优惠
     loading: Loading
 })
 export const Peripheral = Loadable({// 周边
-    loader: () => import("./Jerry/arround"),
+    loader: () => import("./Jerry/around"),
     loading: Loading
 })
 export const Publisher = Loadable({// 厂商目录
@@ -70,6 +70,15 @@ export const Cart = Loadable({
     loader: () => import("./Jerry/cart"),
     loading: Loading
 })
+export const AroundCart = Loadable({
+    loader: () => import("./Jerry/cart/aroundCart"),
+    loading: Loading
+})
+export const GameCart = Loadable({
+    loader: () => import("./Jerry/cart/gameCart"),
+    loading: Loading
+})
+
 export const Mine = Loadable({
     loader: () => import("./Jerry/mine"),
     loading: Loading
