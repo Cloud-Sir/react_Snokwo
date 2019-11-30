@@ -4,7 +4,7 @@ import {Nav,Head,Second,Footer} from "./styled"
 import AroundCart from "./aroundCart"
 import GameCart from "./gameCart"
 
-import {withRouter,Link} from "react-router-dom"
+import {withRouter,NavLink,Switch,Route} from "react-router-dom"
 @withRouter
 
 
@@ -24,17 +24,21 @@ class Cart extends React.Component{
                     <Nav>
                         <ul>
                             <li>
-                                <p><Link to="/cart/gameCart">游戏</Link></p>
+                                <p><NavLink to="/cart/gameCart" activeClassName="activegamearound">游戏</NavLink></p>
                             </li>
                             <li>
-                                <p><Link to="/cart/aroundCart">周边</Link></p>
+                                <p><NavLink to="/cart/aroundCart" activeClassName="activegamearound">周边</NavLink></p>
                             </li>
                         </ul>
                     </Nav>                          
                 </Head>
                    <Second>
-                        <AroundCart/>
-                        <GameCart/>
+                       <Switch>
+                            <Route path="/cart/gameCart" component={GameCart} />
+                        </Switch>
+                        <Switch>
+                            <Route path="/cart/aroundCart" component={AroundCart} />
+                        </Switch>
                         {/* 空购物车 */}
                         <div className="empty">
                             <p>购物车空空如也</p>

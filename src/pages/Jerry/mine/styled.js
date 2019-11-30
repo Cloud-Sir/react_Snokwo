@@ -140,7 +140,7 @@ export const Second = styled.div`
             font-size: 0.12rem;
             color: #999999;
             display: block;
-            width: 1.4rem;
+            /* width: 1.4rem; */
             height:100%;
             line-height:.41rem;
             i{margin-left:.1rem}
@@ -152,7 +152,7 @@ export const Second = styled.div`
         }
         i{
             display: block;
-            width: .22rem;
+            /* width: .22rem; */
             color:#999;
         }
     }

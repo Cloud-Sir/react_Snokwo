@@ -17,8 +17,8 @@ export const Header=styled.div`
         justify-content:space-around;
        span{
             position: absolute;
-            left: .65rem;
-            top: .08rem;
+            left: .55rem;
+            top: .11rem;
             color: white;
             z-index: 100;
         }
