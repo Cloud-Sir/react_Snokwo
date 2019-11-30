@@ -1,10 +1,36 @@
 import Loadable from "react-loadable";
 import Loading from "common/loading";
 
-export const Index = Loadable({
+export const Index = Loadable({// 首页
     loader: () => import("./grace/index"),
     loading: Loading
 })
+export const Activities = Loadable({// 活动
+    loader: () => import("./grace/activities"),
+    loading: Loading
+})
+export const Benefit = Loadable({//优惠
+    loader: () => import("./grace/discount"),
+    loading: Loading
+})
+// export const Peripheral = Loadable({// 周边
+    // loader: () => import("./Jerry/arround"),
+    // loading: Loading
+// })
+export const Publisher = Loadable({// 厂商目录
+    loader: () => import("./grace/directory"),
+    loading: Loading
+})
+export const Searchgame = Loadable({// 游戏搜索
+    loader: () => import("./grace/searchgame"),
+    loading: Loading
+})
+export const Gamedetail = Loadable({// 游戏详情
+    loader: () => import("./grace/gamedetail"),
+    loading: Loading
+})
+
+
 
 export const Headlines = Loadable({
     loader: () => import("./cloud/headlines"),
