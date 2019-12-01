@@ -77,12 +77,40 @@ export const Section = styled.div`
             width:100%;
             position:relative;
             overflow: hidden;
+           
+            .am-carousel-wrap{/*下边小点*/
+            line-height: .01rem;
+                .am-carousel-wrap-dot{
+                    position:relative;
+                    bottom:.1rem;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: .05rem;
+                    height: .05rem;
+                    border-radius: 50%;
+                    background: none;
+                    border: solid 0.00625rem #fff;
+                    box-sizing: border-box;
+                    background-color: #ffffff;  
+                    margin-right:.08rem; 
+                    span{
+                        background-color: transparent;  
+                    }   
+                }
+                .am-carousel-wrap-dot-active{
+                    background-color:#ff5722;
+                }
+            }
             img{
                 width:100%;
                 height:100%;
                 display:block;
             }
         }
+         .am-wingblank.am-wingblank-lg {
+                margin-left:0 !important;
+                margin-right:0 !important;
+            }
         /* 第二块  list */
         .list{
             margin-bottom:0.0997rem;
@@ -157,7 +185,7 @@ export const Section = styled.div`
                     margin-right: 0.09973rem;
                 }
                 .headline-slider{
-                    width:70%;
+                    width:75%;
                     height: .35891rem;
                     display:flex;
                     align-items:center;
@@ -176,7 +204,7 @@ export const Section = styled.div`
                     width: 100%;
                     height: 100%;
                     margin-bottom: 0;
-                    .slider-item{
+                    .slider-slide{
                         width: 100%;
                         height: 100%;
                         overflow: hidden;
@@ -304,6 +332,19 @@ export const Section = styled.div`
             display: flex;
             flex-direction: row;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
             /* 热门小组 */
         .group-info-container{
             width: 100%;

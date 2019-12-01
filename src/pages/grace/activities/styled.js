@@ -22,9 +22,9 @@ export const Section = styled.div`
         }
     }
     .p-title {
-        overflow: hidden;
-        white-space: nowrap;
-        word-break: break-all;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        word-break: break-all;
         word-wrap: break-word;
         text-overflow: ellipsis;
     }

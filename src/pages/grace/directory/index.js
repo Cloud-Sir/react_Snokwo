@@ -1,13 +1,17 @@
 import React, { Fragment } from "react"
 import Header from "components/grace/headers"
 import { Section } from "./styled"
-import {withRouter} from "react-router-dom"
+import { connect } from "react-redux"
+import { mapStateToProps, mapDispatchToProps } from "./mapStore"
+import { withRouter } from "react-router-dom"
+
+@connect(mapStateToProps, mapDispatchToProps)
 @withRouter
 class Directory extends React.Component {
     render() {
         return (
             <Fragment>
-                <Header title={"厂商目录"} lefticon={"\ue645"}  path={this.props}/>
+                <Header title={"厂商目录"} lefticon={"\ue645"} path={this.props} />
                 <Section>
                     <div className="container-header-space"></div>
                     <div>
@@ -264,6 +268,10 @@ class Directory extends React.Component {
             </Fragment>
         )
     }
+    componentDidMount() {//数据请求 在dispatch中
+        this.props.handleAsyncDirectory()
+    }
+
 }
 
 export default Directory;

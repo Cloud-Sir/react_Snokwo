@@ -49,10 +49,14 @@ export const Cut = styled.div`
         justify-content:space-around;
         align-items:center;
         font-size:.14rem;
-        &>.active{
-            color:#ff5722;;
-            border-bottom:.02rem solid  #ff5722;
-        }
+    }
+    .activefruit{
+        color:#ff5722;;
+        border-bottom:.02rem solid  #ff5722;
+        height:100%;
+        display:flex;
+        align-items:center;
+        box-sizing:border-box;
     }
     li{
         height:100%;
@@ -74,38 +78,4 @@ export const Section = styled.div`
     box-sizing:border-box;
     padding:.72rem 0 .471rem;
     overflow-y: scroll;
-`
-
-
-
-
-export const Footer=styled.div`
-    width:100%;
-    height:.471rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #333;
-    ul{
-        width:100%;
-        height:100%;
-        color: #ccc;
-        display:flex;
-        justify-content:space-around;
-        align-items:center;
-    }
-    li{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        i{
-            font-size:.18rem;
-        }
-        span{
-            font-size:.12rem;
-        }
-    }
 `

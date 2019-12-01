@@ -36,6 +36,18 @@ export const Main=styled.div`
     box-sizing:border-box;
     padding-top:.41rem;
     padding-bottom:.471rem;
+    .slider-decorator-0{
+        bottom: .16rem !important;
+        .am-carousel-wrap-dot > span {
+            display: block;
+            width: .05rem;
+            height: .05rem;
+            margin: 0 .02rem;
+            border: .01rem;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
     .swiper{
         width:100%;
         box-sizing:border-box;
