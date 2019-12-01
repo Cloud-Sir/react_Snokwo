@@ -30,39 +30,47 @@ export const Gamedetail = Loadable({// 游戏详情
     loading: Loading
 })
 
-
-
-export const Headlines = Loadable({
+export const Headlines = Loadable({ //头条
     loader: () => import("./cloud/headlines"),
     loading: Loading
 })
 
-export const Articledetail = Loadable({
+export const Articledetail = Loadable({ //文章详情
     loader: () => import("./cloud/articledetail"),
     loading: Loading
 })
 
-export const Headlinesform = Loadable({
+export const Headlinesform = Loadable({ //折扣信息等详情
     loader: () => import("./cloud/headlinesform"),
     loading: Loading
 })
 
-export const Community = Loadable({
+export const Community = Loadable({ //社区
     loader: () => import("./cloud/community"),
     loading: Loading
 })
 
-export const Fruitpastedetail = Loadable({
+export const Fruitpaste = Loadable({ //社区二级路由果贴
+    loader: () => import("components/cloud/community/fruitpaste"),
+    loading: Loading
+})
+
+export const Group = Loadable({ //社区二级路由小组
+    loader: () => import("components/cloud/community/group"),
+    loading: Loading
+})
+
+export const Fruitpastedetail = Loadable({ //果贴详情
     loader: () => import("./cloud/fruitpastedetail"),
     loading: Loading
 })
 
-export const Groups = Loadable({
+export const Groups = Loadable({ //小组页
     loader: () => import("./cloud/groups"),
     loading: Loading
 })
 
-export const Allsearch = Loadable({
+export const Allsearch = Loadable({ //社区里的搜索
     loader: () => import("./cloud/search"),
     loading: Loading
 })

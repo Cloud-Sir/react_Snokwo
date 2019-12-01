@@ -13,7 +13,7 @@ class ArticleDetail extends React.Component {
                 </Header>
                 <Container>
                     <div className="headline-detail-banner">
-                        <img src="https://s3.sonkwo.com/FkAgg2e8TSXdjHehOpBq-0eq073h?imageView2/1/w/320/h/125" />
+                        <img src="https://s3.sonkwo.com/FkAgg2e8TSXdjHehOpBq-0eq073h?imageView2/1/w/320/h/125" alt=""/>
                     </div>
                     <div className="title-container">
                         <h2>杉果黑五特惠将至：《大镖客2》首降 19.9福袋回归</h2>

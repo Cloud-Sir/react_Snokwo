@@ -1,5 +1,6 @@
 import React,{Fragment} from "react";
 import {Header,Main,Todo,Article} from "./styled"
+import { Carousel } from 'antd-mobile';
 import {withRouter} from "react-router-dom";
 @withRouter
 class Headlines extends React.Component{
@@ -14,11 +15,18 @@ class Headlines extends React.Component{
                     <div>杉果头条</div>
                 </Header>
                 <Main>
-                    <div className="swiper">
-                        <p>
-                            <img src="https://s3.sonkwo.com/FqQruF3iX7-NLA-Qe24NK3HlucJd"/>
-                        </p>
-                    </div>
+                    <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
+                        <div className="swiper">
+                            <p>
+                                <img src="https://s3.sonkwo.com/FqQruF3iX7-NLA-Qe24NK3HlucJd"/>
+                            </p>
+                        </div>
+                        <div className="swiper">
+                            <p>
+                                <img src="https://s3.sonkwo.com/Fhx6QHiqD3rBbNUeMV41OKQQ_g8D"/>
+                            </p>
+                        </div>
+                    </Carousel>
                     <Todo>
                         <ul>
                             <li className="dynamic">推荐</li>

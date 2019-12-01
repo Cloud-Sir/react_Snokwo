@@ -1,4 +1,4 @@
-import {Index,Headlines,Community,Cart,AroundCart,GameCart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail,Fruitpastedetail,Groups,Allsearch, Articledetail,Headlinesform} from "pages";
+import {Index,Headlines,Community,Cart,AroundCart,GameCart,Mine,Login,Activities,Benefit,Peripheral,Publisher,Searchgame,Gamedetail,Fruitpastedetail,Groups,Allsearch, Articledetail,Headlinesform,Fruitpaste,Group} from "pages";
 
 export const TabBarRoute = [
     {
@@ -26,7 +26,24 @@ export const TabBarRoute = [
             flag:true
         },
         icon:"\ue622",
-        text:"社区"
+        text:"社区",
+        chaildren:[
+            {
+                path:"/community/fruitpaste",
+                component:Fruitpaste,
+                meta:{
+                    flag:true
+                },
+            },
+            {
+                path:"/community/group",
+                component:Group,
+                meta:{
+                    flag:true
+                },
+            }
+            
+        ]
     },
     {
         path:"/cart",

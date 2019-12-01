@@ -7,7 +7,7 @@ export const TabBarContainer = styled.div`
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 100;
     background-color: #333;
     ul{
         width:100%;

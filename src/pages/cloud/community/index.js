@@ -1,8 +1,8 @@
 import React from "react";
-import {Header,Footer,Cut,Section} from "./styled";
-// import Group from "components/cloud/community/group";
+import {Header,Cut,Section} from "./styled";
+import Group from "components/cloud/community/group";
 import Fruitpaste from "components/cloud/community/fruitpaste";
-import {withRouter} from "react-router-dom"
+import {withRouter,Switch,Route,NavLink,Redirect} from "react-router-dom"
 @withRouter
 class Community extends React.Component {
     render() {
@@ -15,13 +15,16 @@ class Community extends React.Component {
                 </Header>
                 <Cut>
                     <ul>
-                        <li className="active">果贴</li>
-                        <li>小组</li>
+                        <li><NavLink to="/community/fruitpaste" activeClassName="activefruit">果贴</NavLink></li>
+                        <li><NavLink to="/community/group" activeClassName="activefruit">小组</NavLink></li>
                     </ul>
                 </Cut>
                 <Section>
-                    {/* <Group/> */}
-                    <Fruitpaste/>
+                    <Switch>
+                        <Route path="/community/fruitpaste" component={Fruitpaste} exact/>
+                        <Route path="/community/group" component={Group}/>
+                    </Switch>
+                    <Redirect from="/community" to="/community/fruitpaste"/>
                 </Section>
             </div>
         )

@@ -17,6 +17,19 @@ export const Swipercontainer = styled.div`
         font-size: .127rem;
         color:#333;
     }
+    .slider-decorator-0{
+        bottom: .4rem !important;
+        .am-carousel-wrap-dot > span {
+            display: block;
+            width: .05rem;
+            height: .05rem;
+            margin: 0 .02rem;
+            border: .01rem;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+   
 ` 
 
 export const Todocontainer = styled.div`
@@ -34,7 +47,6 @@ export const Todocontainer = styled.div`
         border-bottom: solid 1px whitesmoke;
         background:#fff;
         li{
-            width:.40837rem;
             line-height:.28rem;
             margin-right:.2128rem;
         }
