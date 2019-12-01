@@ -1,7 +1,10 @@
 import React,{Fragment} from "react";
 import {Header,Main,Todo,Article} from "./styled"
 import { Carousel } from 'antd-mobile';
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps} from "./mapStore"
+@connect(mapStateToProps,mapDispatchToProps)
 @withRouter
 class Headlines extends React.Component{
     constructor(){
@@ -65,6 +68,9 @@ class Headlines extends React.Component{
                 </Main>
             </Fragment>
         )
+    }
+    componentDidMount() {
+        this.props.handleHeadAsyncData()
     }
     handleToArticleDetail(){
          this.props.history.push("/articledetail");
