@@ -77,6 +77,33 @@ export const Section = styled.div`
             width:100%;
             position:relative;
             overflow: hidden;
+            .am-wingblank.am-wingblank-lg {
+                margin-left:0 !important;
+                margin-right:0 !important;
+            }
+            .am-carousel-wrap{/*下边小点*/
+            line-height: .01rem;
+                .am-carousel-wrap-dot{
+                    position:relative;
+                    bottom:.1rem;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: .05rem;
+                    height: .05rem;
+                    border-radius: 50%;
+                    background: none;
+                    border: solid 0.00625rem #fff;
+                    box-sizing: border-box;
+                    background-color: #ffffff;  
+                    margin-right:.08rem; 
+                    span{
+                        background-color: transparent;  
+                    }   
+                }
+                .am-carousel-wrap-dot-active{
+                    background-color:#ff5722;
+                }
+            }
             img{
                 width:100%;
                 height:100%;
@@ -304,6 +331,19 @@ export const Section = styled.div`
             display: flex;
             flex-direction: row;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
             /* 热门小组 */
         .group-info-container{
             width: 100%;

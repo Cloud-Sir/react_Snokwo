@@ -1,0 +1,1 @@
+export const directAsyncType = "DIRECT_TYPE"

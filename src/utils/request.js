@@ -4,7 +4,7 @@ import qs from "qs";
 const get = (options) => {
     let url = options.url;
     let data = options.data;
-   
+
     if (data) {
         var str = "";
         for (var key in data) {
