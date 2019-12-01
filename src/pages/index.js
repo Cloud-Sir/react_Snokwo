@@ -67,24 +67,37 @@ export const Allsearch = Loadable({
     loading: Loading
 })
 export const Cart = Loadable({
-    loader: () => import("./Jerry/cart"),
+    loader: () => import("./Jerry/cart"),//购物车
     loading: Loading
 })
 export const AroundCart = Loadable({
-    loader: () => import("./Jerry/cart/aroundCart"),
+    loader: () => import("./Jerry/cart/aroundCart"),//购物车子路由
     loading: Loading
 })
 export const GameCart = Loadable({
-    loader: () => import("./Jerry/cart/gameCart"),
+    loader: () => import("./Jerry/cart/gameCart"),//购物车子路由
     loading: Loading
 })
 
 export const Mine = Loadable({
-    loader: () => import("./Jerry/mine"),
+    loader: () => import("./Jerry/mine"),//我的
+    loading: Loading
+})
+
+export const Message = Loadable({
+    loader: () => import("./Jerry/message"),//消息中心
     loading: Loading
 })
 
 export const Login = Loadable({
-    loader: () => import("./Jerry/login"),
+    loader: () => import("./Jerry/login"),//登录页面
     loading: Loading
+})
+export const AroundClassify=Loadable({
+    loader:()=>import("./Jerry/aroundClassify"),//周边分类
+    loading:Loading
+})
+export const AroundSearch=Loadable({
+    loader:()=>import("./Jerry/aroundSearch"),//周边分类
+    loading:Loading
 })

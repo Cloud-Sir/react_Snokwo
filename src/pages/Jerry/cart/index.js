@@ -1,5 +1,5 @@
 import React from "react"
-import {Header} from "../styled/HeaderStyled"
+import HeaderTitle from "components/Jerry/headers/headerTitle.js"
 import {Nav,Head,Second,Footer} from "./styled"
 import AroundCart from "./aroundCart"
 import GameCart from "./gameCart"
@@ -7,20 +7,12 @@ import GameCart from "./gameCart"
 import {withRouter,NavLink,Switch,Route} from "react-router-dom"
 @withRouter
 
-
 class Cart extends React.Component{
-    constructor(){
-        super();
-    }
     render(){
         return(
             <div className="Cart">
                 <Head>
-                    <Header>
-                        <i className="iconfont">{'\ue645'}</i>
-                        <p>购物车</p>
-                        <span>编辑</span>
-                    </Header> 
+                    <HeaderTitle title="购物车" opera="编辑"/>
                     <Nav>
                         <ul>
                             <li>
@@ -34,9 +26,7 @@ class Cart extends React.Component{
                 </Head>
                    <Second>
                        <Switch>
-                            <Route path="/cart/gameCart" component={GameCart} />
-                        </Switch>
-                        <Switch>
+                            <Route path="/cart/gameCart" component={GameCart} /> 
                             <Route path="/cart/aroundCart" component={AroundCart} />
                         </Switch>
                         {/* 空购物车 */}

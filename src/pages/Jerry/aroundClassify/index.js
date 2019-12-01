@@ -1,15 +1,11 @@
 import React from "react"
-import {Classify,Second} from "./aroundClassifyStyle"
-import {Header} from "../styled/HeaderStyled"
+import {Classify,Second} from "./styled.js"
+import Header from "components/Jerry/headers/headerTitle.js"
 class AroundClassify extends React.Component{
     render(){
         return(
             <Classify>
-                <Header>
-                    <i className="iconfont">{'\ue645'}</i>
-                    <p>分类</p>
-                    <span></span>
-                </Header>
+                <Header title="分类"/>
                 <Second>
                     <div className="clothes">
                         <h2>服饰</h2>

@@ -1,6 +1,6 @@
 import  React from "react"
 import {Head,Nav,Second} from "./styled"
-import {Header} from "../styled/HeaderSearchStyle"
+import HeaderSearch from "components/Jerry/headers/headerSearch.js"
 
 // import { Carousel } from 'antd';
 class AroundSearch extends React.Component{
@@ -11,13 +11,14 @@ class AroundSearch extends React.Component{
         return(
             <div id="around">
                 <Head>
-                    <Header className="head">
-                        <div>
-                            <i className="iconfont">{'\ue645'}</i>
+                    {/* <Header className="head"> */}
+                        {/* <div> */}
+                        <HeaderSearch/>
+                            {/* <i className="iconfont">{'\ue645'}</i>
                             <span className="iconfont">{'\ue609'}</span>
                             <input type="text" value="搜搜你想要的周边" onChange={this.handleChange.bind(this)}/>
-                            <i className="iconfont">{'\ue610'}</i>
-                        </div>
+                            <i className="iconfont">{'\ue610'}</i> */}
+                        {/* </div> */}
                          <Nav>
                             <ul>
                                 <li>
@@ -32,7 +33,7 @@ class AroundSearch extends React.Component{
                             </ul>
                             {/* <div className="block"></div>//点击显现 */}
                         </Nav>      
-                    </Header>     
+                    {/* </Header>      */}
                 </Head>
                 <Second>
                     <div className="result">
@@ -65,6 +66,6 @@ class AroundSearch extends React.Component{
                 </div>
         )
     }
-    handleChange(){}
+    // handleChange(){}
 }
 export default AroundSearch;

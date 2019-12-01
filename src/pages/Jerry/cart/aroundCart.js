@@ -11,7 +11,7 @@ class AroundCart extends Component {
                                     <input type="checkbox"/>
                             </div>
                             <div className="image">
-                                <img src="https://s1.sonkwo.com/Fi1QmcIgNxUqYc_URAbIjPy5X7-R?imageView2/1/w/88/h/80"/>
+                                <img  alt="" src="https://s1.sonkwo.com/Fi1QmcIgNxUqYc_URAbIjPy5X7-R?imageView2/1/w/88/h/80"/>
                             </div>
                             <div className="describe">
                                 <div className="title">

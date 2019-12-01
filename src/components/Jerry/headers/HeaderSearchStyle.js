@@ -34,6 +34,7 @@ export const Header=styled.div`
             background:#515151;
             color:white ;
             transform: scale(.9);
+            outline:none;
         }
    }
 ` 

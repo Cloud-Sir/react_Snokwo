@@ -1,43 +1,80 @@
-import { fetch as fetchPro } from "whatwg-fetch";
-import qs from "qs";
+import axios from "axios";
 
-const get = (options) => {
-    let url = options.url;
-    let data = options.data;
-   
-    if (data) {
-        var str = "";
-        for (var key in data) {
-            str += "&" + key + "=" + data[key];
-        }
 
-        url = url + "?" + str.slice(1);
+const server = axios.create({
+    timeout:5000,
+    withCredentials:true
+})
+
+//请求的拦截
+server.interceptors.request.use((config)=>{
+    if(config.method == "get" ){
+        config.params = {...config.data};
     }
+    console.log(config)
+    return config;
+    
+},(err)=>{
+    return Promise.reject(err)
+})
 
-    var result = fetchPro(url, {
-        headers: {
-            "content-type": "application/json",
-            ...options.headers
-        }
-    }).then(res => res.json());
+//响应的拦截
+server.interceptors.response.use((res)=>{
+    if(res.status == 200){
+        return res.data;
+        
+    }
+    
+},(err)=>{
+    return Promise.reject(err)
+})
+
+export default server;
 
 
-    return result;
-}
 
-const post = (options) => {
-    var result = fetchPro(options.url, {
-        method: options.method,
-        body: qs.stringify(options.data),
-        headers: {
-            "content-type": "application/x-www-form-urlencoded"
-        }
-    }).then(res => res.json())
 
-    return result;
-}
+// import { fetch as fetchPro } from "whatwg-fetch";
+// import qs from "qs";
 
-export default {
-    get,
-    post
-}
+// const get = (options) => {
+//     let url = options.url;
+//     let data = options.data;
+   
+//     if (data) {
+//         var str = "";
+//         for (var key in data) {
+//             str += "&" + key + "=" + data[key];
+//         }
+
+//         url = url + "?" + str.slice(1);
+//     }
+
+//     var result = fetchPro(url, {
+//         headers: {
+//             "content-type": "application/json",
+//             ...options.headers
+//         }
+//     }).then(res => res.json());
+
+
+//     return result;
+// }
+
+// const post = (options) => {
+//     var result = fetchPro(options.url, {
+//         method: options.method,
+//         body: qs.stringify(options.data),
+//         headers: {
+//             "content-type": "application/x-www-form-urlencoded"
+//         }
+//     }).then(res => res.json())
+
+//     return result;
+// }
+
+// export default {
+//     get,
+//     post
+// }
+
