@@ -105,13 +105,47 @@ class IndexHtml extends React.Component {
                         </div>
                         <div className="menu-headline-container">
                             <div className="headline-img"></div>
+
+                            
                             <div className="headline-slider">
                                 <div className="up-slider-container">
                                     <ul className="up-slider-sliders">
-                                        <li className="slider-item">
+                                        {/* <li className="slider-item">
                                             <div >《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
-                                        </li>
+                                        </li> */}
+
+                                        <WingBlank>
+                                            <Carousel className="my-carousel slider-item"
+                                                vertical
+                                                dots={false}
+                                                dragging={false}
+                                                swiping={false}
+                                                autoplay
+                                                infinite
+                                            >
+                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
+                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
+                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
+                                            </Carousel>
+                                        </WingBlank>
+
                                     </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -570,7 +604,7 @@ class IndexHtml extends React.Component {
         )
     }
 
-    
+
 }
 
 export default IndexHtml;

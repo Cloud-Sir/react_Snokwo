@@ -77,10 +77,7 @@ export const Section = styled.div`
             width:100%;
             position:relative;
             overflow: hidden;
-            .am-wingblank.am-wingblank-lg {
-                margin-left:0 !important;
-                margin-right:0 !important;
-            }
+           
             .am-carousel-wrap{/*下边小点*/
             line-height: .01rem;
                 .am-carousel-wrap-dot{
@@ -110,6 +107,10 @@ export const Section = styled.div`
                 display:block;
             }
         }
+         .am-wingblank.am-wingblank-lg {
+                margin-left:0 !important;
+                margin-right:0 !important;
+            }
         /* 第二块  list */
         .list{
             margin-bottom:0.0997rem;
@@ -184,7 +185,7 @@ export const Section = styled.div`
                     margin-right: 0.09973rem;
                 }
                 .headline-slider{
-                    width:70%;
+                    width:75%;
                     height: .35891rem;
                     display:flex;
                     align-items:center;
@@ -203,7 +204,7 @@ export const Section = styled.div`
                     width: 100%;
                     height: 100%;
                     margin-bottom: 0;
-                    .slider-item{
+                    .slider-slide{
                         width: 100%;
                         height: 100%;
                         overflow: hidden;
