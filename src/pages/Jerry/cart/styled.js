@@ -27,18 +27,18 @@ export const Nav=styled.div`
             justify-content: center;
             align-items: center;
             p{ 
-                a{text-decoration:none;color:#cccccc}
+                a{
+                    text-decoration:none;color:#cccccc;
+                    height: .34rem;
+                    padding: 0rem 0.05rem;
+                    display:block;
+                    line-height: .34rem;
+                    border-bottom: 0.0125rem solid #333333;
+                }
                 font-size:.14rem;
-                height: .34rem;
-                padding: 0rem 0.05rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-bottom: 0.0125rem solid #333333;
-                color: #cccccc;
             }
         }
-        .active{
+        .activegamearound{
             border-bottom: 0.0125rem solid #ff5722;
             color: #ff5722;
         }

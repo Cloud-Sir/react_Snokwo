@@ -25,7 +25,7 @@ export const Second=styled.div`
         padding: 0;
         text-align: center;
         list-style: none;
-        top: .8rem;
+        top: 1.2rem;
         li{
             position: relative;
             display: inline-block;

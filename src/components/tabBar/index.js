@@ -13,11 +13,17 @@ class TabBar extends Component {
                 <ul>
                     {
                        TabBarRoute.map((item)=>(
-                           <li key={item.path} onClick={this.handleTo.bind(this,item.path)} className={path === item.path?"active":""}>
+                        <li key={item.path} onClick={this.handleTo.bind(this,item.path)} className={item.children?(path === item.children[0].path?"active":""):(path === item.path?"active":"")}>
                                 <i className="iconfont">{item.icon}</i>
                                 <span>{item.text}</span>
-                           </li>
+                        </li>
                        )) 
+                    //  TabBarRoute.map((item)=>(
+                    //     <li key={item.path} onClick={this.handleTo.bind(this,item.path)} className={())}>
+                    //             <i className="iconfont">{item.icon}</i>
+                    //             <span>{item.text}</span>
+                    //     </li>
+                    //    )) 
                     }
                 </ul>
             </TabBarContainer>

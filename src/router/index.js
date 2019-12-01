@@ -59,14 +59,14 @@ export const TabBarRoute = [
                 component:GameCart,
                 meta:{
                     flag:true
-                },
+                }
             },
             {
                 path:"/cart/aroundCart",
                 component:AroundCart,
                 meta:{
                     flag:true
-                },
+                }
             }
         ]
     },
