@@ -1,0 +1,1 @@
+export const headLineType = "HEAD_ASYNC_TYPE"
