@@ -31,6 +31,14 @@ module.exports = (app) => {
         }
     }))
 
+    app.use("/game_detail", proxy({
+        target: "http://www.sonkwo.hk",
+        changeOrigin: true,
+        pathRewrite: {
+            "^/game_detail": ""
+        }
+    }))
+
 
 }
 
