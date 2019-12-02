@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Header=styled.div`
+export const Head=styled.div`
     position:fixed;
     height:.4rem;
     width:100%;

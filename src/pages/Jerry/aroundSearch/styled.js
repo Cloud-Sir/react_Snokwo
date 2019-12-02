@@ -14,41 +14,41 @@ export const Head=styled.div`
 export const Nav=styled.div`
     background-color: #333333;
     width: 100%;
-    
+    margin-top:.41rem;
     /* display: flex; */
     /* flex-direction: row; */
     /* align-items: center; */
     box-sizing:border-box;
     ul{
-        height: .2125rem;
+        height: .33rem;
         /* height: 100%; */
         width: 100%;
         box-sizing: border-box;
         display: flex;
         justify-content: space-around;
         margin-bottom: 0;
+        li{
+            display: flex;
+            flex: 1;
+            box-orient: horizontal;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.12rem;
+            transform: scale(.9);
+            color: #cccccc;
+            p{margin-bottom:0;}
+            i{
+                width:0;
+                height:0;
+                border:.04rem solid transparent;
+                border-top-color:#ccc;
+                margin-top: .05rem;
+                margin-left: .03rem;
+            }
+        } 
     }
-    li{
-        display: flex;
-        flex: 1;
-        box-orient: horizontal;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.12rem;
-        transform: scale(.9);
-        color: #cccccc;
-        p{margin-bottom:0;}
-        i{
-            width:0;
-            height:0;
-            border:.04rem solid transparent;
-            border-top-color:#ccc;
-            margin-top: .05rem;
-            margin-left: .03rem;
-        }
-      
-    } 
+
    .block{
         position: absolute;
         left: 0;
@@ -64,7 +64,7 @@ export const Nav=styled.div`
         text-align: left;
     }
     /* 鼠标点击后 */
-    li:hover{
+    .active{
         color: #ff5722;
         i{
             margin-top: -.05rem;
@@ -77,7 +77,29 @@ export const Nav=styled.div`
             left: 0.0125rem; */
         }
     }
-    
+    .isShow{
+        width:100%;
+        height:auto;
+        background:#333;
+        ol{
+            position: absolute;
+            left: 0;
+            width:100%;
+            background-color: #333333;
+            z-index: 1;
+            display:flex;
+            padding:.08rem;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            li{
+                width:.9rem;
+                color: #999;
+                font-size:.12rem;
+                text-align: center;
+                margin-top:.04rem;
+            }
+        }
+    }
 `  
 export const Second=styled.div`
     position:absolute;
@@ -85,7 +107,7 @@ export const Second=styled.div`
     top:0;
     bottom:0;
     right:0;
-    padding-top:.7rem;
+    padding-top:.73rem;
     overflow:scroll;
     .result{
         padding: 0.0625rem 0.1rem;

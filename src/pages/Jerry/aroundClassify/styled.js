@@ -54,7 +54,7 @@ export const Second=styled.div`
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    transform:scale(.8);
+                    transform:scale(.9);
                 }
             }
         }

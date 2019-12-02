@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import {Header} from "../styled/HeaderStyled"
+import HeaderTitle from "components/Jerry/headers/headerTitle.js"
 class index extends Component {
     render() {
         return (
             <div className="myhope">
-                <Header>
-                    <i className="iconfont">{'\ue645'}</i>
-                    <p>我的心愿单</p>
-                    <span>隐私设置</span>
-                </Header>
+                <HeaderTitle title="我的心愿单" opera="隐私设置"/>
             </div>
         );
     }

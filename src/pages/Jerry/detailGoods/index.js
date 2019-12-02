@@ -1,15 +1,11 @@
 import React from "react"
-import {Header} from "../styled/HeaderStyled"
+import HeaderTitle from "components/Jerry/headers/headerTitle.js"
 import {Second,Footer} from "./styled"
 class DetailGoods extends React.Component{
     render(){
         return(
             <div className="detailGoods">
-                <Header>
-                    <i className="iconfont">{'\ue645'}</i>
-                    <p>商品详情</p>
-                    <span></span>
-                </Header>
+                <HeaderTitle title="商品详情"/>
                 <Second>
                     <div className="image">
                         <img src="http://7fvkh9.com1.z0.glb.clouddn.com/Fq4lhdc4qT_lX9KemBHKl2GcWv1m?imageMogr2/thumbnail/512"/>

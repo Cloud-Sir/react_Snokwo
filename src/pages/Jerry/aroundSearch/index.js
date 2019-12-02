@@ -1,38 +1,53 @@
 import  React from "react"
 import {Head,Nav,Second} from "./styled"
-import {Header} from "../styled/HeaderSearchStyle"
+import HeaderSearch from "components/Jerry/headers/headerSearch.js"
+import {withRouter} from "react-router-dom"
 
-// import { Carousel } from 'antd';
+import {connect} from "react-redux";
+// import {mapStateToProps,mapDispatchToProps} from "./connect.js"
+import {mapStateToProps,mapDispatchToProps} from "../around/connect.js"
+@connect(mapStateToProps, mapDispatchToProps)
+@withRouter
 class AroundSearch extends React.Component{
-    constructor(){
+    constructor() {
         super()
+        this.state = {
+            isShow: false,
+            n:0
+        }
     }
-    render(){
+    render() {
+        let { list } = this.props;
+        let { isShow ,n} = this.state;
+        let { categories, company_tags, game_tags } = list;
+       
         return(
             <div id="around">
                 <Head>
-                    <Header className="head">
-                        <div>
-                            <i className="iconfont">{'\ue645'}</i>
-                            <span className="iconfont">{'\ue609'}</span>
-                            <input type="text" value="搜搜你想要的周边" onChange={this.handleChange.bind(this)}/>
-                            <i className="iconfont">{'\ue610'}</i>
-                        </div>
-                         <Nav>
+                    <HeaderSearch/>
+                        <Nav>
                             <ul>
-                                <li>
+                            <li onClick={this.handleClick.bind(this,1)} className={n==1?'active':""}>
                                     <p>类型</p><i></i>
                                 </li>
-                                <li>
-                                    <p>类型</p><i></i>
+                            <li onClick={this.handleClick.bind(this, 2)} className={n == 2 ?'active':""}>
+                                    <p>品牌</p><i></i>
                                 </li>
-                                <li>
-                                    <p>类型</p><i></i>
+                            <li onClick={this.handleClick.bind(this, 3)} className={n == 3 ?'active':""}>
+                                    <p>游戏</p><i></i>
                                 </li>
-                            </ul>
-                            {/* <div className="block"></div>//点击显现 */}
+                        </ul>
+                        <div className="isShow" style={{ display: isShow ? "block" : "none" }}>
+                            <ol>
+                                {
+                                    (list ? (n == 1 ? categories : (n == 2 ? company_tags : (n == 3 ? game_tags : []))) : []).map((item, key) => (
+                                        <li key={key}>{item.name}</li>
+                                    ))
+                                }
+                               
+                            </ol>
+                        </div>
                         </Nav>      
-                    </Header>     
                 </Head>
                 <Second>
                     <div className="result">
@@ -65,6 +80,23 @@ class AroundSearch extends React.Component{
                 </div>
         )
     }
-    handleChange(){}
+    componentDidMount() {
+        let _id = this.props.history.location.search.replace("?nav_items_id=", "");
+        this.props.handleGetData();
+    }
+    handleClick(index, e) {
+        let flag = this.state.isShow;
+        let key = this.state.n;
+        if (key==0) {
+            key = index;
+        } else {
+            key = 0;
+        }
+        flag = !flag;
+        this.setState({
+            isShow: flag,
+            n:key
+        })
+    }
 }
 export default AroundSearch;

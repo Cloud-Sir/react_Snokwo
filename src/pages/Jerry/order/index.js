@@ -1,16 +1,12 @@
 import React from "react"
 import {connect} from "react-redux"
-import {Header} from "../styled/HeaderStyled"
+import {Header} from "components/Jerry/headers/header.js"
 import {Second,Footer} from "./styled"
 class Order extends React.Component{
     render(){
         return(
             <div className="Order">
-                <Header>
-                    <i className="iconfont">{'\ue645'}</i>
-                    <p>确认订单</p>
-                    <span></span>
-                </Header>
+                <Header title="确认订单"/>
                 <Second>
                     <div className="edit1">
                         <p>未编辑</p>

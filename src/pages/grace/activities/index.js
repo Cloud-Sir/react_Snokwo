@@ -1,13 +1,16 @@
 import React, { Fragment } from "react"
 import { Section } from "./styled"
 import Header from "components/grace/headers"
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import { connect } from "react-redux"
+import { mapDispatchToProps, mapStateToProps } from "./mapState"
 @withRouter
+@connect(mapStateToProps, mapDispatchToProps)
 class Activities extends React.Component {
     render() {
         return (
             <Fragment>
-                <Header title={"精彩活动"} lefticon={"\ue645"}  path={this.props}/>
+                <Header title={"精彩活动"} lefticon={"\ue645"} path={this.props} />
                 <Section>
                     <div className="container-header-space" style={{ "minHeight": "41px" }}></div>
                     <div className="subject-view-container">
@@ -64,6 +67,9 @@ class Activities extends React.Component {
             </Fragment>
 
         )
+    }
+    componentDidMount() {
+        this.props.handleActivites()
     }
 }
 

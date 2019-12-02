@@ -15,7 +15,7 @@ class gameCart extends Component {
                             <ul>
                                 <li>
                                     <div className="check"><input type="checkbox"/></div>
-                                    <img src="http://s1.sonkwo.hk/medium/910135728720663/file/44813/sonkwo-top-L-Risk-of-Rain-2.jpg?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89"/>
+                                    <img  alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/44813/sonkwo-top-L-Risk-of-Rain-2.jpg?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89"/>
                                     <div className="goodsName">
                                         <span>雨中冒险</span>
                                         <i>￥56.0</i>

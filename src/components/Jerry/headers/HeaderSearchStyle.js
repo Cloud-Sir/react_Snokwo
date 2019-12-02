@@ -9,7 +9,7 @@ export const Header=styled.div`
         padding: 0 .05rem;
         font-size:.12rem;
         clear: both;
-        height:.34rem;
+        height:.41rem;
         background:#333;
         position:relative; 
         display:flex;
@@ -34,6 +34,7 @@ export const Header=styled.div`
             background:#515151;
             color:white ;
             transform: scale(.9);
+            outline:none;
         }
    }
 ` 
