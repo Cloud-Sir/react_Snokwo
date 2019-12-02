@@ -4,11 +4,13 @@ import { Section } from "./styled"
 import { connect } from "react-redux"
 import { mapStateToProps, mapDispatchToProps } from "./mapStore"
 import { withRouter } from "react-router-dom"
-
-@connect(mapStateToProps, mapDispatchToProps)
 @withRouter
+@connect(mapStateToProps, mapDispatchToProps)
+
+
 class Directory extends React.Component {
     render() {
+        let { changshanglist } = this.props
         return (
             <Fragment>
                 <Header title={"厂商目录"} lefticon={"\ue645"} path={this.props} />
@@ -16,252 +18,17 @@ class Directory extends React.Component {
                     <div className="container-header-space"></div>
                     <div>
                         <div className="publishers-container grid-mui">
-                            {/* 循环按钮 */}
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/FlrElyYdVDDOtRk5sN5ms8LmQ8s3" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid-col">
-                                <div>
-                                    <button>
-                                        <img alt="" src="https://s3.sonkwo.com/Ft_8ztIi6EBaVv8MQHgtUxgpqVi7" />
-                                    </button>
-                                </div>
-                            </div>
+                            {
+                                changshanglist.map((item, index) => (
+                                    <div className="grid-col" key={item.id}>
+                                        <div>
+                                            <button>
+                                                <img alt="" src={item.publisher_detail.logo} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </Section>

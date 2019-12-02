@@ -1,24 +1,26 @@
-// import React, { Fragment } from "react"
 import React from "react"
 import { Header, Section } from "./styled"
 import { Link, withRouter } from "react-router-dom"
 import { Carousel, WingBlank } from 'antd-mobile';
 import HomeUL from "components/grace/homelist"
 import HomeModule from "components/grace/homemodule"
-
-import home_banner from "static/grace/img/home_banner.png"
+import { connect } from "react-redux"
+import { mapStateToProps, mapDispatchToProps } from "./mapStore"
+// import home_banner from "static/grace/img/home_banner.png"
 @withRouter
+@connect(mapStateToProps, mapDispatchToProps)
 class IndexHtml extends React.Component {
     constructor() {
         super();
         this.state = {
-            bannergrops: [home_banner, home_banner, home_banner, home_banner, home_banner, home_banner, home_banner, home_banner],
             imgHeight: "100 %",
         }
+
     }
 
     render() {
-        let { bannergrops } = this.state
+        console.log(this.props)
+        let { home_banners, home_groups, home_headlines } = this.props
         return (
             < div >
                 <Header>
@@ -40,29 +42,32 @@ class IndexHtml extends React.Component {
                     <div className="banner">
                         <WingBlank>
                             <Carousel
-                                autoplay={false}
+                                autoplay
                                 infinite
-                                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                                afterChange={index => console.log('slide to', index)}
+                                autoplayInterval={1300}
                             >
-                                {bannergrops.map(val => (
-                                    <a
-                                        key={val}
-                                        href="http://www.alipay.com"
-                                        style={{ touchAction: 'none', display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-                                    >
-                                        <img
-                                            src={val}
-                                            alt=""
-                                            style={{ width: '100%', verticalAlign: 'top' }}
-                                            onLoad={() => {
-                                                // fire window resize event to change height
-                                                window.dispatchEvent(new Event('resize'));
-                                                this.setState({ imgHeight: 'auto' });
-                                            }}
-                                        />
-                                    </a>
-                                ))}
+                                {/* beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                                afterChange={index => console.log('slide to', index)} */}
+                                {
+                                    home_banners.map((item, index) => (
+                                        <a
+                                            key={index}
+                                            href="/"
+                                            style={{ touchAction: 'none', display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                                        >
+                                            <img
+                                                src={item.cover}
+                                                alt=""
+                                                style={{ width: '100%', verticalAlign: 'top' }}
+                                                onLoad={() => {
+                                                    // fire window resize event to change height
+                                                    window.dispatchEvent(new Event('resize'));
+                                                    this.setState({ imgHeight: 'auto' });
+                                                }}
+                                            />
+                                        </a>
+                                    ))
+                                }
                             </Carousel>
                         </WingBlank>
                     </div>
@@ -106,7 +111,7 @@ class IndexHtml extends React.Component {
                         <div className="menu-headline-container">
                             <div className="headline-img"></div>
 
-                            
+
                             <div className="headline-slider">
                                 <div className="up-slider-container">
                                     <ul className="up-slider-sliders">
@@ -123,38 +128,26 @@ class IndexHtml extends React.Component {
                                                 autoplay
                                                 infinite
                                             >
-                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
-                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
-                                                <div className="v-item">《暗黑血统：创世纪》配置公布；《黑色未来88》获81%好评</div>
+                                                {
+                                                    home_headlines.map((item) => (
+                                                        <div key={item.id} className="v-item" >{item.title}</div>
+                                                    ))
+                                                }
                                             </Carousel>
                                         </WingBlank>
 
                                     </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/*  第三块 新游新价 */}
-                    <HomeModule />
+
+                    {/* <HomeModule data={home_boxes} /> */}
+
 
                     {/* 第四块 史低折扣 */}
-                    <HomeModule />
+                    {/* <HomeModule /> */}
 
 
                     {/* 第五块 半价起降 */}
@@ -490,75 +483,32 @@ class IndexHtml extends React.Component {
                             <div className="sk-touch-block">
                                 <div className="sk-touch-container">
                                     {/*  */}
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                                <div className="group-info-container">
-                                                    <div className="info">
-                                                        <span className="iconfont  icon-xiaozurenshux">{"\ue605"}</span>
-                                                        <span>577603</span>
-                                                        <span className="iconfont  icon-xiaozutiezishux">{"\ue68b"}</span>
-                                                        <span>16137</span>
+                                    {
+                                        home_groups.map((item, index) => (
+                                            <div className="game">
+                                                <div className="store-item-card-container change-sku">
+                                                    <div className="card-img">
+                                                        <img alt="" src={item.logo} />
+                                                        <div className="group-info-container">
+                                                            <div className="info">
+                                                                <span className="iconfont  icon-xiaozurenshux">{"\ue605"}</span>
+                                                                <span>{item.member_count}</span>
+                                                                <span className="iconfont  icon-xiaozutiezishux">{"\ue68b"}</span>
+                                                                <span>{item.posts_count}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="card-content">
+                                                        <div className="title">
+                                                            {item.name}
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
+                                        ))
+                                    }
 
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                                <div className="group-info-container">
-                                                    <div className="info">
-                                                        <span className="iconfont  icon-xiaozurenshux">{"\ue605"}</span>
-                                                        <span>5776</span>
-                                                        <span className="iconfont  icon-xiaozutiezishux">{"\ue68b"}</span>
-                                                        <span>16</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                                <div className="group-info-container">
-                                                    <div className="info">
-                                                        <span className="iconfont  icon-xiaozurenshux">{"\ue605"}</span>
-                                                        <span>7603</span>
-                                                        <span className="iconfont  icon-xiaozutiezishux">{"\ue68b"}</span>
-                                                        <span>37</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    {/*  */}
                                 </div>
                             </div>
                         </div>
@@ -602,6 +552,9 @@ class IndexHtml extends React.Component {
                 </Section>
             </div >
         )
+    }
+    componentDidMount() {
+        this.props.handleAsyncHomeGet()
     }
 
 
