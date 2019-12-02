@@ -150,7 +150,7 @@ export const NoTabBarRoute = [
         meta:{}
     },
     {
-        path:"/AroundClassify",
+        path: "/AroundClassify",
         component:AroundClassify,
         meta:{}
     },

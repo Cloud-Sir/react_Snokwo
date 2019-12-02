@@ -15,7 +15,13 @@ export const Second=styled.div`
         overflow: hidden;
     }
     .ant-carousel{overflow:hidden;height:1.1rem;background:white;}
-    .ant-carousel .slick-slide h3 {color: #fff;}    
+    .ant-carousel .slick-slide h3 {
+        color: #fff;
+        img{
+            height:100%;
+            width:100%;
+        }
+    }    
     .slick-dots-bottom{
         position: absolute;
         display: block;
@@ -64,8 +70,7 @@ export const Second=styled.div`
         div{
             display:flex;
             flex-direction:column;
-            text-align:center;
-            align-content:center;
+            align-items: center;
             img{
                 height:.34rem;
                 width:.34rem;

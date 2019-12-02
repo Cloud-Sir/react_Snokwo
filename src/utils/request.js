@@ -8,10 +8,9 @@ const server = axios.create({
 
 //请求的拦截
 server.interceptors.request.use((config)=>{
-    if(config.method == "get" ){
+    if(config.method === "get" ){
         config.params = {...config.data};
     }
-    console.log(config)
     return config;
     
 },(err)=>{
@@ -20,7 +19,7 @@ server.interceptors.request.use((config)=>{
 
 //响应的拦截
 server.interceptors.response.use((res)=>{
-    if(res.status == 200){
+    if(res.status === 200){
         return res.data;
         
     }

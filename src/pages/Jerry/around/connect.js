@@ -1,11 +1,14 @@
-import {getAroundList} from "actions/Jerry/actionCreator.js"
+import {getAroundList,getAroundData} from "actions/Jerry/actionCreator.js"
 
 export const mapStateToProps=(state)=>({
-
+    list: state.Jerry.list,
+    data:state.Jerry.data
 })
 export const mapDispatchToProps=(dispatch)=>({
-    handleGetData(){
-        console.log(1111)
+    handleGetList(){
         dispatch(getAroundList());
+    },
+    handleGetData() {
+        dispatch(getAroundData())
     }
 })

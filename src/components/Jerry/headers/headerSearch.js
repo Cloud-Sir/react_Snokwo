@@ -5,7 +5,6 @@ import {NavLink,withRouter} from "react-router-dom"
 class HeaderSearch extends Component {
     render() {
         return (
-            <div>
                 <Header>
                     <div>
                         <i className="iconfont" onClick={this.handleBack.bind(this)}>{'\ue645'}</i>
@@ -14,7 +13,6 @@ class HeaderSearch extends Component {
                         <NavLink to="/message"><i className="iconfont">{'\ue610'}</i></NavLink>
                     </div>
                 </Header>
-            </div>
         );
     }
     handleChange(){}
