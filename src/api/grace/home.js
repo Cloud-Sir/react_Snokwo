@@ -58,6 +58,11 @@ export const homeApi = () => http({//首页
     method: "get",
     url: "http://localhost:3000/home",
 })
+export const homelistApi = () => http({//首页
+    method: "get",
+    url: "http://localhost:3000/homelist",
+})
+
 export const activityApi = () => http({//活动
     method: "get",
     url: "http://localhost:3000/huodong",
