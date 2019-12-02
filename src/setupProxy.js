@@ -15,6 +15,14 @@ module.exports = (app) => {
             "^/game": ""
         }
     }))
+    app.use("/ajax", proxy({
+        target: "http://m.maoyan.com",
+        changeOrigin: true,
+        // pathRewrite: {
+        //     "^/game": ""
+        // }
+    }))
+    // http://m.maoyan.com/ajax
     app.use("/auth", proxy({
         target: "http://auth.sonkwo.com",
         changeOrigin: true,
