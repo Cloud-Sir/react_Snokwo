@@ -1340,23 +1340,24 @@
     "huodong": {
         "banners": [{
                 "title": "【感恩节】晒剁手病诊断报告，集赞赢免单机会",
-                "url": "http://www.sonkwo.com/posts/309694",
+                "guotieurl": "309694",
                 "cover": "https://s3.sonkwo.com/FkzFkvKTjD-M9c1nZ-gg1rsDEa31"
             },
             {
-                "title": "SD高达G世纪：火线纵横",
-                "url": "http://www.sonkwo.hk/mobile/products/2297?game_id=3360",
-                "cover": "https://s3.sonkwo.com/FtwMMW1-05qpgeenihvRBP-sUJ-N"
-            },
-            {
-                "title": "足球经理 2020",
-                "url": "http://www.sonkwo.hk/mobile/products/2283?game_id=3342",
-                "cover": "https://s3.sonkwo.com/FpJBUMwmeF7f8Cifqi6cUiacdHIW"
-            },
-            {
                 "title": "杉果点评小分队-《荒野大镖客：救赎2》评测活动！",
-                "url": "https://www.sonkwo.com/posts/307240",
+                "guotieurl": "307240",
                 "cover": "https://s3.sonkwo.com/Fs99Al5W1gfUSjQUGx6GSMJTHw8q"
+            },
+            {
+                "title": "SD高达G世纪：火线纵横",
+                "guotieurl": "2297",
+                "game_id": "3360",
+                "cover": "https://s3.sonkwo.com/FtwMMW1-05qpgeenihvRBP-sUJ-N"
+            }, {
+                "title": "足球经理 2020",
+                "guotieurl": "2283",
+                "game_id": "3342",
+                "cover": "https://s3.sonkwo.com/FpJBUMwmeF7f8Cifqi6cUiacdHIW"
             }
         ]
     },

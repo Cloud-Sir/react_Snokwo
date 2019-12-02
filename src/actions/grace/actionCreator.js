@@ -1,6 +1,6 @@
 import { createAction } from "redux-actions"
-import { publisherApi, homeApi, activityApi } from "api/grace/home"
-import { directAsyncType, homeAsyncType } from "./actionTypes"
+import { publisherApi, homeApi, activityApi, gamedetailApi } from "api/grace/home"
+import { directAsyncType, homeAsyncType, activityAsyncType, gamedetailAsyncType } from "./actionTypes"
 //  publisherApi-厂商目录
 export const directAsyncAction = () => {
     let directAction = createAction(directAsyncType, (data) => data)
@@ -20,9 +20,18 @@ export const homegetAsyncAction = () => {//首页
 }
 
 export const activityAsyncAction = () => {//活动
+    let activityAction = createAction(activityAsyncType, (data) => data)
     return async (dispatch) => {
         let activitydata = await activityApi()
-        console.log(activitydata)
-        // dispatch()
+        dispatch(activityAction(activitydata))
+    }
+}
+
+export const gamedetailAsyncAction = (game_id) => {//游戏详情
+    let gamedetailAction = createAction(gamedetailAsyncType, (data) => data)
+    return async (dispatch) => {
+        let gamedetaildata = await gamedetailApi(game_id)
+        // console.log(gamedetaildata)
+        dispatch(gamedetailAction(gamedetaildata))
     }
 }
