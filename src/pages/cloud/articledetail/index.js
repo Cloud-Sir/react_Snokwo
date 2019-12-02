@@ -1,10 +1,25 @@
 import React, { Fragment } from 'react';
 import { Header, Container } from "./styled"
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from "./mapstore";
+@connect(mapStateToProps, mapDispatchToProps)
 @withRouter
 class ArticleDetail extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            id: ''  
+        }
+        let { id } = this.props.match.params;
+        this.state.id = id
+    }
     render() {
+        let { article_detail } = this.props;
+        let cover = article_detail.cover ? article_detail.cover : "";
+        let account = article_detail.account ? article_detail.account : "";
         return (
+           
             <Fragment>
                 <Header>
                     <i className="iconfont left" onClick={this.handleBack.bind(this)}>{"\ue645"}</i>
@@ -13,28 +28,25 @@ class ArticleDetail extends React.Component {
                 </Header>
                 <Container>
                     <div className="headline-detail-banner">
-                        <img src="https://s3.sonkwo.com/FkAgg2e8TSXdjHehOpBq-0eq073h?imageView2/1/w/320/h/125" alt=""/>
+                        <img src={cover.url} alt="" />
                     </div>
                     <div className="title-container">
-                        <h2>杉果黑五特惠将至：《大镖客2》首降 19.9福袋回归</h2>
+                        <h2>{article_detail.title}</h2>
                         <div className="account-info">
                             <div className="account-img">
-                                <img src="https://s4.sonkwo.com/FubIpSNdDSHfjO89Kn4Nzt4DRy8J?imageView2/1/w/60/h/60" alt="" />
+                                <img src={account.avatar} alt="" />
                             </div>
-                            <div className="account-name">
-                                杉果-破枪瘦马
-                            </div>
-                            <div className="account-follow">
-                                +关注
-                            </div>
+                            <div className="account-name">{account.nickname}</div>
+                            <div className="account-follow">+关注</div>
                         </div>
                     </div>
-                    <div className="headline-content">
-                        {/* 数据直接渲染 */}
-                    </div>
+                    <div className="headline-content" dangerouslySetInnerHTML={{ __html: article_detail.content }}/>
                 </Container>
             </Fragment>
         );
+    }
+    componentDidMount() {
+        this.props.handleAsyncarticledetail(this.state.id)
     }
     handleBack(){
         this.props.history.goBack()

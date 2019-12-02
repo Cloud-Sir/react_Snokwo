@@ -1,64 +1,61 @@
 import React,{Fragment} from 'react';
-import {Header,Article} from "./styled"
-import {withRouter} from "react-router-dom";
-
+import { Header, Article } from "./styled";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { mapStateToProps, mapDispatchToProps } from "./mapStore";
+@connect(mapStateToProps,mapDispatchToProps)
 @withRouter
 
 class HeadlinesForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            id: '',
+            name:""
+        }
+        let { id ,name} = this.props.match.params;
+        this.state.id = id
+        this.state.name = name
+    }
     render() {
+        let { what_info } = this.props;
+        let arr = what_info.headlines ? what_info.headlines : []
         return (
             <Fragment>
                 <Header>
                     <i className="iconfont left" onClick={this.handleBack.bind(this)}>{"\ue645"}</i>
-                    <div>折扣信息</div>
+                    <div>{this.state.name}</div>
                     <i className="iconfont right">{"\ue6a7"}</i>
                 </Header>
                 <Article>
-                        <div className="headline-news-container">
-                            <div className="headline-news-container-img">
-                                <img src="https://s3.sonkwo.com/FiWVZyg_lOxgvqWF8rwpZPVizdhO?imageMogr2/thumbnail/1000|imageView2/1/w/290/h/194" alt=""/>
-                            </div>
-                            <div className="headline-news-container-content">
-                                <div className="headline-news-title">
-                                    杉果黑五特惠将至：《大镖客2》首降 19.9福袋回归
+                    {
+                        arr.map((item) => ( 
+                            <div className="headline-news-container" key={item.id} onClick={this.handleToArticleDetail.bind(this,item.id)}>
+                                <div className="headline-news-container-img">
+                                    <img src={item.thumbnail.url} alt="" />
                                 </div>
-                                <div className="headline-news-bottom">
-                                    <div className="headlines-news-avatar">
-                                        <img src="https://s4.sonkwo.com/FubIpSNdDSHfjO89Kn4Nzt4DRy8J?imageView2/1/w/60/h/60" alt=""/>
-                                    </div>
-                                    <div className="headlines-news-nickname">
-                                        杉果-破枪瘦马
-                                    </div>
-                                    <div className="headline-news-bottom-time">
-                                        11月26日
+                                <div className="headline-news-container-content">
+                                    <div className="headline-news-title">{item.title}</div>
+                                    <div className="headline-news-bottom">
+                                        <div className="headlines-news-avatar">
+                                            <img src={item.account.avatar} alt="" />
+                                        </div>
+                                        <div className="headlines-news-nickname">{item.account.nickname}</div>
+                                        <div className="headline-news-bottom-time">11月26日</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="headline-news-container">
-                            <div className="headline-news-container-img">
-                                <img src="https://s3.sonkwo.com/FiWVZyg_lOxgvqWF8rwpZPVizdhO?imageMogr2/thumbnail/1000|imageView2/1/w/290/h/194" alt=""/>
-                            </div>
-                            <div className="headline-news-container-content">
-                                <div className="headline-news-title">
-                                    杉果黑五特惠将至：《大镖客2》首降 19.9福袋回归
-                                </div>
-                                <div className="headline-news-bottom">
-                                    <div className="headlines-news-avatar">
-                                        <img src="https://s4.sonkwo.com/FubIpSNdDSHfjO89Kn4Nzt4DRy8J?imageView2/1/w/60/h/60" alt=""/>
-                                    </div>
-                                    <div className="headlines-news-nickname">
-                                        杉果-破枪瘦马
-                                    </div>
-                                    <div className="headline-news-bottom-time">
-                                        11月26日
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Article>
+                        ))
+                    }
+                </Article>
             </Fragment>
         );
+    }
+    componentDidMount() {
+        this.props.handlewhatInfo(this.state.id)
+    }
+    handleToArticleDetail(id) {
+        this.props.history.push("/articledetail/"+id)
     }
     handleBack(){
         this.props.history.goBack()

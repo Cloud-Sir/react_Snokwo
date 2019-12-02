@@ -120,12 +120,12 @@ export const NoTabBarRoute = [
     },
     
     {
-        path:"/articledetail",
+        path:"/articledetail/:id",
         component:Articledetail,
         meta:{}
     },
     {
-        path:"/headlinesform",
+        path:"/headlinesform/:id/:name",
         component:Headlinesform,
         meta:{}
     },
