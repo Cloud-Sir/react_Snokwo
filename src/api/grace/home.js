@@ -62,3 +62,14 @@ export const activityApi = () => http({//活动
     method: "get",
     url: "http://localhost:3000/huodong",
 })
+export const gamedetailApi = (game_id = 527) => http({//游戏详情
+    method: "get",
+    url: "/game_detail/api/products/" + game_id + ".json",
+    data: {
+        locale: "js",
+        sonkwo_version: '1',
+        sonkwo_client: "mobile",
+        _: 1575290987548
+    }
+})
+// http://www.sonkwo.hk/api/products/527.json?locale=js&sonkwo_version=1&sonkwo_client=mobile&_=1575290987548

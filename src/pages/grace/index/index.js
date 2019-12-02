@@ -19,7 +19,7 @@ class IndexHtml extends React.Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         let { home_banners, home_groups, home_headlines } = this.props
         return (
             < div >
@@ -485,7 +485,7 @@ class IndexHtml extends React.Component {
                                     {/*  */}
                                     {
                                         home_groups.map((item, index) => (
-                                            <div className="game">
+                                            <Link className="game" to={"/groups/" + item.id}>
                                                 <div className="store-item-card-container change-sku">
                                                     <div className="card-img">
                                                         <img alt="" src={item.logo} />
@@ -505,7 +505,7 @@ class IndexHtml extends React.Component {
 
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         ))
                                     }
 

@@ -7,13 +7,16 @@ export const Header=styled.div`
     padding:.068rem 0;
     margin-bottom:.058rem;
     position:fixed;
-    z-index:1;
+    z-index:6;
     left:0;
     top:0;
     background-color: #333;
     color: #ccc;
     display:flex;
     align-items:center;
+    a{
+        color:#ccc;
+    }
     i{
         position: absolute;
         margin-left:.128rem;
@@ -23,6 +26,14 @@ export const Header=styled.div`
         text-align:center;
         font-size:.13rem;
     }
+`
+
+export const Covertightly = styled.div`
+    width:100%;
+    height:.41rem;
+    background:#fff;
+    position: relative;;
+    z-index:3;
 `
 
 export const Main=styled.div`
@@ -36,6 +47,11 @@ export const Main=styled.div`
     box-sizing:border-box;
     padding-top:.41rem;
     padding-bottom:.471rem;
+    .qwer{
+        position: relative;
+        z-index:100;
+        background:#fff;
+    }
     .slider-decorator-0{
         bottom: .16rem !important;
         .am-carousel-wrap-dot > span {
@@ -52,6 +68,8 @@ export const Main=styled.div`
         width:100%;
         box-sizing:border-box;
         padding:.128rem;
+        position:relative;
+        z-index: 100;
         p{
             border-radius:.07rem;
             overflow:hidden;
@@ -66,14 +84,17 @@ export const Main=styled.div`
 export const Todo=styled.div`
     width:100%;
     height:.3829rem;
+    background:#fff;
     border-bottom:1px solid #f5f5f5;
+    position:relative;
+    z-index: 5;
     ul{
         width:100%;
         height:.3829rem;
         display:flex;
         justify-content:space-around;
         align-items:center;
-        &>.dynamic{
+        .dynamic{
             line-height:.3829rem;
             font-weight:bold;
             border-bottom: solid 2px #F95D26;

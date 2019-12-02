@@ -240,6 +240,20 @@ export const Section = styled.div`
     .container-footer-space{
         height: .48511rem;
     }
+    .my-drawer {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar {
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar .am-list {
+  width: 300px;
+  padding: 0;
+}
 `
 export const Footer = styled.div`
     .container-footer-zone{

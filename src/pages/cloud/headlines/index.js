@@ -1,69 +1,59 @@
 import React,{Fragment} from "react";
-import {Header,Main,Todo,Article} from "./styled"
+import { Header, Main, Todo, Article, Covertightly} from "./styled"
 import { Carousel } from 'antd-mobile';
-import { withRouter } from "react-router-dom";
+import { withRouter, NavLink, Switch, Route, Redirect ,Link} from "react-router-dom";
+import Recommend from "components/cloud/headlines/recommend";
+import Information from "components/cloud/headlines/information"; 
+import Articlec from "components/cloud/headlines/article";
+import Video from "components/cloud/headlines/video"; 
+import Radiostation from "components/cloud/headlines/radiostation";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps} from "./mapStore"
 @connect(mapStateToProps,mapDispatchToProps)
 @withRouter
 class Headlines extends React.Component{
-    constructor(){
-        super()
-    }
-    render(){
-        return(
+    render() {
+        let { headline_data } = this.props;
+        let mobile_banner = headline_data.mobile_banner
+        return (
             <Fragment>
                 <Header>
-                    <i className="iconfont">{"\ue610"}</i>
+                    <i className="iconfont"><Link to="/message">{"\ue610"}</Link></i>
                     <div>杉果头条</div>
                 </Header>
+                <Covertightly></Covertightly>
                 <Main>
+                    <div className="qwer">
                     <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
-                        <div className="swiper">
-                            <p>
-                                <img src="https://s3.sonkwo.com/FqQruF3iX7-NLA-Qe24NK3HlucJd"/>
-                            </p>
-                        </div>
-                        <div className="swiper">
-                            <p>
-                                <img src="https://s3.sonkwo.com/Fhx6QHiqD3rBbNUeMV41OKQQ_g8D"/>
-                            </p>
-                        </div>
+                        {
+                            (mobile_banner ? mobile_banner.banners:[]).map((item,index) => (
+                                <div className="swiper" key={index}>
+                                    <p>
+                                        <img src={item.cover} alt=""/>
+                                    </p>
+                                </div>
+                            ))
+                        }
                     </Carousel>
                     <Todo>
                         <ul>
-                            <li className="dynamic">推荐</li>
-                            <li>资讯</li>
-                            <li>文章</li>
-                            <li>视频</li>
-                            <li>电台</li>
+                            <li><NavLink to="/headlines/recommend" activeClassName="dynamic">推荐</NavLink></li>
+                            <li><NavLink to="/headlines/information" activeClassName="dynamic">资讯</NavLink></li>
+                            <li><NavLink to="/headlines/article" activeClassName="dynamic">文章</NavLink></li>
+                            <li><NavLink to="/headlines/video" activeClassName="dynamic">视频</NavLink></li>
+                            <li><NavLink to="/headlines/radiostation" activeClassName="dynamic">电台</NavLink></li>
                         </ul>
-                    </Todo>
+                        </Todo>
+                    </div>
                     <Article>
-                        <div className="headline-news-container" onClick={this.handleToArticleDetail.bind(this)}>
-                            <div className="headline-news-container-img">
-                                <img src="https://s3.sonkwo.com/FiWVZyg_lOxgvqWF8rwpZPVizdhO?imageMogr2/thumbnail/1000|imageView2/1/w/290/h/194" alt=""/>
-                            </div>
-                            <div className="headline-news-container-content">
-                                <div className="headline-news-title">
-                                    杉果黑五特惠将至：《大镖客2》首降 19.9福袋回归
-                                </div>
-                                <div className="headline-news-bottom">
-                                    <div className="headlines-news-avatar">
-                                        <img src="https://s4.sonkwo.com/FubIpSNdDSHfjO89Kn4Nzt4DRy8J?imageView2/1/w/60/h/60" alt=""/>
-                                    </div>
-                                    <div className="headlines-news-nickname">
-                                        杉果-破枪瘦马
-                                    </div>
-                                    <div className="headline-news-bottom-time">
-                                        11月26日
-                                    </div>
-                                    <div className="headline-news-section" onClick={this.handleToHeadlinesform.bind(this)}>
-                                        折扣信息
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Switch>
+                            <Route path="/headlines/recommend" component={Recommend} exact />
+                            <Route path="/headlines/information" component={Information} />
+                            <Route path="/headlines/article" component={Articlec} />
+                            <Route path="/headlines/video" component={Video} />
+                            <Route path="/headlines/radiostation" component={Radiostation} />
+                        </Switch>
+                        <Redirect from="/headlines" to="/headlines/recommend" /> 
                     </Article>
                 </Main>
             </Fragment>
@@ -71,13 +61,6 @@ class Headlines extends React.Component{
     }
     componentDidMount() {
         this.props.handleHeadAsyncData()
-    }
-    handleToArticleDetail(){
-         this.props.history.push("/articledetail");
-    }
-    handleToHeadlinesform(e){
-        e.stopPropagation();
-        this.props.history.push("/headlinesform");
     }
 }
 

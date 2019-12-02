@@ -48,6 +48,7 @@ export const Container = styled.div`
         text-align:center;
         img{
             display:inline-block;
+            width:2.7231rem;
             height:100%;
         }
     }
@@ -86,5 +87,31 @@ export const Container = styled.div`
     .account-follow{
         color: #666;
         border: solid 1px #999;
+    }
+    .headline-content{
+        width:100%;
+        overflow:hidden;
+        box-sizing:border-box;
+        padding:.06809rem .12766rem .12766rem;
+        p{
+            font-size:.13rem;
+            color:#333;
+            line-height:.22rem;
+            strong{
+                display:block;
+                margin:.1rem 0;
+            }
+        }
+        img{
+            margin:.1rem 0 ;
+            width:100%;
+        }
+        a{
+            color: #2f5c94;
+            
+        }
+        h2{
+            font-size:.16rem;
+        }
     }
 `
