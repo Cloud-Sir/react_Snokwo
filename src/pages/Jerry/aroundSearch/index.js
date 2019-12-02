@@ -4,8 +4,8 @@ import HeaderSearch from "components/Jerry/headers/headerSearch.js"
 import {withRouter} from "react-router-dom"
 
 import {connect} from "react-redux";
-// import {mapStateToProps,mapDispatchToProps} from "./connect.js"
-import {mapStateToProps,mapDispatchToProps} from "../around/connect.js"
+
+import {mapStateToProps,mapDispatchToProps} from "./connect.js"
 @connect(mapStateToProps, mapDispatchToProps)
 @withRouter
 class AroundSearch extends React.Component{
@@ -13,14 +13,19 @@ class AroundSearch extends React.Component{
         super()
         this.state = {
             isShow: false,
-            n:0
+            n: 0,
+            list:[]
         }
     }
     render() {
         let { list } = this.props;
+        this.setState({
+            list:list
+        })
         let { isShow ,n} = this.state;
         let { categories, company_tags, game_tags } = list;
-       
+        console.log(categories, company_tags, game_tags);
+        console.log(list);
         return(
             <div id="around">
                 <Head>
@@ -83,6 +88,7 @@ class AroundSearch extends React.Component{
     componentDidMount() {
         let _id = this.props.history.location.search.replace("?nav_items_id=", "");
         this.props.handleGetData();
+        this.props.handleGetSearchData();
     }
     handleClick(index, e) {
         let flag = this.state.isShow;

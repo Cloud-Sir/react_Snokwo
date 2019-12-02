@@ -1,8 +1,9 @@
-import {getAroundList,getAroundData} from "actions/Jerry/actionCreator.js"
+import {getAroundList,getAroundData,getAroundPrice} from "actions/Jerry/actionCreator.js"
 
 export const mapStateToProps=(state)=>({
     list: state.Jerry.list,
-    data:state.Jerry.data
+    data: state.Jerry.data,
+    price: state.Jerry.price
 })
 export const mapDispatchToProps=(dispatch)=>({
     handleGetList(){
@@ -10,5 +11,8 @@ export const mapDispatchToProps=(dispatch)=>({
     },
     handleGetData() {
         dispatch(getAroundData())
+    },
+    handleGetPrice() {
+        dispatch(getAroundPrice())
     }
 })

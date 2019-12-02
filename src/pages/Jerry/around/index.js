@@ -2,15 +2,16 @@ import  React from "react"
 import {Second} from "./styled"
 import HeaderSearch from "components/Jerry/headers/headerSearch.js"
 import { Carousel } from 'antd';
-import {Link} from "react-router-dom"
+import {Link,NavLink} from "react-router-dom"
 
 import {connect} from "react-redux";
 import {mapStateToProps,mapDispatchToProps} from "./connect.js"
 @connect(mapStateToProps,mapDispatchToProps)
 class Around extends React.Component{
     render() {
-        let { list,data } = this.props;
-        console.log(data)
+        let { list, data, price } = this.props;
+        var array = price.price;
+        console.log(data);
         return(
             <div id="around">
                 <HeaderSearch/>
@@ -43,24 +44,29 @@ class Around extends React.Component{
                     }
                 </div>
                     {
-                        (data.peri_banners ? data.peri_banners : []).map((item, index) => (
-                            <div className="content" key={index}>
+                        (data.peri_banners? data.peri_banners : []).map((item, n) => (
+                            <div className="content" key={n}>
                                 <div className="main">
                                     <h2>{item.name}</h2>
                                     <img  alt="" src={item.img_mobile}/>
                                 </div>
                                 <ul className="goods">
                                     {
-                                        (item.games?item.games:[]).map((good, index) => [
-                                         <li key={index}>
-                                            <div className="img">
-                                                    <img alt="" src={good.cover}/>
-                                            </div>
-                                            <h3>{good.sku_name}</h3>
-                                            <p>￥189.0</p>
-                                        </li>   
-                                        ])
+                                        (item.games ? item.games : []).map((good, index) => [
+                                            
+                                                <li key={index} className="goodsLi">
+                                                <NavLink to={"/detailGoods?sku_id=" + good.product_id}>
+                                                    <div className="img">
+                                                            <img alt="" src={good.cover}/>
+                                                    </div>
+                                                </NavLink>
+                                                        <h3>{good.sku_name}</h3>
+                                                        <p> ￥{array?array[index].sale_price: ""} </p>
+                                                </li>
+                                            
+                                        ])   
                                     }
+                                    
                                 </ul>
                                 <div className="findMore">
                                     <Link to="/aroundSearch">
@@ -81,6 +87,7 @@ class Around extends React.Component{
     componentDidMount(){
         this.props.handleGetList();
         this.props.handleGetData();
+        this.props.handleGetPrice();
     }
 }
 export default Around;

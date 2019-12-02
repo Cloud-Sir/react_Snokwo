@@ -119,7 +119,7 @@ export const Second=styled.div`
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            li{
+            .goodsLi{
                 margin-top: 0.0625rem;
                 border-radius: 0.03125rem;
                 width: 49%;
@@ -164,7 +164,7 @@ export const Second=styled.div`
             justify-content:center;
             align-items:center;
             border: 0.006rem solid #f5f5f5;
-            p{margin-right:.04rem;margin-bottom:0;}
+            p{margin-right:.04rem;margin-bottom:0;display: inline-block;}
             p,i{
                 font-size:.12rem;
                 color:#999;

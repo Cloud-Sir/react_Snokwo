@@ -1,33 +1,72 @@
 import React from "react"
 import HeaderTitle from "components/Jerry/headers/headerTitle.js"
-import {Second,Footer} from "./styled"
+import { Second, Footer } from "./styled"
+
+import {withRouter} from "react-router-dom"
+import {connect} from "react-redux";
+import {mapStateToProps,mapDispatchToProps} from "./connect.js"
+@connect(mapStateToProps, mapDispatchToProps)
+@withRouter
 class DetailGoods extends React.Component{
-    render(){
+    constructor() {
+        super()
+        this.state = {
+            id:""
+        }
+    }
+    render() {
+        let { detailList, price } = this.props;
+        let { id } = this.state;
+        let skus = detailList.skus;
+        if (skus) {
+            var attrs = [];
+            var vals = [];
+            for (var i = 0; i < skus.length; i++){
+                if (skus[i].sku_attrs) {
+                    attrs = skus[i].sku_attrs;
+                }
+                if (skus[i].sku_vals) {
+                    vals = skus[i].sku_vals;
+                }
+            }
+        }
+        let arrPrice = price.price;
+        if (arrPrice) {
+            var _price;
+            for (var i = 0; i < arrPrice.length; i++){
+                if (arrPrice[i].id == id) {
+                    _price = arrPrice[i];
+                }
+            }
+        }
         return(
             <div className="detailGoods">
                 <HeaderTitle title="商品详情"/>
                 <Second>
                     <div className="image">
-                        <img src="http://7fvkh9.com1.z0.glb.clouddn.com/Fq4lhdc4qT_lX9KemBHKl2GcWv1m?imageMogr2/thumbnail/512"/>
+                        <img src={detailList.product_image}/>
                     </div>
                     <div className="describe">
-                        <h2>就Deki鞥我的看法</h2>
-                        <p><i>126.0</i><del>149.0</del></p>
-                        <span>叫我干嘛:<strong>进度款我的肌肤网络挂</strong></span>
+                        <h2>{detailList.alias_name}</h2>
+                        {_price ? <p><i>{_price.sale_price}</i><del>{_price.list_price}</del></p> : ""}
+                        {/* {service ? <span>{service.service_cooked}</span>:""} */}
+                        {/* 叫我干嘛:<strong>进度款我的肌肤网络挂</strong> */}
                     </div>
                     <div className="size">
-                        <div className="one">
-                            <h3>颜色</h3>
-                            <div className="color">
-                                <span>红色</span><span>红色</span>
-                                <span>红色</span>
-                                <span>红色</span>
-                            </div>   
-                        </div>
-                        <div className="two">
-                            <h3>尺码</h3>
-                            <span>红色</span><span>红色</span>
-                        </div>
+                        {
+                            (attrs ? attrs : []).map((item, index) => (
+                                <div className="one" key={index}>
+                                    <h3>{item.name}</h3>
+                                    <div className="color">
+                                        {
+                                            (vals ? vals : []).map((n, key) => (
+                                                <span key={key}>{n.sku_attr_id==item.id?n.name:''}</span>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+                            ))
+                        }
                         <div className="three">
                             <h3>购买数量</h3>
                             <div className="count">
@@ -36,7 +75,7 @@ class DetailGoods extends React.Component{
                                 <h4>+</h4>  
                             </div>
                         </div>
-                    </div>
+                        </div>
                     <div className="introduce">
                         <div className="nav">
                             <div className="child"><span>商品介绍</span></div>
@@ -65,6 +104,14 @@ class DetailGoods extends React.Component{
                 </Footer>
             </div>
         )
+    }
+    componentDidMount() {
+        let id = this.props.history.location.search.replace("?sku_id=", "");
+        this.setState({
+            id:Number(id)
+        })
+        this.props.handleGetDetails(Number(id));
+        this.props.handleGetPrice();
     }
 }
 export default DetailGoods;

@@ -109,3 +109,7 @@ export const AroundSearch=Loadable({
     loader:()=>import("./Jerry/aroundSearch"),//周边分类
     loading:Loading
 })
+export const DetailGoods = Loadable({
+    loader: () => import("./Jerry/detailGoods"), //周边分类
+    loading: Loading
+})
