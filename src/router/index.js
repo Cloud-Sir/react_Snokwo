@@ -135,7 +135,7 @@ export const NoTabBarRoute = [
         meta:{}
     },
     {
-        path:"/fruitpastedetail",
+        path:"/fruitpastedetail/:id",
         component:Fruitpastedetail,
         meta:{}
     },

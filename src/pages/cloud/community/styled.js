@@ -18,6 +18,9 @@ export const Header = styled.div`
         margin-left:.128rem;
         
     }
+    a{
+        color:#ccc;
+    }
     &>.left{
         font-size:.16rem;
     }

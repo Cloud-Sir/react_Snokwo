@@ -1,13 +1,10 @@
 import React from "react";
 import { Fruitpastecontent, Swipercontainer, Todocontainer } from "./styled";
+import Hotpaste from "../hotpaste"
 import { Carousel } from 'antd-mobile';
 import { withRouter } from "react-router-dom";
 @withRouter
 class Fruitpaste extends React.Component {
-    constructor() {
-        super();
- 
-    }
     render() {
         return (
             
@@ -26,6 +23,48 @@ class Fruitpaste extends React.Component {
                             </div>
                             <div className="swiperfont">【感恩节】晒剁手病诊断报告，集赞赢免单机会</div>
                         </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/FoKzAWicF6w8ER-nEA85msigzBh4?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">【今日果聊】你最期待什么样的星球大战游戏</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/Fmgyjj8LqqgqQMMThjl4NbrAdNjJ?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">圣女战旗-11.27</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/FmfbaMWCiJbcMjGOemH4g8ddGiHw?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">【感恩节偷跑】杉果点评小分队新兵招募中！</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/FmZwU6QJrhqxMY_XQuRmDDOIDxmH?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">【感恩节】感恩节促销保价政策 拒绝背刺！</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/Frm2GJSZeSlY3MWlmTR6HTby7Ncw?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">加入Steam愿望单，赢取《奇迹一刻》游戏key</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/FhyLfLSdxXTVVktCEY-mkSaeSIcJ?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">【今日果聊】你最期待什么样的星球大战游戏</div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://s3.sonkwo.com/FlqmONdDVCOmtkXbNqatmlZwvhxC?imageView2/1/w/320/h/136" alt="" />
+                            </div>
+                            <div className="swiperfont">【感恩节】雨中冒险2惊喜大放送</div>
+                        </div>
                     </Carousel>
                 </Swipercontainer>
                 <Todocontainer>
@@ -34,47 +73,10 @@ class Fruitpaste extends React.Component {
                         <li>最新帖子</li>
                         <li>我的关注</li>
                     </ul>
-                    <div>
-                        <div className="group-topic-container" onClick={this.handleToFruitpasteDetail.bind(this)}>
-                            <div className="group-topic-user-info">
-                                <div>
-                                    <img src="https://s4.sonkwo.com/FsUt62OuKJKBeH1SyFc6AGnnpIAo?imageView2/1/w/60/h/60" alt="" />
-                                </div>
-                                <div className="group-topic-right">
-                                    <p className="group-topic-name">杉果社区管理圆</p>
-                                    <p className="group-topic-time">2019-11-26</p>
-                                </div>
-                            </div>
-                            <div className="group-topic-info">
-                                【感恩节】感恩节促销保价政策 拒绝背刺！（附促销剧透）
-                            </div>
-                            <div className="topic-images-container">
-                                <img src="https://s3.sonkwo.com/FkJGVXwDelHVXpT07lPMKfhu1XW_?imageView2/1/w/95/h/95" alt="" />
-                                <img src="https://s3.sonkwo.com/Fodgj5hrc1rRfMGNzz6-bPW2zXmM?imageView2/1/w/95/h/95" alt="" />
-                                <img src="https://s3.sonkwo.com/FjIHd2LFi9UEPytwr03Ewncjwxc8?imageView2/1/w/95/h/95" alt="" />
-                            </div>
-                            <div className="group-topic-bottom">
-                                <div className="group-topic-from-left">
-                                    <span>来自：<a href="#/groups" onClick={this.handleBubble.bind(this)}>杉果综合讨论组</a></span>
-                                </div>
-                                <div className="group-topic-from-right">
-                                    <i className="iconfont">{"\ue7ee"}</i>
-                                    <span className="space-right">33</span>
-                                    <i className="iconfont">{"\ue607"}</i>
-                                    <span>79</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Hotpaste/>
                 </Todocontainer>
             </Fruitpastecontent>
         )
-    }
-    handleToFruitpasteDetail() {
-        this.props.history.push("/fruitpastedetail")
-    }
-    handleBubble(e) {
-        e.stopPropagation();
     }
 }
 

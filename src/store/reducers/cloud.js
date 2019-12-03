@@ -1,11 +1,12 @@
 import { handleActions } from "redux-actions"
-import { headLineType, headfiveType, acticleType, whatType} from "actions/cloud/cloudActionTypes"
+import { headLineType, headfiveType, acticleType, whatType, hotType} from "actions/cloud/cloudActionTypes"
  
 const defaultState = {
     headline_data: [],
     headline_five: [],
     article_detail: [],
-    what_info:[]
+    what_info: [],
+    hot_list:[]
 }
 
 
@@ -29,5 +30,10 @@ export default handleActions({
         let whatState = JSON.parse(JSON.stringify(state));
         whatState.what_info = action.payload;
         return whatState
+    },
+    [hotType]: (state, action) => {
+        let hotpasteState = JSON.parse(JSON.stringify(state));
+        hotpasteState.hot_list = action.payload;
+        return hotpasteState;
     }
 }, defaultState)
