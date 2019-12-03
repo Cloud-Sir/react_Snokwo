@@ -1735,8 +1735,8 @@
             }
         ]
     },
-    "homelistzuixin": {
-        "new_tagged_games": [{
+    "homelist": {
+        "homelistzuixin": [{
                 "id": 3404,
                 "sku_name": "著名探险家：国际协会",
                 "sku_ename": "Renowned Explorers: International Society",
@@ -1795,20 +1795,6 @@
                     1430
                 ],
                 "area": "abroad"
-            },
-            {
-                "id": 4485,
-                "sku_name": "三〇一室无一人",
-                "sku_ename": "Banter Schooldays!!",
-                "cover": "https://s1.sonkwo.com/medium/910135728720663/file/45360/sonkwo-top-L-Banter-Schooldays!!.jpg",
-                "product_id": 4316,
-                "pubdate": 1574697600,
-                "category": [
-                    1354,
-                    1430,
-                    1406
-                ],
-                "area": "native"
             },
             {
                 "id": 3349,
@@ -1913,11 +1899,10 @@
                 ],
                 "area": "abroad"
             }
-        ]
+        ],
 
-    },
-    "homelistzuixinprices": {
-        "homelistzuixinprice": [{
+
+        "homelistzuixinprices": [{
                 "id": 3404,
                 "status": "sale",
                 "sale_price": "68.0",
@@ -1983,10 +1968,9 @@
                 "sale_price": "35.0",
                 "list_price": "175.0"
             }
-        ]
-    },
-    "homelistcuxiao": {
-        "sale_tagged_games": [{
+        ],
+
+        "homelistcuxiao": [{
                 "id": 2990,
                 "sku_name": "不死王国：吸血鬼战争",
                 "sku_ename": "Immortal Realms: Vampire Wars",
@@ -2043,20 +2027,6 @@
                     1
                 ],
                 "area": "abroad"
-            },
-            {
-                "id": 4485,
-                "sku_name": "三〇一室无一人",
-                "sku_ename": "Banter Schooldays!!",
-                "cover": "https://s1.sonkwo.com/medium/910135728720663/file/45360/sonkwo-top-L-Banter-Schooldays!!.jpg",
-                "product_id": 4316,
-                "pubdate": 1574697600,
-                "category": [
-                    1354,
-                    1430,
-                    1406
-                ],
-                "area": "native"
             },
             {
                 "id": 3403,
@@ -2161,10 +2131,9 @@
                 ],
                 "area": "abroad"
             }
-        ]
-    },
-    "homelistcuxiaoprices": {
-        "homelistcuxiaoprice": [{
+        ],
+
+        "homelistcuxiaoprices": [{
                 "id": 2990,
                 "status": "sale",
                 "sale_price": "114.0",
@@ -2230,11 +2199,10 @@
                 "sale_price": "35.0",
                 "list_price": "175.0"
             }
-        ]
+        ],
 
-    },
-    "homelistyushou": {
-        "presell_tagged_games": [{
+
+        "homelistyushou": [{
                 "id": 2508,
                 "sku_name": "工人物语 标准版",
                 "sku_ename": "The Settlers Standard Edition",
@@ -2391,10 +2359,9 @@
                 ],
                 "area": "abroad"
             }
-        ]
-    },
-    "homelistyushouprices": {
-        "homelistyushouprice": [{
+        ],
+
+        "homelistyushouprices": [{
                 "id": 2508,
                 "status": "sale",
                 "sale_price": "358.0",
@@ -2466,10 +2433,9 @@
                 "sale_price": "271.0",
                 "list_price": "271.0"
             }
-        ]
-    },
-    "homelistweek": {
-        "weekly_ranking": [{
+        ],
+
+        "homelistweek": [{
                 "accessible_id": 73,
                 "sku_name": "黑暗之魂2：原罪学者",
                 "sku_ename": "DARK SOULS™ II: Scholar of the First Sin",
@@ -2549,10 +2515,9 @@
                 "pubdate": 1401033600,
                 "area": "abroad"
             }
-        ]
-    },
-    "homelistweekprices": {
-        "homelistweekprice": [{
+        ],
+
+        "homelistweekprices": [{
                 "id": 73,
                 "status": "sale",
                 "sale_price": "39.0",
@@ -2606,10 +2571,9 @@
                 "sale_price": "17.0",
                 "list_price": "89.0"
             }
-        ]
-    },
-    "homelistmouth": {
-        "monthly_ranking": [{
+        ],
+
+        "homelistmouth": [{
                 "accessible_id": 2992,
                 "sku_name": "荒野大镖客：救赎2 标准版 \t",
                 "sku_ename": "Red Dead Redemption 2",
@@ -2689,10 +2653,8 @@
                 "pubdate": 1401033600,
                 "area": "abroad"
             }
-        ]
-    },
-    "homelistmouthprices": {
-        "homelistmouthprice": [{
+        ],
+        "homelistmouthprices": [{
                 "id": 2992,
                 "status": "sale",
                 "sale_price": "189.0",
@@ -2748,9 +2710,8 @@
             }
         ]
     },
-    "aroundGoods":{
-        "price":[
-            {
+    "aroundGoods": {
+        "price": [{
                 "id": 3780,
                 "list_price": "189.0",
                 "sale_price": "169.0",
@@ -2764,9 +2725,9 @@
             },
             {
                 "id": 2968,
-            "list_price": "139.0",
-            "sale_price": "119.0",
-            "status": "sale"
+                "list_price": "139.0",
+                "sale_price": "119.0",
+                "status": "sale"
             },
             {
                 "id": 4478,
@@ -2776,21 +2737,21 @@
             },
             {
                 "id": 4478,
-                "list_price":"449.0",
-                "sale_price":"399.0",
-                "status":"sale"
+                "list_price": "449.0",
+                "sale_price": "399.0",
+                "status": "sale"
             },
             {
-                "id":2971,
+                "id": 2971,
                 "status": "sale",
                 "sale_price": "149.0",
                 "list_price": "179.0"
             },
             {
-                    "id": 2971,
-            "list_price": "179.0",
-            "sale_price": "149.0",
-            "status": "sale"
+                "id": 2971,
+                "list_price": "179.0",
+                "sale_price": "149.0",
+                "status": "sale"
             },
             {
                 "id": 4220,
@@ -2799,10 +2760,10 @@
                 "list_price": "268.0"
             },
             {
-                    "id": 4220,
-            "list_price": "268.0",
-            "sale_price": "258.0",
-            "status": "sale"
+                "id": 4220,
+                "list_price": "268.0",
+                "sale_price": "258.0",
+                "status": "sale"
             },
             {
                 "id": 4286,
@@ -2812,9 +2773,9 @@
             },
             {
                 "id": 4286,
-            "list_price": "128.0",
-            "sale_price": "128.0",
-            "status": "sale"
+                "list_price": "128.0",
+                "sale_price": "128.0",
+                "status": "sale"
             },
             {
                 "id": 4482,
@@ -2824,9 +2785,9 @@
             },
             {
                 "id": 4482,
-            "list_price": "168.0",
-            "sale_price": "148.0",
-            "status": "sale"
+                "list_price": "168.0",
+                "sale_price": "148.0",
+                "status": "sale"
             },
             {
                 "id": 4479,
@@ -2836,9 +2797,9 @@
             },
             {
                 "id": 4479,
-            "list_price": "298.0",
-            "sale_price": "288.0",
-            "status": "sale"
+                "list_price": "298.0",
+                "sale_price": "288.0",
+                "status": "sale"
             },
             {
                 "id": 3874,
@@ -2848,9 +2809,9 @@
             },
             {
                 "id": 3874,
-            "list_price": "168.0",
-            "sale_price": "168.0",
-            "status": "sale"
+                "list_price": "168.0",
+                "sale_price": "168.0",
+                "status": "sale"
             },
             {
                 "id": 4329,
@@ -2859,10 +2820,10 @@
                 "list_price": "228.0"
             },
             {
-                    "id": 4329,
-            "list_price": "228.0",
-            "sale_price": "228.0",
-            "status": "sale"
+                "id": 4329,
+                "list_price": "228.0",
+                "sale_price": "228.0",
+                "status": "sale"
             },
             {
                 "id": 4432,
@@ -2872,9 +2833,9 @@
             },
             {
                 "id": 4432,
-            "list_price": "256.0",
-            "sale_price": "256.0",
-            "status": "sale"
+                "list_price": "256.0",
+                "sale_price": "256.0",
+                "status": "sale"
             },
             {
                 "id": 3769,
@@ -2883,10 +2844,10 @@
                 "list_price": "256.0"
             },
             {
-                    "id": 3769,
-            "list_price": "256.0",
-            "sale_price": "256.0",
-            "status": "sale"
+                "id": 3769,
+                "list_price": "256.0",
+                "sale_price": "256.0",
+                "status": "sale"
             },
             {
                 "id": 3795,
@@ -2895,12 +2856,12 @@
                 "list_price": "129.0"
             },
             {
-                    "id": 3795,
-            "list_price": "129.0",
-            "sale_price": "109.0",
-            "status": "sale"
+                "id": 3795,
+                "list_price": "129.0",
+                "sale_price": "109.0",
+                "status": "sale"
             },
-             {
+            {
                 "id": 3653,
                 "status": "sale",
                 "sale_price": "237.0",
@@ -2908,9 +2869,9 @@
             },
             {
                 "id": 3653,
-            "list_price": "279.0",
-            "sale_price": "237.0",
-            "status": "sale"
+                "list_price": "279.0",
+                "sale_price": "237.0",
+                "status": "sale"
             },
             {
                 "id": 4001,
@@ -2920,9 +2881,9 @@
             },
             {
                 "id": 4001,
-            "list_price": "129.0",
-            "sale_price": "109.0",
-            "status": "sale"
+                "list_price": "129.0",
+                "sale_price": "109.0",
+                "status": "sale"
             },
             {
                 "id": 3747,
@@ -2931,10 +2892,10 @@
                 "list_price": "699.0"
             },
             {
-                    "id": 3747,
-            "list_price": "699.0",
-            "sale_price": "699.0",
-            "status": "sale"
+                "id": 3747,
+                "list_price": "699.0",
+                "sale_price": "699.0",
+                "status": "sale"
             },
             {
                 "id": 2763,
@@ -2943,10 +2904,10 @@
                 "list_price": "395.0"
             },
             {
-                    "id": 2763,
-            "list_price": "395.0",
-            "sale_price": "197.0",
-            "status": "sale"
+                "id": 2763,
+                "list_price": "395.0",
+                "sale_price": "197.0",
+                "status": "sale"
             },
             {
                 "id": 3018,
@@ -2955,10 +2916,10 @@
                 "list_price": "129.0"
             },
             {
-                    "id": 3018,
-            "list_price": "129.0",
-            "sale_price": "129.0",
-            "status": "sale"
+                "id": 3018,
+                "list_price": "129.0",
+                "sale_price": "129.0",
+                "status": "sale"
             },
             {
                 "id": 2762,
@@ -2967,7 +2928,7 @@
                 "list_price": "248.0"
             },
             {
-                    "id": 2762,
+                "id": 2762,
                 "list_price": "248.0",
                 "sale_price": "173.0",
                 "status": "sale"
@@ -2984,7 +2945,7 @@
                 "sale_price": "293.0",
                 "status": "sale"
             }
-            
+
         ]
-    }   
+    }
 }

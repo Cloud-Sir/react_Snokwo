@@ -1,12 +1,10 @@
 import React from "react"
 import { Header, Section } from "./styled"
-import { Link, withRouter } from "react-router-dom"
+import { Link, withRouter, NavLink, Switch, Redirect, Route } from "react-router-dom"
 import { Carousel, WingBlank } from 'antd-mobile';
-import HomeUL from "components/grace/homelist"
-import HomeModule from "components/grace/homemodule"
+import { Newest, Promotion, AdvanceSale, WeekRanking, MonthRanking } from "components/grace/homeitem"
 import { connect } from "react-redux"
 import { mapStateToProps, mapDispatchToProps } from "./mapStore"
-// import home_banner from "static/grace/img/home_banner.png"
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 class IndexHtml extends React.Component {
@@ -15,11 +13,18 @@ class IndexHtml extends React.Component {
         this.state = {
             imgHeight: "100 %",
         }
-
     }
 
     render() {
         // console.log(this.props)
+        let {
+            home_new_list, home_newprice_list,
+            home_promotion_list, home_promotionprice_list,
+            home_advanceSale_list, home_advanceSaleprice_list,
+            home_week_list, home_weekprice_list,
+            home_mouth_list, home_mouthprice_list
+        } = this.props
+        // console.log(this.props, 999)
         let { home_banners, home_groups, home_headlines } = this.props
         return (
             < div >
@@ -524,19 +529,19 @@ class IndexHtml extends React.Component {
                                         <div className=" sk-taps-background " style={{ height: "100%", boxSizing: "border-box" }}>
                                             {/* 五个按钮 */}
                                             <div className="tab-child" style={{ margin: "0rem 0.05rem" }}>
-                                                <button className="sk-taps-button sk-taps-active">最新</button>
+                                                <NavLink to="/index/newest" activeClassName="sk-taps-active" className="sk-taps-button">最新</NavLink>
                                             </div>
                                             <div className="tab-child" style={{ margin: "0rem 0.05rem" }}>
-                                                <button className="sk-taps-button">促销</button>
+                                                <NavLink to="/index/promotion" activeClassName="sk-taps-active" className="sk-taps-button">促销</NavLink>
                                             </div>
                                             <div className="tab-child" style={{ margin: "0rem 0.05rem" }}>
-                                                <button className="sk-taps-button">预售</button>
+                                                <NavLink to="/index/advanceSale" activeClassName="sk-taps-active" className="sk-taps-button">预售</NavLink>
                                             </div>
                                             <div className="tab-child" style={{ margin: "0rem 0.05rem" }}>
-                                                <button className="sk-taps-button">周排行</button>
+                                                <NavLink to="/index/weekRanking" activeClassName="sk-taps-active" className="sk-taps-button">周排行</NavLink>
                                             </div>
                                             <div className="tab-child" style={{ margin: "0rem 0.05rem" }}>
-                                                <button className="sk-taps-button">月排行</button>
+                                                <NavLink to="/index/monthRanking" activeClassName="sk-taps-active" className="sk-taps-button">月排行</NavLink>
                                             </div>
                                         </div>
                                     </div>
@@ -544,9 +549,52 @@ class IndexHtml extends React.Component {
                             </div>
                         </div>
 
+                        {/* <Route path="/index" render={() => {
+                            return (
+                                <Fragment>
+
+                                </Fragment>
+                            )
+                        }}>
+
+                        </Route> */}
 
                         {/* 选项卡内容 */}
-                        <HomeUL></HomeUL>
+                        {/* <HomeUL></HomeUL> */}
+
+                        <Switch>
+                            <Route path="/index/newest" exact render={() => (
+                                <Newest home_new_list={home_new_list ? home_new_list : []}
+                                    home_newprice_list={home_newprice_list ? home_newprice_list : []}
+                                />
+                            )}
+                            />
+                            <Route path="/index/promotion" render={() => (
+                                <Promotion home_promotion_list={home_promotion_list ? home_promotion_list : []}
+                                    home_promotionprice_list={home_promotionprice_list ? home_promotionprice_list : []}
+                                />
+                            )} />
+                            <Route path="/index/advanceSale"
+                                render={() => (
+                                    <AdvanceSale home_advanceSale_list={home_advanceSale_list ? home_advanceSale_list : []}
+                                        home_advanceSaleprice_list={home_advanceSaleprice_list ? home_advanceSaleprice_list : []}
+                                    />
+                                )} />
+                            <Route path="/index/weekRanking"
+                                render={() => (
+                                    <WeekRanking home_week_list={home_week_list ? home_week_list : []}
+                                        home_weekprice_list={home_weekprice_list ? home_weekprice_list : []}
+                                    />
+                                )} />
+                            <Route path="/index/monthRanking"
+                                render={() => (
+                                    <MonthRanking home_mouth_list={home_mouth_list ? home_mouth_list : []}
+                                        home_mouthprice_list={home_mouthprice_list ? home_mouthprice_list : []}
+                                    />
+                                )} />
+                        </Switch>
+                        {/* */}
+                        <Redirect from="/index" to="/index/newest" />
                     </div>
                     <div className="spaceClean"></div>
                 </Section>
@@ -555,6 +603,7 @@ class IndexHtml extends React.Component {
     }
     componentDidMount() {
         this.props.handleAsyncHomeGet()
+        this.props.handleAsyncListGet()
     }
 
 
