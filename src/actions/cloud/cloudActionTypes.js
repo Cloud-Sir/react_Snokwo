@@ -9,3 +9,7 @@ export const whatType = "WHAT_TYPE"
 export const fruitType = "FRUIT_TYPE"
 
 export const hotType = "HOT_TYPE"
+
+export const lefttagsType = "LEFT_TAGS_TYPE"
+
+export const righttagsType = "RIGHT_TAGS_TYPE"

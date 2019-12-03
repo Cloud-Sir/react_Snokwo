@@ -9,7 +9,6 @@ class Hotpaste extends React.Component{
     render() {
         let { hot_list } = this.props;
         let info = hot_list.posts;
-        console.log(info,3456)
         return (
             <div>
                 <Hotpastea>
@@ -37,7 +36,7 @@ class Hotpaste extends React.Component{
                                 </div>
                                  <div className="group-topic-bottom">
                                      <div className="group-topic-from-left">
-                                        <span>来自：<a href="#/groups" onClick={this.handleBubble.bind(this)}>{item.group.name}</a></span>
+                                        <span>来自：<a href={"#/groups/fruitpaste?id="+item.group.id} onClick={this.handleBubble.bind(this)}>{item.group.name}</a></span>
                                      </div>
                                      <div className="group-topic-from-right">
                                          <i className="iconfont">{"\ue7ee"}</i>

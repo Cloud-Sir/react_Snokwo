@@ -74,7 +74,6 @@ export const fruitpasteApi = (id = 310678) => http({
     }
 })
 
-
 export const hotpasteApi = () => http({
     method: "get",
     url: "/game/api/search/posts",
@@ -89,6 +88,32 @@ export const hotpasteApi = () => http({
         _: 1575297208216
     }
 })
+
+export const lefttagsApi = () => http({
+    method: "get",
+    url: "/game/api/tags.json",
+    data: {
+        locale: "js",
+        sonkwo_version: 1,
+        sonkwo_client: "mobile",
+        "q[kind_eq]": 11,
+        _: 1575335770914
+    }
+})
+
+export const righttagsApi = (eqid=1696) => http({
+    method: "get",
+    url: "/game/api/communities/groups.json",
+    data: {
+        locale: "js",
+        sonkwo_version: 1,
+        sonkwo_client: "mobile",
+        "q[tags_id_eq]": eqid,
+        _: 1575335770943
+    }
+})
+
+
 
 //最新帖子
 //https://www.sonkwo.com/api/search/posts?locale=js&sonkwo_version=1&sonkwo_client=mobile&type=Posts%3A%3ASubject&group_not_recommend=disable&order%5Bpublished_at_timestamp%5D=desc&page=3&_=1575297208277

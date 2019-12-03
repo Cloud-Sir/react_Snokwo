@@ -52,6 +52,9 @@ export const Small = styled.div`
         }
         .group-list-title{
             width:100%;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
             height:.2128rem;
             font-size:.13rem;
             color: #333333;
