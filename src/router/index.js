@@ -49,7 +49,8 @@ export const TabBarRoute = [
         path:"/cart",
         component:Cart,
         meta:{
-            flag:true
+            flag: true,
+            requiredAuth:true
         },
         icon:"\ue639",
         text:"购物车",
@@ -75,7 +76,7 @@ export const TabBarRoute = [
         component:Mine,
         meta:{
             flag:true,
-            requiredAuth:false 
+            requiredAuth:true 
         },
         icon:"\ue617",
         text:"我的"
@@ -157,7 +158,9 @@ export const NoTabBarRoute = [
     {
         path:"/message",
         component:Message,
-        meta:{}
+        meta: {
+            requiredAuth: true
+        }
     },
     {
         path: "/AroundClassify",
