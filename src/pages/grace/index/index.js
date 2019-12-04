@@ -5,6 +5,7 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import { Newest, Promotion, AdvanceSale, WeekRanking, MonthRanking } from "components/grace/homeitem"
 import { connect } from "react-redux"
 import { mapStateToProps, mapDispatchToProps } from "./mapStore"
+import Index from "components/grace/homemodule"
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 class IndexHtml extends React.Component {
@@ -56,7 +57,7 @@ class IndexHtml extends React.Component {
                                 {
                                     home_banners.map((item, index) => (
                                         <a
-                                            key={index}
+
                                             href="/"
                                             style={{ touchAction: 'none', display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                                         >
@@ -148,334 +149,22 @@ class IndexHtml extends React.Component {
                     </div>
                     {/*  第三块 新游新价 */}
 
-                    {/* <HomeModule data={home_boxes} /> */}
+                    <Index data={home_new_list} price={home_newprice_list} title={"新游新价"} />
 
 
                     {/* 第四块 史低折扣 */}
-                    {/* <HomeModule /> */}
-
-
+                    <Index data={home_promotion_list} price={home_promotionprice_list} title={"【黑五】史低折扣"} />
                     {/* 第五块 半价起降 */}
-                    <div className="store-sec-kill-container">
-                        <div className="store-sec-kill-header">
-                            <div className="header">【黑五】半价起降时代</div>
-                        </div>
-                        <div className="sk-touch-group " style={{ height: "1.38rem" }}>
-                            <div className="sk-touch-block">
-                                <div className="sk-touch-container">
-                                    {/*  */}
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    {/*  */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Index data={home_advanceSale_list} price={home_advanceSaleprice_list} title={"【黑五】半价起降"} />
 
 
                     {/* 第六块 人气明星 */}
-                    <div className="store-sec-kill-container">
-                        <div className="store-sec-kill-header">
-                            <div className="header">【黑五】人气明星降时代</div>
-                        </div>
-                        <div className="sk-touch-group " style={{ height: "1.38rem" }}>
-                            <div className="sk-touch-block">
-                                <div className="sk-touch-container">
-                                    {/*  */}
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    <span className="sale-content inter">国际站</span>
-                                                    方舟：生存进化 DLC季票
-                                                        </div>
-                                                <div className="price-content">
-                                                    ￥61
-                                                        <div className="discount">
-                                                        -50%
-                                                            </div>
-                                                    <div className="list-price">
-                                                        122
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    {/*  */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Index data={home_week_list} price={home_weekprice_list} title={"【黑五】人气明星"} />
 
 
                     {/*----------   第七块 优品特辑    ------ */}
-
-                    <div className="store-sec-kill-container">
-                        <div className="store-sec-kill-header">
-                            <div className="header">【黑五】人气明星降时代</div>
-                        </div>
-                        <div className="sk-touch-group " style={{ height: "1.15rem" }}>
-                            <div className="sk-touch-block">
-                                <div className="sk-touch-container">
-                                    {/*  */}
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="game">
-                                        <div className="store-item-card-container change-sku">
-                                            <div className="card-img">
-                                                <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
-                                            </div>
-                                            <div className="card-content">
-                                                <div className="title">
-                                                    黑五优品【新作佳选】
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    {/*  */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Index data={home_mouth_list} price={home_mouthprice_list} title={"【黑五】优品特辑 "} />
 
 
 
@@ -489,8 +178,8 @@ class IndexHtml extends React.Component {
                                 <div className="sk-touch-container">
                                     {/*  */}
                                     {
-                                        home_groups.map((item, index) => (
-                                            <Link className="game" to={"/groups/" + item.id}>
+                                        home_groups.map(item => (
+                                            <Link key={item.id} className="game" to={"/groups/fruitpaste?id=" + item.id}>
                                                 <div className="store-item-card-container change-sku">
                                                     <div className="card-img">
                                                         <img alt="" src={item.logo} />
@@ -548,19 +237,7 @@ class IndexHtml extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-                        {/* <Route path="/index" render={() => {
-                            return (
-                                <Fragment>
-
-                                </Fragment>
-                            )
-                        }}>
-
-                        </Route> */}
-
                         {/* 选项卡内容 */}
-                        {/* <HomeUL></HomeUL> */}
 
                         <Switch>
                             <Route path="/index/newest" exact render={() => (
@@ -577,18 +254,21 @@ class IndexHtml extends React.Component {
                             <Route path="/index/advanceSale"
                                 render={() => (
                                     <AdvanceSale home_advanceSale_list={home_advanceSale_list ? home_advanceSale_list : []}
+                                        flag={true}
                                         home_advanceSaleprice_list={home_advanceSaleprice_list ? home_advanceSaleprice_list : []}
                                     />
                                 )} />
                             <Route path="/index/weekRanking"
                                 render={() => (
                                     <WeekRanking home_week_list={home_week_list ? home_week_list : []}
+                                        has={true}
                                         home_weekprice_list={home_weekprice_list ? home_weekprice_list : []}
                                     />
                                 )} />
                             <Route path="/index/monthRanking"
                                 render={() => (
                                     <MonthRanking home_mouth_list={home_mouth_list ? home_mouth_list : []}
+                                        has={true}
                                         home_mouthprice_list={home_mouthprice_list ? home_mouthprice_list : []}
                                     />
                                 )} />
@@ -602,11 +282,149 @@ class IndexHtml extends React.Component {
         )
     }
     componentDidMount() {
-        this.props.handleAsyncHomeGet()
-        this.props.handleAsyncListGet()
+        if (!(sessionStorage.getItem('home_new_list'))) {
+            this.props.handleAsyncHomeGet()
+            this.props.handleAsyncListGet()
+
+
+        }
     }
 
 
 }
 
 export default IndexHtml;
+
+
+
+
+
+
+
+// <div className="store-sec-kill-container">
+//     <div className="store-sec-kill-header">
+//         <div className="header">【黑五】半价起降时代</div>
+//     </div>
+//     <div className="sk-touch-group " style={{ height: "1.38rem" }}>
+//         <div className="sk-touch-block">
+//             <div className="sk-touch-container">
+
+//                 <div className="game">
+//                     <div className="store-item-card-container change-sku">
+//                         <div className="card-img">
+//                             <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+//                         </div>
+//                         <div className="card-content">
+//                             <div className="title">
+//                                 <span className="sale-content inter">国际站</span>
+//                                 方舟：生存进化 DLC季票
+//                                                         </div>
+//                             <div className="price-content">
+//                                 ￥61
+//                                                         <div className="discount">
+//                                     -50%
+//                                                             </div>
+//                                 <div className="list-price">
+//                                     122
+//                                                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 <div className="game">
+//                     <div className="store-item-card-container change-sku">
+//                         <div className="card-img">
+//                             <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+//                         </div>
+//                         <div className="card-content">
+//                             <div className="title">
+//                                 <span className="sale-content inter">国际站</span>
+//                                 方舟：生存进化 DLC季票
+//                                                         </div>
+//                             <div className="price-content">
+//                                 ￥61
+//                                                         <div className="discount">
+//                                     -50%
+//                                                             </div>
+//                                 <div className="list-price">
+//                                     122
+//                                                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div className="game">
+//                     <div className="store-item-card-container change-sku">
+//                         <div className="card-img">
+//                             <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+//                         </div>
+//                         <div className="card-content">
+//                             <div className="title">
+//                                 <span className="sale-content inter">国际站</span>
+//                                 方舟：生存进化 DLC季票
+//                                                         </div>
+//                             <div className="price-content">
+//                                 ￥61
+//                                                         <div className="discount">
+//                                     -50%
+//                                                             </div>
+//                                 <div className="list-price">
+//                                     122
+//                                                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div className="game">
+//                     <div className="store-item-card-container change-sku">
+//                         <div className="card-img">
+//                             <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+//                         </div>
+//                         <div className="card-content">
+//                             <div className="title">
+//                                 <span className="sale-content inter">国际站</span>
+//                                 方舟：生存进化 DLC季票
+//                                                         </div>
+//                             <div className="price-content">
+//                                 ￥61
+//                                                         <div className="discount">
+//                                     -50%
+//                                                             </div>
+//                                 <div className="list-price">
+//                                     122
+//                                                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div className="game">
+//                     <div className="store-item-card-container change-sku">
+//                         <div className="card-img">
+//                             <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+//                         </div>
+//                         <div className="card-content">
+//                             <div className="title">
+//                                 <span className="sale-content inter">国际站</span>
+//                                 方舟：生存进化 DLC季票
+//                                                         </div>
+//                             <div className="price-content">
+//                                 ￥61
+//                                                         <div className="discount">
+//                                     -50%
+//                                                             </div>
+//                                 <div className="list-price">
+//                                     122
+//                                                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+
+
+
+//             </div>
+//         </div>
+//     </div>
+// </div>

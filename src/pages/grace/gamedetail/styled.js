@@ -359,5 +359,11 @@ export const Footer = styled.div`
     background-color: #ff5722;
 }
 
-
+.am-drawer-overlay{
+    background-color:rgba(0,0,0,0) !important;
+    position:none;
+}
+.am-drawer-sidebar{
+    padding:0.3rem;
+}
 `

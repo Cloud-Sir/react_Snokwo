@@ -1,0 +1,3 @@
+react_Snokwo   打开cmd    npm start
+
+react_Snokwo>src>static   打开cmd   json-server home.json

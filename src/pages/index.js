@@ -74,6 +74,12 @@ export const Allsearch = Loadable({ //社区里的搜索
     loader: () => import("./cloud/search"),
     loading: Loading
 })
+
+export const Beingsearch = Loadable({ //社区里搜索按下回车的的页面
+    loader: () => import("./cloud/searching"),
+    loading: Loading
+})
+
 export const Cart = Loadable({
     loader: () => import("./Jerry/cart"),//购物车
     loading: Loading

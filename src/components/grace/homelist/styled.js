@@ -56,6 +56,24 @@ export const HomeListUL = styled.div`
             height: 100%;
             position: relative;
         }
+        .sk-presale-sort{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAsCAYAAAAXb/p7AAAAAXNSR0IArs4c6QAAAPlJREFUWAntmbEKwkAQRC8qWFn6D5ZWFqL5+CgpUqW0tba0shCdQRZSXEAzIkFmceA4srmXd9tZPFLCb7w1GS/ai8yA6g3ZoA2qBtR+z6ANqgbUfs+gDaoG1H7PoA2qBtR+z6ANqgbUfs+gDaoG1H7PoA2qBtR+z6ANqgbUfs/g3xucqV+I/jvSIgekQlglskfWyBQZXMWA/0luOK1BAqguUrrmCPDuBfa3SABvsJ7nnu3beweQh9cI7RCqARAhPy4AE46QtEtowvMjeisHeMHTRySAWgDxGr9eAOb1cwwCeIf1snsQAc/YCJgKMKfuA79eg2eFM2MkyifaXCguhdGPtAAAAABJRU5ErkJggg==");
+            background-size:.170213rem;
+            width: 0.170213rem;
+            height:.18719rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .sale-icon {
+                color: white;
+                font-size: 0.1rem;
+                text-align: center;
+            }
+        }
         .sk-presale-icon {   /*预售*/
             position: absolute;
             right: 0;

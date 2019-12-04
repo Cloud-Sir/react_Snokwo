@@ -1,9 +1,19 @@
 import React from "react";
 import { Header, Detailinfo } from "./styled"
-
-import {withRouter} from "react-router-dom";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { mapStateToProps, mapDispatchToProps } from "./mapStore";
+@connect(mapStateToProps,mapDispatchToProps)
 @withRouter
 class Fruitpastedetail extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            id: '',
+        }
+        let { id} = this.props.match.params;
+        this.state.id = id;
+    }
     render() {
         return (
             <div>
@@ -39,6 +49,9 @@ class Fruitpastedetail extends React.Component {
                 </Detailinfo>
             </div>
         )
+    }
+    componentDidMount() {
+        this.props.handlefruitpasteAsync(this.state.id)
     }
     handleToBack(){
         this.props.history.goBack()

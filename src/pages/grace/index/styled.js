@@ -414,7 +414,7 @@ export const Section = styled.div`
             }
         }
         .spaceClean{
-            height:11.571rem;
+            height:.481rem;
         }
 
 `

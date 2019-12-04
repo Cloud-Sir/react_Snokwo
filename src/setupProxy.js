@@ -15,14 +15,14 @@ module.exports = (app) => {
             "^/game": ""
         }
     }))
-    app.use("/ajax", proxy({
-        target: "http://m.maoyan.com",
+    app.use("/juooo", proxy({
+        target: "https://api.juooo.com",
         changeOrigin: true,
-        // pathRewrite: {
-        //     "^/game": ""
-        // }
+        pathRewrite: {
+            "^/juooo": ""
+        }
     }))
-    // http://m.maoyan.com/ajax
+    // https://api.juooo.com/card/index/getExchangeList?group_id=228&page=1&city_id=0&show_name=AF&version=6.0.8&referer=2
     app.use("/auth", proxy({
         target: "http://auth.sonkwo.com",
         changeOrigin: true,
@@ -45,6 +45,7 @@ module.exports = (app) => {
             "^/juooo": ""
         }
     }))
+
 
 }
 

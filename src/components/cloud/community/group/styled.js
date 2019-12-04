@@ -10,7 +10,7 @@ export const Small = styled.div`
         height:100%;
         margin-top:1px;
         overflow:hidden;
-        .bgcolorwhtie{
+        .bgwhtie{
             background:#fff;
         }
         li{
@@ -52,6 +52,9 @@ export const Small = styled.div`
         }
         .group-list-title{
             width:100%;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
             height:.2128rem;
             font-size:.13rem;
             color: #333333;

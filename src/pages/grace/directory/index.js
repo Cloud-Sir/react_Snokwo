@@ -36,7 +36,7 @@ class Directory extends React.Component {
         )
     }
     componentDidMount() {//数据请求 在dispatch中
-        this.props.handleAsyncDirectory()
+        if (!sessionStorage.getItem('changshanglist')) this.props.handleAsyncDirectory()
     }
 
 }
