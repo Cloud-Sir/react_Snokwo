@@ -116,6 +116,6 @@ export const AroundSearch=Loadable({
     loading:Loading
 })
 export const DetailGoods = Loadable({
-    loader: () => import("./Jerry/detailGoods"), //周边分类
+    loader: () => import("./Jerry/detailGoods"), //详情分类
     loading: Loading
 })

@@ -82,7 +82,9 @@ class Activities extends React.Component {
         )
     }
     componentDidMount() {
-        this.props.handleActivites()
+        if (!sessionStorage.getItem('activity_list')) {
+            this.props.handleActivites()
+        }
     }
 }
 

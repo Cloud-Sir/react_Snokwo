@@ -98,6 +98,10 @@ export const Second = styled.div`
             padding: 0 0.05rem;
             text-align: center;
         }
+        .check{
+            border: 0.00625rem solid #ff5722;
+            color: #ff5722;
+        }
         .one{
             display: flex;
             box-orient: vertical;
@@ -138,7 +142,8 @@ export const Second = styled.div`
             }   
         }
     }
-    .introduce{
+`
+export const Introduce = styled.div`
         .nav{
             background-color: white;
             width: 100%;
@@ -161,11 +166,12 @@ export const Second = styled.div`
                     align-items: center;
                     font-size: 0.12rem;
                 }
-                span:hover{
+                .active {
                     border-bottom: 0.0125rem solid #ff5722;
                     color: #ff5722;
                 }
             }
+            
         }
         .detail{
             padding: 0.05rem .1rem;
@@ -177,8 +183,7 @@ export const Second = styled.div`
                 vertical-align: middle;
             }
         }
-    }
-`
+` 
 export const Footer = styled.div`
     position:fixed;
     left:0;

@@ -16,7 +16,7 @@ class AroundClassify extends React.Component{
     render() {
         let { list } = this.props;
         let {parent,child } = this.state;
-        if (list.categories && parent.length==0) {
+        if (list.categories && parent.length == 0) { //eslint-disable-line
             for (var i = 0; i < list.categories.length; i++){
                 if (!list.categories[i].parent_id) {
                    parent.push(list.categories[i])
@@ -36,7 +36,7 @@ class AroundClassify extends React.Component{
                                 <ul>
                                     {
                                         child.map((a, index) => (
-                                             a.parent_id == item.id? <li key={index}><span>{a.name}</span></li>:""
+                                             a.parent_id == item.id? <li key={index}><span>{a.name}</span></li>:""//eslint-disable-line
                                         ))
                                     }
                                   

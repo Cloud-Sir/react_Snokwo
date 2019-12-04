@@ -55,3 +55,16 @@ export const detailListApi = (id) => http({
         _: 1575294884576
     }
 })
+
+export const searchApi = (show_name = "俄罗斯") => http({ //搜索聚橙数据
+    method: "get",
+    url: "/juooo/card/index/getExchangeList",
+    data: {
+        group_id: "228",
+        page: '1',
+        city_id: "mobile",
+        version: " 6.0.8",
+        referer: 2,
+        show_name
+    }
+})

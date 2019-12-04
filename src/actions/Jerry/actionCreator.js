@@ -1,4 +1,4 @@
-import { AroundTypes,SearchTypes ,AroundDataTypes,AroundPrices,DetailTypes} from "./actionTypes"
+import { AroundTypes,SearchTypes ,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "./actionTypes"
 
 
 import {aroundListApi,aroundDataApi,aroundSearchApi,aroundPriceApi,detailListApi} from "api/Jerry/index.js"
@@ -41,7 +41,10 @@ export const getDetailList = (id) => {
     const detailList = createAction(DetailTypes,(data)=>(data))
     return async (dispatch) => {
         let data = await detailListApi(id);
-        // console.log(data);
         dispatch(detailList(data));
     }
 }
+export const savePrice = (allPrice) => ({
+    type: saveTypes,
+    allPrice
+})
