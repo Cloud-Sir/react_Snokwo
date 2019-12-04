@@ -2,14 +2,14 @@ import React from "react";
 import {Header,Cut,Section} from "./styled";
 import Group from "components/cloud/community/group";
 import Fruitpaste from "components/cloud/community/fruitpaste";
-import {withRouter,Switch,Route,NavLink,Redirect} from "react-router-dom"
+import {withRouter,Switch,Route,NavLink,Redirect,Link} from "react-router-dom"
 @withRouter
 class Community extends React.Component {
     render() {
         return (
             <div>
                 <Header>
-                    <i className="iconfont left">{"\ue610"}</i>
+                    <i className="iconfont"><Link to="/message">{"\ue610"}</Link></i>
                     <div>杉果社区</div>
                     <i className="iconfont right" onClick={this.handleToAllSearch.bind(this)}>{"\ue609"}</i>
                 </Header>
@@ -21,7 +21,8 @@ class Community extends React.Component {
                 </Cut>
                 <Section>
                     <Switch>
-                        <Route path="/community/fruitpaste" component={Fruitpaste} exact/>
+                        <Route path="/community/fruitpaste" component={Fruitpaste} exact />
+                        
                         <Route path="/community/group" component={Group}/>
                     </Switch>
                     <Redirect from="/community" to="/community/fruitpaste"/>

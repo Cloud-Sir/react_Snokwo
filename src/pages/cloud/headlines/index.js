@@ -24,25 +24,25 @@ class Headlines extends React.Component{
                 <Covertightly></Covertightly>
                 <Main>
                     <div className="qwer">
-                    <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
-                        {
-                            (mobile_banner ? mobile_banner.banners:[]).map((item,index) => (
-                                <div className="swiper" key={index}>
-                                    <p>
-                                        <img src={item.cover} alt=""/>
-                                    </p>
-                                </div>
-                            ))
-                        }
-                    </Carousel>
-                    <Todo>
-                        <ul>
-                            <li><NavLink to="/headlines/recommend" activeClassName="dynamic">推荐</NavLink></li>
-                            <li><NavLink to="/headlines/information" activeClassName="dynamic">资讯</NavLink></li>
-                            <li><NavLink to="/headlines/article" activeClassName="dynamic">文章</NavLink></li>
-                            <li><NavLink to="/headlines/video" activeClassName="dynamic">视频</NavLink></li>
-                            <li><NavLink to="/headlines/radiostation" activeClassName="dynamic">电台</NavLink></li>
-                        </ul>
+                        <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
+                            {
+                                (mobile_banner ? mobile_banner.banners:[]).map((item,index) => (
+                                    <div className="swiper" key={index}>
+                                        <p>
+                                            <img src={item.cover} alt=""/>
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </Carousel>
+                        <Todo>
+                            <ul>
+                                <li><NavLink to="/headlines/recommend" activeClassName="dynamic">推荐</NavLink></li>
+                                <li><NavLink to="/headlines/information" activeClassName="dynamic">资讯</NavLink></li>
+                                <li><NavLink to="/headlines/article" activeClassName="dynamic">文章</NavLink></li>
+                                <li><NavLink to="/headlines/video" activeClassName="dynamic">视频</NavLink></li>
+                                <li><NavLink to="/headlines/radiostation" activeClassName="dynamic">电台</NavLink></li>
+                            </ul>
                         </Todo>
                     </div>
                     <Article>
