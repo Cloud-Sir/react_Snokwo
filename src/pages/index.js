@@ -112,10 +112,14 @@ export const AroundClassify=Loadable({
     loading:Loading
 })
 export const AroundSearch=Loadable({
-    loader:()=>import("./Jerry/aroundSearch"),//周边分类
+    loader:()=>import("./Jerry/aroundSearch"),//周边查询
     loading:Loading
 })
 export const DetailGoods = Loadable({
-    loader: () => import("./Jerry/detailGoods"), //详情分类
+    loader: () => import("./Jerry/detailGoods"), //详情
     loading: Loading
+})
+export const OrderBought = Loadable({
+    loader: () => import("./Jerry/order"),
+    loading:Loading
 })

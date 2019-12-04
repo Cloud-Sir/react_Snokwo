@@ -4,9 +4,9 @@ import HeaderSearch from "components/Jerry/headers/headerSearch.js"
 import {withRouter} from "react-router-dom"
 
 import {connect} from "react-redux";
-
 import {mapStateToProps,mapDispatchToProps} from "./connect.js"
 @connect(mapStateToProps, mapDispatchToProps)
+    
 @withRouter
 class AroundSearch extends React.Component{
     constructor() {
@@ -14,18 +14,13 @@ class AroundSearch extends React.Component{
         this.state = {
             isShow: false,
             n: 0,
-            list:[]
         }
     }
     render() {
-        let { list } = this.props;
-        this.setState({
-            list:list
-        })
-        let { isShow ,n} = this.state;
+        let { list,searchData} = this.props;
         let { categories, company_tags, game_tags } = list;
-        // console.log(categories, company_tags, game_tags);
-        // console.log(list);
+        console.log(searchData);
+        let { isShow, n} = this.state;
         return(
             <div id="around">
                 <Head>
@@ -52,36 +47,26 @@ class AroundSearch extends React.Component{
                                         <li key={key}>{item.name}</li>
                                     ))
                                 }
-                               
                             </ol>
                         </div>
                         </Nav>      
                 </Head>
                 <Second>
                     <div className="result">
-                        <p>就得开始你看反馈两个</p>
+                        <p>共找到了{searchData.length}个结果</p>
                         <ul>
-                            <li>
-                                <div className="imag">
-                                    <img src="https://s1.sonkwo.com/Fpy_mA1aBqndZgfGbP-yTkCSdcKH?imageMogr2/thumbnail/512"/>    
-                                </div>
-                                <p>就都能上课的结果</p>
-                                <strong>￥188</strong>
-                            </li>
-                            <li>
-                                <div className="imag">
-                                    <img src="https://s1.sonkwo.com/Fpy_mA1aBqndZgfGbP-yTkCSdcKH?imageMogr2/thumbnail/512"/>    
-                                </div>
-                                <p>就都能上课的结果</p>
-                                <strong>￥188</strong>
-                            </li>
-                            <li>
-                                <div className="imag">
-                                    <img src="https://s1.sonkwo.com/Fpy_mA1aBqndZgfGbP-yTkCSdcKH?imageMogr2/thumbnail/512"/>    
-                                </div>
-                                <p>就都能上课的结果</p>
-                                <strong>￥188</strong>
-                            </li>
+                            {
+                                (searchData?searchData:[]).map((item,key) => (
+                                    <li key={key}>
+                                        <div className="imag">
+                                            <img src={item.pic} alt=""/>    
+                                        </div>
+                                        <p>{item.schedular_name}</p>
+                                        <strong>￥{item.show_stock}</strong>
+                                    </li> 
+                                ))
+                            }
+                           
                         </ul>
                     </div>
                 </Second>
@@ -89,14 +74,14 @@ class AroundSearch extends React.Component{
         )
     }
     componentDidMount() {
-        let _id = this.props.history.location.search.replace("?nav_items_id=", "");
+        // let _id = this.props.history.location.search.replace("?nav_items_id=", "");
         this.props.handleGetData();
         this.props.handleGetSearchData();
     }
     handleClick(index, e) {
         let flag = this.state.isShow;
         let key = this.state.n;
-        if (key==0) {
+        if (key == 0) { //eslint-disable-line
             key = index;
         } else {
             key = 0;

@@ -1,4 +1,4 @@
-import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, AroundCart, GameCart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
+import {GameCart,AroundCart,OrderBought,DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart,Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
 
 export const TabBarRoute = [
     {
@@ -27,7 +27,7 @@ export const TabBarRoute = [
         },
         icon:"\ue622",
         text:"社区",
-        chaildren:[
+        children:[
             {
                 path:"/community/fruitpaste",
                 component:Fruitpaste,
@@ -52,7 +52,23 @@ export const TabBarRoute = [
             flag:true
         },
         icon:"\ue639",
-        text:"购物车",
+        text: "购物车",
+        children: [
+            {
+                path: "/cart/gameCart",
+                component:GameCart,
+                meta:{
+                    flag:true
+                },
+            },
+            {
+                path: "/cart/aroundCart",
+                component:AroundCart,
+                meta:{
+                    flag:true
+                },
+            }
+        ]
     },
     {
         path:"/mine",
@@ -152,6 +168,11 @@ export const NoTabBarRoute = [
         path: "/detailGoods",
         component: DetailGoods,
         meta: {},
+    },
+    {
+        path: "/orderBought",
+        component: OrderBought,
+        meta:{}
     }
 ]
 

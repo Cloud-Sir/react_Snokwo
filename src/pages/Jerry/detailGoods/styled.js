@@ -216,7 +216,7 @@ export const Footer = styled.div`
         align-items: center;
         color: white;
         flex: 3;
-        p{font-size: 0.12rem;}
+        p{font-size: 0.12rem;color: white;}
     }
     .add{background-color: #ee660b;}
     .buy{background-color:#eb0115;}

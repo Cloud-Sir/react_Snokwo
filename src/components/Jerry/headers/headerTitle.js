@@ -9,13 +9,17 @@ class HeaderTitle extends Component {
                 <Head>
                     <i className="iconfont" onClick={this.handleBack.bind(this)}>{'\ue645'}</i>
                     <p>{this.props.title}</p>
-                    <span><NavLink to="/message">{this.props.opera}</NavLink></span>
+                    <NavLink to={this.props.opera == '编辑' ? '' : '/message'}><span onClick={this.hanldeDel.bind(this)}//eslint-disable-line
+                    >{this.props.opera}</span></NavLink>
                 </Head>
             </div>
         );
     }
     handleBack(){
         this.props.history.goBack();
+    }
+    hanldeDel() {
+        this.props.handle('编辑')
     }
 }
 

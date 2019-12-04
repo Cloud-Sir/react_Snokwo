@@ -53,3 +53,14 @@ export const searchApi = (show_name = "俄罗斯") => http({ //搜索聚橙数�
         show_name
     }
 })
+export const getPersonApi = () => http({
+    method:"get",
+    url: "/auth/api/me.json",
+    data: {
+        locale: "js",
+        sonkwo_version: 1,
+        sonkwo_client: "mobile",
+        'q:["real_name_asterisks", "gender", "region", "email_asterisks","phone_number_asterisks", "credential_num_asterisks", "show_steam_review","unmute_at_timestamp", "platforms","show_id", "platforms", "kind", "point","score", "point", "xp", "point", "tasks", "wallet", "balance","wallet","status"]':[true,true,true, true,true,true,true,true,true,true,true,true,true,true,true],
+        _: 1575426767969
+    }
+})

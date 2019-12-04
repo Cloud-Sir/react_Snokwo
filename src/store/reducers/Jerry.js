@@ -1,4 +1,4 @@
-import { AroundTypes,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "actions/Jerry/actionTypes.js"
+import { AroundTypes,AroundDataTypes,AroundPrices,DetailTypes,saveTypes,SearchTypes} from "actions/Jerry/actionTypes.js"
 import { handleActions } from "redux-actions"
 const defaultState = {
     list: [],
@@ -6,10 +6,13 @@ const defaultState = {
     price: [],
     detailList: [],
     
-    allPrice:""
+    allPrice: "",
+    goods:"",
+
+    searchData:""
 }
 export default handleActions({
-    [AroundTypes]: (state, action) => {
+    [AroundTypes]: (state, action) => {//周边基本数据
         let aroundState = JSON.parse(JSON.stringify(state));
         aroundState.list = action.payload;
         return aroundState;
@@ -32,6 +35,12 @@ export default handleActions({
     [saveTypes]: (state, action) => {
         let saveState = JSON.parse(JSON.stringify(state));
         saveState.allPrice = action.allPrice;
+        saveState.goods = action.data;
         return saveState;
+    },
+    [SearchTypes]: (state, action) => {
+        let SearchState = JSON.parse(JSON.stringify(state));
+        SearchState.searchData = action.payload.data.list;
+        return SearchState;
     }
 },defaultState)

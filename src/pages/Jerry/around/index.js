@@ -33,7 +33,7 @@ class Around extends React.Component{
                     </Link>
                     {
                         (list.nav_items ? list.nav_items : []).map((item, key) => (
-                            < Link to={"/aroundSearch?nav_items_id="+item.peri_tag.id} key = {key} >
+                            < Link to="/aroundSearch" key = {key} >
                                 <div>
                                     <img alt="" src={item.icon_mobile} />
                                     <span>{item.name}</span>
@@ -53,15 +53,15 @@ class Around extends React.Component{
                                     {
                                         (item.games ? item.games : []).map((good, index) => [
                                             
-                                                <li key={index} className="goodsLi">
-                                                <NavLink to={"/detailGoods?sku_id=" + good.id+"&product_id="+good.product_id}>
-                                                    <div className="img">
-                                                            <img alt="" src={good.cover}/>
-                                                    </div>
-                                                </NavLink>
-                                                        <h3>{good.sku_name}</h3>
-                                                        <p> ￥{array?array[index].sale_price: ""} </p>
-                                                </li>
+                                            <li key={index} className="goodsLi">
+                                            <NavLink to={"/detailGoods?sku_id=" + good.id+"&product_id="+good.product_id}>
+                                                <div className="img">
+                                                        <img alt="" src={good.cover}/>
+                                                </div>
+                                            </NavLink>
+                                                    <h3>{good.sku_name}</h3>
+                                                    <p> ￥{array?array[index].sale_price: ""} </p>
+                                            </li>
                                             
                                         ])   
                                     }
@@ -77,8 +77,6 @@ class Around extends React.Component{
                             </div>
                         ))
                     }
-                
-                
                 </Second>
             </div>      
         )

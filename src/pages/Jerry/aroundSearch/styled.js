@@ -112,7 +112,6 @@ export const Second=styled.div`
     .result{
         padding: 0.0625rem 0.1rem;
         color: #666;
-        width:100%;
         overflow: hidden;
         p{ 
             transform:scale(.9);
@@ -124,8 +123,6 @@ export const Second=styled.div`
             margin-left: -.1rem;
         }
         ul{
-            /* padding-left: 0.09375rem;
-            padding-right: 0.09375rem; */
             width: 100%;
             display: flex;
             justify-content: space-between;

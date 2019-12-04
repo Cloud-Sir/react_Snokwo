@@ -23,7 +23,7 @@ class DetailGoods extends React.Component{
     }
     render() {
         let { detailList, price } = this.props;
-        let { id, isShow, isCheck, count } = this.state;
+        let {id, isShow, isCheck, count } = this.state;
         let skus = detailList.skus;
         if (detailList.introduce) {
             var introduce = detailList.introduce;
@@ -44,7 +44,7 @@ class DetailGoods extends React.Component{
         let arrPrice = price.price;var _price;
         if (arrPrice) {
             for (var i = 0; i < arrPrice.length; i++){
-                if (arrPrice[i].id == id) {
+                if (arrPrice[i].id == id) { //eslint-disable-line
                     _price = arrPrice[i];
                     break;
                 }
@@ -55,7 +55,7 @@ class DetailGoods extends React.Component{
                 <HeaderTitle title="商品详情"/>
                 <Second>
                     <div className="image">
-                        <img src={detailList.product_image}/>
+                        <img src={detailList.product_image} alt=""/>
                     </div>
                     <div className="describe">
                         <h2>{detailList.alias_name}</h2>
@@ -126,8 +126,8 @@ class DetailGoods extends React.Component{
                         <p>加入购物车</p>
                     </div>
                     <div className="buy">
-                        <p>立即购买</p>
-                    </div>
+                        <p onClick={this.handleOrder.bind(this)}>立即购买</p>
+                   </div>
                 </Footer>
             </div>
         )
@@ -135,7 +135,8 @@ class DetailGoods extends React.Component{
     componentDidMount() {
         let id = this.props.history.location.search.replace("?", "").split(/\W/g);
         this.setState({
-            id:Number(id[1])
+            id: Number(id[1]),//用于判断商品id与价格id的匹配
+            _id: Number(id[3])//用于传递给order立即购买页面
         })
         this.props.handleGetDetails(Number(id[3]));
         this.props.handleGetPrice();
@@ -178,13 +179,14 @@ class DetailGoods extends React.Component{
             obj:obj
         })
     }
-    handleAddCart(e){
+    //判断是否选择规格
+    handleCheckInfo() {
         let array = this.state.types;
         let num = this.state.count;
         let obj = this.state.obj;
         let isCheck = this.state.isCheck;
-        if (isCheck==-1) {
-             alert("请选择规格")
+        if (isCheck == -1) { //eslint-disable-line
+            alert("请选择规格");
         } else {
             obj.count = num;
             array.push(obj);
@@ -193,23 +195,48 @@ class DetailGoods extends React.Component{
             types:array,
             obj: obj,
             count: num
-        })
-        if (Cookies.get("types")) {
+        })        
+    }
+    //加入购物车
+    handleAddCart(e) {
+        e.stopPropagation()
+        this.handleCheckInfo();
+        if (Cookies.get("types")) { //cookie中有数据
             let arr = JSON.parse(Cookies.get("types"));
+            
             let tag = false;
             for (var i = 0; i < arr.length; i++) {
-                if (arr[i].name == this.state.types.name) { //eslint-disable-line
-                    arr[i].count += this.state.types.count;
+                if (arr[i].color == this.state.obj.color) { //eslint-disable-line
+                    arr[i].count = arr[i].count + this.state.obj.count; //如果有相同商品
+                    
                     tag = true;
                     break;
                 }
             }
-            if(tag==false){ arr = arr.concat(this.state.types)}
-            Cookies.set("types", JSON.stringify(arr));
-        } else {
+            if (!tag) { //eslint-disable-line
+                console.log(arr)
+                arr = arr.push(this.state.obj); //没有相同商品
+                Cookies.set("types", JSON.stringify(arr));
+            } else {
+                Cookies.set("types", JSON.stringify(arr));
+            }
+        } else { //cookie中没有数据
             Cookies.set("types", JSON.stringify(this.state.types));
         }
        
+    }
+    handleOrder() {
+        this.handleCheckInfo();
+        if (Object.keys(this.state.obj).length == 0) { //eslint-disable-line
+            return;
+        } else {
+            this.setState({
+                obj:{}
+            })
+            Cookies.set("buy", JSON.stringify(this.state.types))
+            let _id = this.state._id;
+            this.props.history.push("/orderBought?id=" + _id);
+        }
     }
 }
 export default DetailGoods;

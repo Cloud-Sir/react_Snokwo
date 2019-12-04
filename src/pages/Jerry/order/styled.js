@@ -40,11 +40,41 @@ export const Second=styled.div`
     }
     .edit3{
         div{
+            height:auto;
             display:flex;
-            width:2.7rem;
-            margin-right:.09rem;
             justify-content:space-between;
-            span{color:#333;font-size:.12rem;}
+            align-items:center;
+            span{
+                color:#333;
+                font-size:.12rem;
+                display:flex;
+                 .ima{
+                    height:.8975rem;
+                    width:.8975rem;
+                    img{height:100%;width:100%;}
+                }
+                .message{
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:space-between;
+                    align-items: flex-start;
+                    width: 1.9rem;
+                    strong,h5,h6{width:100%;font-weight:normal;height: .2rem;font-size:.13962rem;}
+                    strong h6{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space:nowrap;
+                    }
+                    h2{
+                        font-weight:normal;
+                        font-size:.12rem;
+                        color: #8B572A;
+                        margin-top:.019rem;
+                    }
+                    h5{color: #ff5722;}
+                }
+            }
+           
         }
     }
     .edit4{

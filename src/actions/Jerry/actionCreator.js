@@ -1,7 +1,7 @@
-import { AroundTypes,SearchTypes ,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "./actionTypes"
+import { AroundTypes,SearchTypes,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "./actionTypes"
 
 
-import {aroundListApi,aroundDataApi,searchApi,aroundPriceApi,detailListApi} from "api/Jerry/index.js"
+import {aroundListApi,aroundDataApi,searchApi,aroundPriceApi,detailListApi,getPersonApi} from "api/Jerry/index.js"
 import {createAction} from "redux-actions"
 export const getAroundList=()=>{
     let aroundList=createAction(AroundTypes,(data)=>(data))
@@ -32,8 +32,8 @@ export const getAroundSearch = () => {
     let aroundSearch = createAction(SearchTypes, (data) => (data))
     
     return async (dispatch) => {
-        let data = await searchApi()
-        console.log(data);//失败
+        let data = await searchApi();
+        dispatch(aroundSearch(data))
     }
 }
 
@@ -44,7 +44,14 @@ export const getDetailList = (id) => {
         dispatch(detailList(data));
     }
 }
-export const savePrice = (allPrice) => ({
+export const savePrice = (data,allPrice) => ({
     type: saveTypes,
+    data,
     allPrice
 })
+export const getPerson = () => {
+    return async (dispatch) => {
+        let data = await getPersonApi();
+        console.log(data);
+    }
+}
