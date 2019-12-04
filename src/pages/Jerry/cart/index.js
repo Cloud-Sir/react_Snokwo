@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 import {mapStateToProps,mapDispatchToProps} from "./connect.js"
 import Cookies from "js-cookie"
 
-import { withRouter, NavLink, Switch, Route } from "react-router-dom"
+import { withRouter, NavLink, Switch, Route ,Redirect} from "react-router-dom"
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 class Cart extends React.Component {
@@ -48,14 +48,15 @@ class Cart extends React.Component {
                         <Route path="/cart/gameCart" component={GameCart}/>
                         <Route path="/cart/aroundCart" component={AroundCart}/>
                     </Switch>
+                    < Redirect to="/cart/gameCart"/>
                     {/* 空购物车 */}
                     <div className="empty" style={{ display: (goods.length == 0 && type.length == 0 && gameTypes.length==0) ? "block" : "none" }}//eslint-disable-line
                     >
                         <p>购物车空空如也</p>
                         < NavLink to = "/peripheral"><span>看看游戏</span></NavLink >
-                        < NavLink to = "/peripheral"><span>看看周边</span></NavLink >
+                        < NavLink to="/peripheral"><span>看看周边</span></NavLink >
+                        
                     </div>
-
                 </Second>
                 <Footer>
                     <div className="account">
