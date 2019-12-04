@@ -38,7 +38,13 @@ module.exports = (app) => {
             "^/game_detail": ""
         }
     }))
-
+    app.use("/juooo", proxy({
+        target: "https://api.juooo.com",
+        changeOrigin: true,
+        pathRewrite: {
+            "^/juooo": ""
+        }
+    }))
 
 }
 

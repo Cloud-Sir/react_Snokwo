@@ -11,7 +11,6 @@ class Around extends React.Component{
     render() {
         let { list, data, price } = this.props;
         var array = price.price;
-        console.log(data);
         return(
             <div id="around">
                 <HeaderSearch/>
@@ -55,7 +54,7 @@ class Around extends React.Component{
                                         (item.games ? item.games : []).map((good, index) => [
                                             
                                                 <li key={index} className="goodsLi">
-                                                <NavLink to={"/detailGoods?sku_id=" + good.product_id}>
+                                                <NavLink to={"/detailGoods?sku_id=" + good.id+"&product_id="+good.product_id}>
                                                     <div className="img">
                                                             <img alt="" src={good.cover}/>
                                                     </div>

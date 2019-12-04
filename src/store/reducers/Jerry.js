@@ -1,10 +1,12 @@
-import { AroundTypes,AroundDataTypes,AroundPrices,DetailTypes} from "actions/Jerry/actionTypes.js"
+import { AroundTypes,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "actions/Jerry/actionTypes.js"
 import { handleActions } from "redux-actions"
 const defaultState = {
     list: [],
     data: [],
     price: [],
-    detailList:[]
+    detailList: [],
+    
+    allPrice:""
 }
 export default handleActions({
     [AroundTypes]: (state, action) => {
@@ -26,5 +28,10 @@ export default handleActions({
         let detailState = JSON.parse(JSON.stringify(state));
         detailState.detailList = action.payload;
         return detailState
+    },
+    [saveTypes]: (state, action) => {
+        let saveState = JSON.parse(JSON.stringify(state));
+        saveState.allPrice = action.allPrice;
+        return saveState;
     }
 },defaultState)

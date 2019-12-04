@@ -24,28 +24,31 @@ class AroundSearch extends React.Component{
         })
         let { isShow ,n} = this.state;
         let { categories, company_tags, game_tags } = list;
-        console.log(categories, company_tags, game_tags);
-        console.log(list);
+        // console.log(categories, company_tags, game_tags);
+        // console.log(list);
         return(
             <div id="around">
                 <Head>
                     <HeaderSearch/>
                         <Nav>
-                            <ul>
-                            <li onClick={this.handleClick.bind(this,1)} className={n==1?'active':""}>
+                        <ul>
+                            <li onClick={this.handleClick.bind(this, 1)} className={n == 1 ? 'active' : ""}//eslint-disable-line
+                            >
                                     <p>类型</p><i></i>
                                 </li>
-                            <li onClick={this.handleClick.bind(this, 2)} className={n == 2 ?'active':""}>
+                            <li onClick={this.handleClick.bind(this, 2)} className={n == 2 ? 'active' : ""} //eslint-disable-line
+                            >
                                     <p>品牌</p><i></i>
                                 </li>
-                            <li onClick={this.handleClick.bind(this, 3)} className={n == 3 ?'active':""}>
+                            <li onClick={this.handleClick.bind(this, 3)} className={n == 3 ? 'active' : ""}//eslint-disable-line
+                            >
                                     <p>游戏</p><i></i>
                                 </li>
                         </ul>
                         <div className="isShow" style={{ display: isShow ? "block" : "none" }}>
                             <ol>
                                 {
-                                    (list ? (n == 1 ? categories : (n == 2 ? company_tags : (n == 3 ? game_tags : []))) : []).map((item, key) => (
+                                    (list ? (n == 1 ? categories : (n == 2 ? company_tags : (n == 3 ? game_tags : []))) : []).map((item, key) => (//eslint-disable-line
                                         <li key={key}>{item.name}</li>
                                     ))
                                 }
