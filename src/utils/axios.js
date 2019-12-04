@@ -1,7 +1,7 @@
 import axios from "axios"
 //创建新的axios
 const server = axios.create({
-    timeout: 5000,
+    // timeout: 5000,
     withCredentials: true, //表示跨域请求时是否需要使用凭证
     //baseURL:"http://www.baidu.com"  判断是开发环境还是生产环境?
 })

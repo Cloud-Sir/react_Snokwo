@@ -153,3 +153,21 @@ export const getShowListApi = (keywords) => http({
         referer: 2,
     }
 })
+
+export const registerApi = (user,psd) => http({
+    method: "post",
+    url: "/hao//users/register",
+    data: {
+        username: user,
+        password:psd
+    }
+})
+
+export const loginApi = (user, psd) => http({
+    method: "post",
+    url: "/hao//users/login",
+    data: {
+        username: user,
+        password: psd
+    }
+})

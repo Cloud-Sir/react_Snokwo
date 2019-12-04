@@ -1,14 +1,16 @@
 import {
     headLineType, headfiveType, acticleType,
     whatType, fruitType, hotType, lefttagsType,
-    righttagsType, beingType, newestType, concernType
+    righttagsType, beingType, newestType, concernType,
+    registerType, loginType
 } from "./cloudActionTypes";
 
 
 import {
     headline_dataApi, headline_fiveApi, article_detailApi,
     confusionApi, fruitpasteApi, hotpasteApi, lefttagsApi,
-    righttagsApi, getShowListApi, getNewestListApi, getCncernListApi
+    righttagsApi, getShowListApi, getNewestListApi, getCncernListApi,
+    registerApi, loginApi
 } from "api/cloud/headlines";
 
 
@@ -116,5 +118,23 @@ export const concernAction = () => {
         let data = await getCncernListApi()
         console.log(data,789798)
         dispatch(myconcernAction(data))
+    }
+}
+
+export const registerAction = (user,psd) => {
+    let zhuceAction = createAction(registerType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await registerApi(user,psd)
+        dispatch(zhuceAction(data.data))
+    }
+}
+
+export const loginAction = (user, psd) => {
+    let deluAction = createAction(loginType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await loginApi(user, psd)
+        dispatch(deluAction(data.data))
     }
 }

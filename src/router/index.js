@@ -1,5 +1,5 @@
-import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group, Beingsearch } from "pages";
-
+import { DetailGoods, AroundSearch, Register, AroundClassify, Message, Index, Headlines, Community, Cart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Beingsearch } from "pages";
+// AroundCart, GameCart,
 export const TabBarRoute = [
     {
         path: "/index",
@@ -27,29 +27,13 @@ export const TabBarRoute = [
         },
         icon: "\ue622",
         text: "社区",
-        chaildren: [
-            {
-                path: "/community/fruitpaste",
-                component: Fruitpaste,
-                meta: {
-                    flag: true
-                },
-            },
-            {
-                path: "/community/group",
-                component: Group,
-                meta: {
-                    flag: true
-                },
-            }
-
-        ]
     },
     {
         path: "/cart",
         component: Cart,
         meta: {
-            flag: true
+            flag: true,
+            requiredAuth: true
         },
         icon: "\ue639",
         text: "购物车",
@@ -75,7 +59,7 @@ export const TabBarRoute = [
         component: Mine,
         meta: {
             flag: true,
-            requiredAuth: false
+            requiredAuth: true
         },
         icon: "\ue617",
         text: "我的"
@@ -86,6 +70,11 @@ export const NoTabBarRoute = [
     {
         path: "/login",
         component: Login,
+        meta: {}
+    },
+    {
+        path: "/register",
+        component: Register,
         meta: {}
     },
     {
@@ -116,7 +105,9 @@ export const NoTabBarRoute = [
     {
         path: "/gamedetail",
         component: Gamedetail,
-        meta: {}
+        meta: {
+            requiredAuth: true
+        }
     },
 
     {
@@ -152,7 +143,9 @@ export const NoTabBarRoute = [
     {
         path: "/message",
         component: Message,
-        meta: {}
+        meta: {
+            requiredAuth: true
+        }
     },
     {
         path: "/AroundClassify",

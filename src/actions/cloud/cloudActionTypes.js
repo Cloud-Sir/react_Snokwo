@@ -19,3 +19,7 @@ export const beingType = "BEING_TYPE"
 export const newestType = "NEWEST_TYPE"
 
 export const concernType = "CONCERN_TYPE"
+
+export const registerType = "REGISTER_TYPE"
+
+export const loginType = "LOGIN_TYPE"
