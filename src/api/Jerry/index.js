@@ -29,21 +29,6 @@ export const aroundPriceApi = () => http({
     url: "http://localhost:3000/aroundGoods",
 })
 
-export const aroundSearchApi = () => http({
-    method: "get",
-    url: "/game/api/search/skus.json",
-    data: {
-        page: 1,
-        per: 10,
-        // "q[where,cate]": "physical",
-        'q["where","_or","tag","all"]': 17,
-        'q[where,cate]': "physical",
-        locale: "js",
-        sonkwo_version: 1,
-        sonkwo_client: "mobile",
-        _: 1575271758428
-    }
-})
 
 export const detailListApi = (id) => http({
     method: "get",

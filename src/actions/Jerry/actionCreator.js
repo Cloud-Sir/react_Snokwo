@@ -1,7 +1,7 @@
 import { AroundTypes,SearchTypes ,AroundDataTypes,AroundPrices,DetailTypes,saveTypes} from "./actionTypes"
 
 
-import {aroundListApi,aroundDataApi,aroundSearchApi,aroundPriceApi,detailListApi} from "api/Jerry/index.js"
+import {aroundListApi,aroundDataApi,searchApi,aroundPriceApi,detailListApi} from "api/Jerry/index.js"
 import {createAction} from "redux-actions"
 export const getAroundList=()=>{
     let aroundList=createAction(AroundTypes,(data)=>(data))
@@ -32,7 +32,7 @@ export const getAroundSearch = () => {
     let aroundSearch = createAction(SearchTypes, (data) => (data))
     
     return async (dispatch) => {
-        let data = await aroundSearchApi()
+        let data = await searchApi()
         console.log(data);//失败
     }
 }
