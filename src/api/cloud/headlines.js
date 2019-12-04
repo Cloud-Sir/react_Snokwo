@@ -89,6 +89,35 @@ export const hotpasteApi = () => http({
     }
 })
 
+export const getNewestListApi = () => http({
+    method: "get",
+    url: "/game/api/search/posts",
+    data: {
+        locale: "js",
+        sonkwo_version: 1,
+        sonkwo_client: "mobile",
+        type: "Posts::Subject",
+        group_not_recommend: "disable",
+        "order[published_at_timestamp]": "desc",
+        page: 1,
+        _: 1575389303849
+    }
+})
+
+export const getCncernListApi = () => http({
+    method: "get",
+    url: "/game/api/search/posts",
+    data: {
+        locale: "js",
+        sonkwo_version: 1,
+        sonkwo_client: "mobile",
+        type: "Posts::Subject",
+        relation: true,
+        page: 1,
+        _: 1575389303849
+    }
+})
+
 export const lefttagsApi = () => http({
     method: "get",
     url: "/game/api/tags.json",
@@ -113,7 +142,14 @@ export const righttagsApi = (eqid=1696) => http({
     }
 })
 
-
-
-//最新帖子
-//https://www.sonkwo.com/api/search/posts?locale=js&sonkwo_version=1&sonkwo_client=mobile&type=Posts%3A%3ASubject&group_not_recommend=disable&order%5Bpublished_at_timestamp%5D=desc&page=3&_=1575297208277
+export const getShowListApi = (keywords) => http({
+    method: "get",
+    url: "/juooo/Show/Search/getShowList",
+    data: {
+        keywords: keywords,
+        page: 1,
+        sort_type: 1,
+        version: "6.0.8",
+        referer: 2,
+    }
+})

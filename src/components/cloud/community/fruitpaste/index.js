@@ -1,13 +1,23 @@
 import React from "react";
 import { Fruitpastecontent, Swipercontainer, Todocontainer } from "./styled";
 import Hotpaste from "../hotpaste"
+import Newest from "../newest"
+import Myconcern from "../myconcern"
 import { Carousel } from 'antd-mobile';
 import { withRouter } from "react-router-dom";
 @withRouter
 class Fruitpaste extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            btns: ["最热帖子", "最新帖子", "我的关注"],
+            activeIndex: 0
+        }
+    }
+    
     render() {
+        let { btns, activeIndex} = this.state;
         return (
-            
             <Fruitpastecontent>
                 <Swipercontainer>
                     <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
@@ -69,14 +79,31 @@ class Fruitpaste extends React.Component {
                 </Swipercontainer>
                 <Todocontainer>
                     <ul>
-                        <li className="kind-active">最热帖子</li>
-                        <li>最新帖子</li>
-                        <li>我的关注</li>
+                        {
+                            btns.map((item,index) => (
+                                <li key={index} style={{ color: activeIndex == index ? "#ff5722" : "", borderBottom: activeIndex == index ? "solid 0.018rem #ff5722" : "" }}
+                                    onClick={this.handleShowpaste.bind(this,index)}
+                                >{item}</li>
+                            ))
+                        }
                     </ul>
-                    <Hotpaste/>
+                    {
+                        activeIndex===0?<Hotpaste />:""
+                    }
+                    {
+                        activeIndex === 1 ? <Newest/>:""
+                    }
+                    {
+                        activeIndex === 2 ? <Myconcern/>:""
+                    }
                 </Todocontainer>
             </Fruitpastecontent>
         )
+    }
+    handleShowpaste(index) {
+        this.setState({
+            activeIndex:index
+        })
     }
 }
 

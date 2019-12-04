@@ -10,7 +10,7 @@ export const Small = styled.div`
         height:100%;
         margin-top:1px;
         overflow:hidden;
-        .bgcolorwhtie{
+        .bgwhtie{
             background:#fff;
         }
         li{

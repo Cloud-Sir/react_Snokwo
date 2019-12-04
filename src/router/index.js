@@ -1,4 +1,4 @@
-import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, AroundCart, GameCart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group} from "pages";
+import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, AroundCart, GameCart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
 
 export const TabBarRoute = [
     {
@@ -133,6 +133,11 @@ export const NoTabBarRoute = [
         path:"/allsearch",
         component:Allsearch,
         meta:{}
+    },
+    {
+        path: "/beingsearch",
+        component: Beingsearch,
+        meta: {}
     },
     {
         path:"/fruitpastedetail/:id",

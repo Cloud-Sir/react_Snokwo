@@ -50,9 +50,5 @@ export const Todocontainer = styled.div`
             line-height:.28rem;
             margin-right:.2128rem;
         }
-        .kind-active{
-            border-bottom: solid 0.018rem #ff5722;
-            color: #ff5722;
-        }
     }
 `

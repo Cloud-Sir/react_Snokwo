@@ -13,3 +13,9 @@ export const hotType = "HOT_TYPE"
 export const lefttagsType = "LEFT_TAGS_TYPE"
 
 export const righttagsType = "RIGHT_TAGS_TYPE"
+
+export const beingType = "BEING_TYPE"
+
+export const newestType = "NEWEST_TYPE"
+
+export const concernType = "CONCERN_TYPE"

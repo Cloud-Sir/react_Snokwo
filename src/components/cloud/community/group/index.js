@@ -11,24 +11,25 @@ class Group extends React.Component{
         super(props);
         this.state = {
             eqid: "1696",
+            activeIndex:-1
         }
     }
     
     render() {
+        let { activeIndex } = this.state;
         let { left_tags, right_tags} = this.props;
-        // console.log(right_tags,4567890)
         return(
             <Fragment>
                 <Small>
                     <ul>
-                        <li className="bgcolorwhtie" id="1694">最近访问</li>
-                        <li id="1695">我的小组</li>
+                        <li id="1694" onClick={this.handleLately.bind(this,1694)} ref="lay" className="bgwhtie">最近访问</li>
+                        <li id="1695" onClick={this.handleMinegroup.bind(this,1695)} ref="mygroup">我的小组</li>
                         {
                             (left_tags ? left_tags : []).map((item) => (
-                                <li key={item.id} id={item.id} onClick={this.handleChangeeqid.bind(this, item.id)}>{item.name}</li>
+                                <li key={item.id} id={item.id} onClick={this.handleChangeeqid.bind(this, item.id)} style={{ background: activeIndex == item.id ? "white" : "" }}>{item.name}</li>
                             ))
                         }
-                        <li id="1702">更多</li>
+                        <li id="1702" onClick={this.handleMore.bind(this, 1702)} ref="more">更多</li>
                     </ul>
                     <ol>
                         {
@@ -57,15 +58,55 @@ class Group extends React.Component{
     componentDidMount(){
         this.props.handleLeftTagsAsync()
         this.props.handlerightTagsAcync(this.state.eqid)
+        // this.forceUpdate()
     }
     handleToGroups(id) {
         this.props.history.push("/groups/fruitpaste?id="+id)
     }
     handleChangeeqid(id) {
         this.setState({
-            eqid: id
-        })
-        console.log(this.state.eqid)
+            eqid: id,
+            activeIndex:id
+        }, () => (
+            this.props.handlerightTagsAcync(this.state.eqid)
+        ))
+        
+        this.refs.lay.style.background = "#f4f4f4"
+        this.refs.mygroup.style.background = "#f4f4f4"
+        this.refs.more.style.background = "#f4f4f4"
+    }
+    handleLately(eqid) {
+        this.refs.lay.style.background = "white"
+        this.refs.mygroup.style.background = "#f4f4f4"
+        this.refs.more.style.background = "#f4f4f4"
+        this.setState({
+            eqid: eqid,
+            activeIndex: -1
+        }, () => (
+            this.props.handlerightTagsAcync(this.state.eqid)
+        ))
+    }
+    handleMinegroup(eqid) {
+        this.refs.mygroup.style.background = "white"
+        this.refs.lay.style.background = "#f4f4f4"
+        this.refs.more.style.background = "#f4f4f4"
+        this.setState({
+            eqid: eqid,
+            activeIndex: -1
+        }, () => (
+            this.props.handlerightTagsAcync(this.state.eqid)
+        ))
+    }
+    handleMore(eqid) {
+        this.refs.more.style.background = "white"
+        this.refs.mygroup.style.background = "#f4f4f4"
+        this.refs.lay.style.background = "#f4f4f4"
+        this.setState({
+            eqid: eqid,
+            activeIndex: -1
+        }, () => (
+            this.props.handlerightTagsAcync(this.state.eqid)
+        ))
     }
 }
 
