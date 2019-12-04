@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import Header from "components/grace/headers"
-
+import Cookies from "js-cookie"
 import { Section, Footer } from "./styled"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
@@ -15,6 +15,7 @@ class GameDetail extends React.Component {
         this.state = {
             id: '',
             game_id: '',
+            flag: true,
             tishi_open: false,
             banben_open: false,
             fashou_open: false,
@@ -25,10 +26,8 @@ class GameDetail extends React.Component {
         let { id, game_id } = url.parse(this.props.location.search, true).query;
         this.state.id = id
         this.state.game_id = game_id
-
     }
     render() {
-        // let { banben_list } = this.state
         let { game_list, gamedetail_list } = this.props
         let sku_detail = game_list.sku_detail ? game_list.sku_detail : ''//游戏详情
         let banben_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
@@ -54,7 +53,6 @@ class GameDetail extends React.Component {
             </div>
         )
 
-        // console.log(banben_list.length)
         return (
             <Fragment>
                 <Header title={game_list.sku_name} lefticon={"\ue645"} righticon={"\ue6a7"} path={this.props} />
@@ -216,18 +214,30 @@ class GameDetail extends React.Component {
                     <div className="container-footer-zone">
                         <div className="game-info-footer">
                             <div className="game-info-footer-icon">
-                                <a href="/" className="view-cart-button" style={{ "padding": ".03404rem" }}>
+                                <a className="view-cart-button" style={{ "padding": ".03404rem" }}//eslint-disable-line
+                                >
                                     <span className="iconfont  icon-buy_gouwuche">{"\ue639"}</span>
-                                    <div>购物车</div>
+                                    <div>客服</div>
                                 </a>
-                                <a href="/" className="view-wish-button" style={{ "padding": "  0.0212rem" }}>
+                                <a className="view-wish-button" style={{ "padding": "  0.0212rem" }}//eslint-disable-line
+                                >
                                     <span className="icon-buy_collect">❤</span>
                                     <div>收藏</div>
                                 </a>
                             </div>
                             <div className="game-footer-canby">
-                                <a href="/" className="add-cart-button">加入购物车</a>
-                                <a href="/" className="buy-button">立即购买</a>
+                                {
+                                    this.state.flag ? (
+                                        <a className="add-cart-button" onClick={this.handleAddCart.bind(this, game_list, gamedetail_list)} //eslint-disable-line
+                                        >加入购物车
+                                        </a>
+                                    ) : (
+                                            <a className="add-cart-button" style={{ background: "#CCC" }} //eslint-disable-line
+                                            >已经在购物车</a>
+                                        )
+                                }
+                                <a href="/#/cart/gameCart" className="buy-button"
+                                >购物车</a>
                             </div>
                         </div>
                     </div>
@@ -238,11 +248,38 @@ class GameDetail extends React.Component {
     componentDidMount() {
         let id = this.state.game_id
         this.props.handleGameDetail(id)
+        // this.handleAddCart(this.props.game_list, this.props.gamedetail_list)
     }
     onbanbenOpenChange = (...args) => {
         // console.log(args);
         // console.log(123123);
         this.setState({ banben_open: !this.state.banben_open });
+    }
+    handleAddCart(game, gamedetail_list) {
+        let obj = {}
+        obj.id = gamedetail_list.id
+        obj.name = game.sku_name
+        obj.ename = game.sku_ename
+        obj.url = game.background ? game.background : game.cover
+        if (Cookies.get("gameTypes")) {
+            let arr = JSON.parse(Cookies.get("gameTypes"));
+            let tag = false;
+            // console.log(arr)
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].id == gamedetail_list.id) { //eslint-disable-line
+                    tag = true
+                    this.setState({ flag: false })
+                    break;
+                }
+            }
+            if (tag == false) { arr.push(obj) }//eslint-disable-line
+            Cookies.set("gameTypes", JSON.stringify(arr));
+        } else {
+            let arr = []
+            arr.push(obj)
+            Cookies.set("gameTypes", JSON.stringify(arr));
+            this.setState({ flag: false })
+        }
     }
 }
 

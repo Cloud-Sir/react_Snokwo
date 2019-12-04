@@ -107,19 +107,19 @@ export const Login = Loadable({
     loader: () => import("./Jerry/login"),//登录页面
     loading: Loading
 })
-
+export const AroundClassify = Loadable({
+    loader: () => import("./Jerry/aroundClassify"),//周边分类
+    loading: Loading
+})
 export const Register = Loadable({
     loader: () => import("./cloud/register"),//注册页面
     loading: Loading
 })
 
-export const AroundClassify=Loadable({
-    loader:()=>import("./Jerry/aroundClassify"),//周边分类
-    loading:Loading
-})
-export const AroundSearch=Loadable({
-    loader:()=>import("./Jerry/aroundSearch"),//周边查询
-    loading:Loading
+
+export const AroundSearch = Loadable({
+    loader: () => import("./Jerry/aroundSearch"),//周边分类
+    loading: Loading
 })
 export const DetailGoods = Loadable({
     loader: () => import("./Jerry/detailGoods"), //详情

@@ -1,23 +1,23 @@
 import React from "react"
 import HeaderTitle from "components/Jerry/headers/headerTitle.js"
-import { Second, Footer,Introduce} from "./styled"
+import { Second, Footer, Introduce } from "./styled"
 import Cookies from "js-cookie"
 
-import { withRouter,NavLink} from "react-router-dom"
-import {connect} from "react-redux";
-import {mapStateToProps,mapDispatchToProps} from "./connect.js"
+import { withRouter, NavLink } from "react-router-dom"
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from "./connect.js"
 
 @connect(mapStateToProps, mapDispatchToProps)
 @withRouter
-class DetailGoods extends React.Component{
+class DetailGoods extends React.Component {
     constructor() {
         super()
         this.state = {
             id: "",
             isShow: 1,
-            isCheck:-1,
+            isCheck: -1,
             count: 1,
-            obj:{},
+            obj: {},
             types: [],
         }
     }
@@ -31,7 +31,7 @@ class DetailGoods extends React.Component{
         if (skus) {
             var attrs = [];
             var vals = [];
-            for (var i = 0; i < skus.length; i++){
+            for (var i = 0; i < skus.length; i++) {
                 if (skus[i].sku_attrs) {
                     attrs = skus[i].sku_attrs;
                 }
@@ -41,7 +41,7 @@ class DetailGoods extends React.Component{
                 }
             }
         }
-        let arrPrice = price.price;var _price;
+        let arrPrice = price.price; var _price;
         if (arrPrice) {
             for (var i = 0; i < arrPrice.length; i++){
                 if (arrPrice[i].id == id) { //eslint-disable-line
@@ -50,44 +50,44 @@ class DetailGoods extends React.Component{
                 }
             }
         }
-        return(
+        return (
             <div className="detailGoods">
-                <HeaderTitle title="商品详情"/>
+                <HeaderTitle title="商品详情" />
                 <Second>
                     <div className="image">
                         <img src={detailList.product_image} alt=""/>
                     </div>
                     <div className="describe">
                         <h2>{detailList.alias_name}</h2>
-                        {_price ?<p><i>{_price.sale_price}</i><del>{_price.list_price}</del></p>: ""}
+                        {_price ? <p><i>{_price.sale_price}</i><del>{_price.list_price}</del></p> : ""}
                         {/*{service ? <span>{service.service_cooked}</span>:""}  */}
                         {/* 叫我干嘛:<strong>进度款我的肌肤网络挂</strong> */}
                     </div>
                     <div className="size">
                         {
-                        (attrs ? attrs : []).map((item, index) => (
-                            <div className="one" key={index}>
-                                <h3>{item.name}</h3>
-                                <div className="color">
-                                    {
-                                        (vals ? vals : []).map((n, key) => (
-                                            n.sku_attr_id == item.id ? <span key={key} className={isCheck == key ? 'check' : ""}//eslint-disable-line
-                                            onClick={this.handleCheckName.bind(this,n.name,key,skus,vals,_price)}>{n.name}</span> : ''
-                                        ))
-                                    }
+                            (attrs ? attrs : []).map((item, index) => (
+                                <div className="one" key={index}>
+                                    <h3>{item.name}</h3>
+                                    <div className="color">
+                                        {
+                                            (vals ? vals : []).map((n, key) => (
+                                                n.sku_attr_id == item.id ? <span key={key} className={isCheck == key ? 'check' : ""}//eslint-disable-line
+                                                    onClick={this.handleCheckName.bind(this, n.name, key, skus, vals, _price)}>{n.name}</span> : ''
+                                            ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        ))
+                            ))
                         }
                         <div className="three">
                             <h3>购买数量</h3>
                             <div className="count">
-                                <h4 onClick={this.handleCount.bind(this,2)}>-</h4>
+                                <h4 onClick={this.handleCount.bind(this, 2)}>-</h4>
                                 <h5>{count}</h5>
-                                <h4 onClick={this.handleCount.bind(this, 1)}>+</h4>  
+                                <h4 onClick={this.handleCount.bind(this, 1)}>+</h4>
                             </div>
                         </div>
-                        </div>
+                    </div>
                     <Introduce>
                         <div className="nav">
                             < div className="child">
@@ -102,13 +102,13 @@ class DetailGoods extends React.Component{
                         <div className="detail" style={{ display: isShow == 1 ? 'block' : 'none' }}//eslint-disable-line
                         >
                             {
-                                <div dangerouslySetInnerHTML={{__html:introduce? introduce.description_cooked:"".content}}></div>
+                                <div dangerouslySetInnerHTML={{ __html: introduce ? introduce.description_cooked : "".content }}></div>
                             }
                         </div>
                         <div className="detail" style={{ display: isShow == 2 ? 'block' : 'none' }}//eslint-disable-line
                         >
                             {
-                                <div dangerouslySetInnerHTML={{ __html: introduce ? introduce.service_cooked: "".content }}></div>
+                                <div dangerouslySetInnerHTML={{ __html: introduce ? introduce.service_cooked : "".content }}></div>
                             }
                         </div>
                     </Introduce>
@@ -143,7 +143,7 @@ class DetailGoods extends React.Component{
     }
     handleClick(flag, e) {
         this.setState({
-            isShow:flag
+            isShow: flag
         })
     }
     handleCount(n, e) {
@@ -157,7 +157,7 @@ class DetailGoods extends React.Component{
             count: num
         })
     }
-    handleCheckName(name, key, skus, vals,_price, e) {
+    handleCheckName(name, key, skus, vals, _price, e) {
         let check = this.state.isCheck;
         let obj = this.state.obj;
         let count = this.state.count;
@@ -172,11 +172,11 @@ class DetailGoods extends React.Component{
             obj.count = count;
         } else {
             check = -1;
-            obj={}
+            obj = {}
         }
         this.setState({
             isCheck: check,
-            obj:obj
+            obj: obj
         })
     }
     //判断是否选择规格
@@ -192,7 +192,7 @@ class DetailGoods extends React.Component{
             array.push(obj);
         }
         this.setState({
-            types:array,
+            types: array,
             obj: obj,
             count: num
         })        
@@ -223,7 +223,7 @@ class DetailGoods extends React.Component{
         } else { //cookie中没有数据
             Cookies.set("types", JSON.stringify(this.state.types));
         }
-       
+
     }
     handleOrder() {
         this.handleCheckInfo();

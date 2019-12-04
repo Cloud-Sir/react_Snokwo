@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Head=styled.div`
+export const Head = styled.div`
     position: fixed;
     width: 100%;
     top: 0;
@@ -8,7 +8,7 @@ export const Head=styled.div`
     z-index: 99;
 `
 
-export const Nav=styled.div`
+export const Nav = styled.div`
     background-color: #333333;
     display: flex;
     box-orient: horizontal;
@@ -44,7 +44,7 @@ export const Nav=styled.div`
         }
     }
 `
-export const Second= styled.div`
+export const Second = styled.div`
     position:absolute;
     left:0;
     top:0;
@@ -244,6 +244,24 @@ export const Second= styled.div`
                         span{
                             font-size:.12rem;
                             color:#333;
+                        }
+                        .gameName{
+                            font-size:.1rem;
+                            color:#333;
+                            width: 1.4rem;
+                            white-space:nowrap;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                        }
+                        .gameEname{
+                            font-size:.1rem;
+                            color:#333;
+                            width: 1.4rem;
+                            overflow:hidden;
+                            text-overflow:ellipsis; 
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
                         }
                         i{
                             font-size: 0.12rem;

@@ -1,6 +1,6 @@
 import React from "react"
 import HeaderTitle from "components/Jerry/headers/headerTitle.js"
-import {Nav,Head,Second,Footer} from "./styled"
+import { Nav, Head, Second, Footer } from "./styled"
 import AroundCart from "./aroundCart"
 import GameCart from "./gameCart"
 
@@ -8,10 +8,10 @@ import {connect} from "react-redux";
 import {mapStateToProps,mapDispatchToProps} from "./connect.js"
 import Cookies from "js-cookie"
 
-import {withRouter,NavLink,Switch,Route} from "react-router-dom"
+import { withRouter, NavLink, Switch, Route } from "react-router-dom"
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
-class Cart extends React.Component{
+class Cart extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -55,7 +55,7 @@ class Cart extends React.Component{
                         < NavLink to = "/peripheral"><span>看看游戏</span></NavLink >
                         < NavLink to = "/peripheral"><span>看看周边</span></NavLink >
                     </div>
-                       
+
                 </Second>
                 <Footer>
                     <div className="account">

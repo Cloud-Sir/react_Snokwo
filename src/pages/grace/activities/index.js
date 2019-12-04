@@ -19,7 +19,7 @@ class Activities extends React.Component {
                     {
                         activity_list.map((item, index) => (
                             <div className="subject-view-container" key={index}>
-                                <Link to={item.game_id ? ("/gamedetail?id=" + item.guotieurl + "&game_id=" + item.game_id) : ("/fruitpastedetail/" + item.guotieurl)}>
+                                <Link to={item.game_id ? ("/gamedetail?id=" + item.game_id + "&game_id=" + item.guotieurl) : ("/fruitpastedetail/" + item.guotieurl)}>
                                     {/* /gamedetail */}
                                     {/* "/gamedetail?id="+item.guotieurl+"&game_id="+item.game_id */}
                                     <div className="subject-view-title p-title">

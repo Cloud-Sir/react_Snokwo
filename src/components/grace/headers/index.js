@@ -1,7 +1,9 @@
 import React from "react"
 import { Headers } from "./styled"
 import { connect } from "react-redux"
+import { withRouter } from "react-router-dom"
 import { mapStateToProps, mapDispatchToProps } from "./mapState"
+@withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 class Header extends React.Component {
     render() {
@@ -21,7 +23,7 @@ class Header extends React.Component {
                         </div>
                     </div>
                 </div>
-                <i className="iconfont right" style={{ display: title && !has ? "block" : "none" }}>{righticon}</i>
+                <i className="iconfont right" style={{ display: title && !has ? "block" : "none" }} onClick={this.handleClick.bind(this)}>{righticon}</i>
                 <i className="right searchright" onClick={this.handleSubmit.bind(this)} style={{ display: has ? "block" : "none" }}>搜索</i>
             </Headers>
         )
@@ -47,6 +49,9 @@ class Header extends React.Component {
     handleSubmit(e, val) {
         e.preventDefault()
         this.props.handleSearchChange(val ? val : this.props.searchval)
+    }
+    handleClick() {
+        this.props.history.push("/message")
     }
 
 }

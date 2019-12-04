@@ -3,28 +3,28 @@ import {Register,GameCart,AroundCart,OrderBought,DetailGoods, AroundSearch, Arou
 
 export const TabBarRoute = [
     {
-        path:"/index",
-        component:Index,
-        meta:{
-            flag:true
+        path: "/index",
+        component: Index,
+        meta: {
+            flag: true
         },
-        icon:"\ue694",
-        text:"商城"
+        icon: "\ue694",
+        text: "商城"
     },
     {
-        path:"/headlines",
-        component:Headlines,
-        meta:{
-            flag:true
+        path: "/headlines",
+        component: Headlines,
+        meta: {
+            flag: true
         },
-        icon:"\ue68b",
-        text:"头条"
+        icon: "\ue68b",
+        text: "头条"
     },
     {
-        path:"/community",
-        component:Community,
-        meta:{
-            flag:true
+        path: "/community",
+        component: Community,
+        meta: {
+            flag: true
         },
         icon:"\ue622",
         text:"社区",
@@ -47,11 +47,11 @@ export const TabBarRoute = [
         ]
     },
     {
-        path:"/cart",
-        component:Cart,
-        meta:{
+        path: "/cart",
+        component: Cart,
+        meta: {
             flag: true,
-            requiredAuth:true
+            requiredAuth: true
         },
         icon:"\ue639",
         text: "购物车",
@@ -73,73 +73,75 @@ export const TabBarRoute = [
         ]
     },
     {
-        path:"/mine",
-        component:Mine,
-        meta:{
-            flag:true,
-            requiredAuth:true 
+        path: "/mine",
+        component: Mine,
+        meta: {
+            flag: true,
+            requiredAuth: true
         },
-        icon:"\ue617",
-        text:"我的"
+        icon: "\ue617",
+        text: "我的"
     }
 ]
 
 export const NoTabBarRoute = [
     {
-        path:"/login",
-        component:Login,
-        meta:{}
-    }, 
+        path: "/login",
+        component: Login,
+        meta: {}
+    },
     {
         path: "/register",
         component: Register,
         meta: {}
     },
     {
-        path:"/activity",
-        component:Activities,
-        meta:{}
+        path: "/activity",
+        component: Activities,
+        meta: {}
     },
     {
-        path:"/benefit",
-        component:Benefit,
-        meta:{}
+        path: "/benefit",
+        component: Benefit,
+        meta: {}
     },
     {
-        path:"/peripheral",
-        component:Peripheral,
-        meta:{}
+        path: "/peripheral",
+        component: Peripheral,
+        meta: {}
     },
     {
-        path:"/publisher",
-        component:Publisher,
-        meta:{}
+        path: "/publisher",
+        component: Publisher,
+        meta: {}
     },
     {
-        path:"/searchgame",
-        component:Searchgame,
-        meta:{}
+        path: "/searchgame",
+        component: Searchgame,
+        meta: {}
     },
     {
-        path:"/gamedetail",
-        component:Gamedetail,
-        meta:{}
+        path: "/gamedetail",
+        component: Gamedetail,
+        meta: {
+            requiredAuth: true
+        }
     },
-    
+
     {
-        path:"/articledetail/:id",
-        component:Articledetail,
-        meta:{}
-    },
-    {
-        path:"/headlinesform/:id/:name",
-        component:Headlinesform,
-        meta:{}
+        path: "/articledetail/:id",
+        component: Articledetail,
+        meta: {}
     },
     {
-        path:"/allsearch",
-        component:Allsearch,
-        meta:{}
+        path: "/headlinesform/:id/:name",
+        component: Headlinesform,
+        meta: {}
+    },
+    {
+        path: "/allsearch",
+        component: Allsearch,
+        meta: {}
     },
     {
         path: "/beingsearch",
@@ -147,30 +149,30 @@ export const NoTabBarRoute = [
         meta: {}
     },
     {
-        path:"/fruitpastedetail/:id",
-        component:Fruitpastedetail,
-        meta:{}
-    },
-    {
-        path:"/groups",
-        component:Groups,
+        path: "/fruitpastedetail/:id",
+        component: Fruitpastedetail,
         meta: {}
     },
     {
-        path:"/message",
-        component:Message,
+        path: "/groups",
+        component: Groups,
+        meta: {}
+    },
+    {
+        path: "/message",
+        component: Message,
         meta: {
             requiredAuth: true
         }
     },
     {
         path: "/AroundClassify",
-        component:AroundClassify,
-        meta:{}
+        component: AroundClassify,
+        meta: {}
     },
     {
-        path:"/aroundSearch",
-        component:AroundSearch,
+        path: "/aroundSearch",
+        component: AroundSearch,
         meta: {}
     },
     {

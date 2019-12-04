@@ -6,7 +6,7 @@ import {createAction} from "redux-actions"
 export const getAroundList=()=>{
     let aroundList=createAction(AroundTypes,(data)=>(data))
 
-    return async (dispatch)=>{
+    return async (dispatch) => {
         let data = await aroundListApi()
         dispatch(aroundList(data))
     }
@@ -14,15 +14,15 @@ export const getAroundList=()=>{
 
 export const getAroundData = () => {
     let aroundData = createAction(AroundDataTypes, (data) => (data))
-    
+
     return async (dispatch) => {
         let data = await aroundDataApi();
         dispatch(aroundData(data))
     }
 }
 export const getAroundPrice = () => {
-    let aroundPrice = createAction(AroundPrices,(data)=>(data))
-    
+    let aroundPrice = createAction(AroundPrices, (data) => (data))
+
     return async (dispatch) => {
         let data = await aroundPriceApi();
         dispatch(aroundPrice(data));
@@ -30,7 +30,7 @@ export const getAroundPrice = () => {
 }
 export const getAroundSearch = () => {
     let aroundSearch = createAction(SearchTypes, (data) => (data))
-    
+
     return async (dispatch) => {
         let data = await searchApi();
         dispatch(aroundSearch(data))
@@ -38,7 +38,7 @@ export const getAroundSearch = () => {
 }
 
 export const getDetailList = (id) => {
-    const detailList = createAction(DetailTypes,(data)=>(data))
+    const detailList = createAction(DetailTypes, (data) => (data))
     return async (dispatch) => {
         let data = await detailListApi(id);
         dispatch(detailList(data));
