@@ -107,6 +107,12 @@ export const Login = Loadable({
     loader: () => import("./Jerry/login"),//登录页面
     loading: Loading
 })
+
+export const Register = Loadable({
+    loader: () => import("./cloud/register"),//注册页面
+    loading: Loading
+})
+
 export const AroundClassify=Loadable({
     loader:()=>import("./Jerry/aroundClassify"),//周边分类
     loading:Loading
