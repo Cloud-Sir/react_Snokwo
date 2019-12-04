@@ -17,11 +17,15 @@ export const HomeListUL = styled.div`
                 overflow: hidden;
             }
         }
-            
+            .wushuju{
+                color:#ddd;
+                text-align:center;
+                line-height:1rem;
+            }
         .item{
             background-color: white;
             padding:0;
-            min-height: .48446rem;
+            min-height: .8446rem;
             margin-bottom: -1px;
             border: 1px solid #e6e6e6;
             border-width: 1px 0;
@@ -95,7 +99,6 @@ export const HomeListUL = styled.div`
             }
         }
         .mainmenu-items-bar-link .mainmenu-items-bar .mainmenu-items-bar-img img {
-            height: .75rem;
             width: 1.2715rem;
             min-width: 1.2715rem;
             display: block;
@@ -134,6 +137,8 @@ export const HomeListUL = styled.div`
                 }
                 .inter {/*  国际颜色 */
                     background-color: #106dde;
+                    margin-bottom: .08rem;
+                    display: inline-block;
                 }
             }
             .item-content-view {
@@ -147,12 +152,9 @@ export const HomeListUL = styled.div`
                     flex: 1;
                     box-orient: vertical;
                     flex-direction: column;
-                    .space {
-                        display: flex;
-                        flex: 1;
-                    }
+                    
                     .item-bar-summary {
-                        margin-bottom: 0.1106rem;
+                        margin-top: .08rem;
                         display: flex;
                         box-orient: horizontal;
                         flex-direction: row;
@@ -164,7 +166,7 @@ export const HomeListUL = styled.div`
                             padding: 0rem 0.034rem;
                             border-radius: 0.1rem;
                             margin-right: 0.0425rem;
-                            max-width: 0.510638rem;
+                            max-width: 2rem;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
@@ -177,16 +179,23 @@ export const HomeListUL = styled.div`
                         flex-direction: row;
                         flex: 1;
                         align-items: flex-end;
-                        color: #ff5722;
                         font-size: 0.13rem;
                         text-align: left;
                         margin-bottom: 0px;
-                        width: 100%;
+                        width: 85%;
                         height: auto;
+                        .c_ff6{
+                            color:#c33; font-weight: bold;
+                        }
                         .large-screen-font {
                             font-size: 0.13rem;
-                            font-weight: bold;
-                            line-height: 0.13rem;
+                            line-height: 0.23rem;
+                            width: 100%;
+                            overflow:hidden;
+                            text-overflow:ellipsis; 
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;          
                         }
                         .item-discount {
                             display: flex;

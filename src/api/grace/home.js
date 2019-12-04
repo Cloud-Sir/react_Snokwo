@@ -78,3 +78,32 @@ export const gamedetailApi = (game_id = 527) => http({//游戏详情
     }
 })
 // http://www.sonkwo.hk/api/products/527.json?locale=js&sonkwo_version=1&sonkwo_client=mobile&_=1575290987548
+// export const searchApi = (keyword) => http({//游戏详情
+//     method: "get",
+//     url: "/grace/api/search/autocomplete.json",
+//     data: {
+//         locale: "js",
+//         sonkwo_version: '1',
+//         sonkwo_client: "mobile",
+//         _: 1575290987548,
+//         keyword: 88,
+//         per: 7,
+//     }
+// })
+// https://www.sonkwo.com/api/search/autocomplete.json?locale=js&sonkwo_version=1&sonkwo_client=mobile&keyword=88&per=7&_=1575357132921
+
+export const searchApi = (keywords) => http({//搜索聚橙数据
+    method: "get",
+    url: "/juooo/Show/Search/getShowList",
+    data: {
+        sort_type: '1',
+        group_id: "228",
+        page: '1',
+        version: " 6.0.8",
+        referer: 2,
+        keywords,
+    }
+})
+//  https://api.juooo.com/Show/Search/getShowList?keywords=1&page=1&sort_type=1&version=6.0.8&referer=2
+//  https://api.juooo.com/card/index/getExchangeList?group_id=228&page=1&city_id=0&show_name=AF&version=6.0.8&referer=2
+//优惠券 https://www.sonkwo.com/api/event_gift_packs.json?locale=js&sonkwo_version=1&sonkwo_client=mobile&page=1&per=10&_=1575386628113

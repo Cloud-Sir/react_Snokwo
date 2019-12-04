@@ -1,65 +1,79 @@
 import React, { Component } from 'react';
 import { HomeModule } from "./styled"
 import { Link } from "react-router-dom"
-class index extends Component {
+class Index extends Component {
     render() {
-        console.log(this.props, 888)
-        let { data } = this.props
+        // console.log(this.props, 888)
+        let { data, title, price } = this.props
         return (
             <HomeModule>
 
-                {
-                    (data ? data : []).map((item, index) => (
-                        <div className="store-sec-kill-container" key={index}>
-                            <div className="store-sec-kill-header">
-                                <div className="header">{item.name}</div>
-                            </div>
-                            <div className="sk-touch-group " style={{ height: "1.38rem" }}>
-                                <div className="sk-touch-block">
-                                    <div className="sk-touch-container">
 
+                <div className="store-sec-kill-container">
+                    <div className="store-sec-kill-header">
+                        <div className="header">{title}</div>
+                    </div>
+                    <div className="sk-touch-group " style={{ height: "1.38rem" }}>
 
-                                        <Link to="/gamedetail" className="game">
+                        <div className="sk-touch-block" >
+                            {
+
+                                (data ? data : []).map((item, index) => (
+                                    <Link className="sk-touch-container" key={index} to={"/gamedetail?id=" + (item.id ? item.id : item.accessible_id) + "&game_id=" + item.product_id}>
+                                        <div className="game">
+
                                             <div className="store-item-card-container change-sku">
                                                 <div className="card-img">
-                                                    <img alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/34822/b89d7a9ab936a65fa1383e46a844463a?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89" />
+                                                    <img alt="" src={item.cover} />
                                                 </div>
                                                 <div className="card-content">
                                                     <div className="title">
                                                         <span className="sale-content inter">国际站</span>
-                                                        方舟：生存进化 DLC季票
-                                                        </div>
-                                                    <div className="price-content">
-                                                        ￥61
-                                                        <div className="discount">
-                                                            -50%
-                                                            </div>
-                                                        <div className="list-price">
-                                                            122
-                                                                </div>
+                                                        {item.sku_name}
                                                     </div>
+                                                    {
+                                                        (price ? price : []).map((itm, ind) => (
+
+                                                            (item.accessible_id ? item.accessible_id : item.id) === itm.id ?
+                                                                (
+                                                                    <div className="price-content" key={ind}>
+                                                                        {"￥" + itm.sale_price}
+                                                                        {
+                                                                            (itm.list_price > itm.sale_price) ? (<div className="discount"><div>{-(Math.floor(((itm.list_price - itm.sale_price) / itm.list_price) * 100)) + "%"}</div></div>)
+                                                                                : ""
+                                                                        }
+                                                                        {
+                                                                            (itm.list_price > itm.sale_price) ? (<div className="list-price"><div>{itm.list_price}</div></div>)
+                                                                                : ""
+                                                                        }
+                                                                    </div>
+                                                                ) : ""
+
+
+
+
+                                                        ))
+                                                    }
+                                                    {/*  */}
                                                 </div>
                                             </div>
-                                        </Link>
 
 
-
-
-
-
-
-                                    </div >
-                                </div >
-                            </div >
+                                        </div>
+                                    </Link >
+                                ))
+                            }
                         </div >
-                    ))
-                }
+
+                    </div >
+                </div >
+
             </HomeModule >
         );
     }
 }
 
-export default index;
+export default Index;
 
 
 /*

@@ -94,8 +94,7 @@ export const HomeModule = styled.div`
         }
         .sk-touch-group{
             max-width: 100%;
-            overflow: hidden;
-            position: relative;}
+            overflow: hidden;}
         .sk-touch-block{
             display: flex;
             flex-direction: row;
@@ -103,7 +102,7 @@ export const HomeModule = styled.div`
             overflow: auto ;
             position: absolute;
             top: 0;
-            left: 0;
+            left: 0;    height: 1.5rem;
         }
         .sk-touch-container{
             width: auto;

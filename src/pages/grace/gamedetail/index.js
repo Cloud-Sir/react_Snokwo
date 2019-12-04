@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
 import { mapStateToProps, mapDispatchToProps } from "./mapStore"
 import url from "url"
-import { Drawer, List } from 'antd-mobile';
+import { Drawer } from 'antd-mobile';
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 class GameDetail extends React.Component {
@@ -32,16 +32,16 @@ class GameDetail extends React.Component {
         let { game_list, gamedetail_list } = this.props
         let sku_detail = game_list.sku_detail ? game_list.sku_detail : ''//游戏详情
         let banben_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
-        let tishi_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
-        let fashou_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
-        let peizhi_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
-        let youhui_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
+        // let tishi_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
+        // let fashou_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
+        // let peizhi_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
+        // let youhui_list = gamedetail_list.skus ? gamedetail_list.skus : []//版本规则
         const banben_sidebar = (
-            <div>
-                <h1>此游戏的其他版本</h1>
+            <div ref="banben_sidebar">
+                {/* <h1>此游戏的其他版本</h1> */}
                 {
                     banben_list.map((item, index) => (
-                        <div className="game-relation-container selected">
+                        <div key={index} className="game-relation-container selected" style={{ padding: ".3rem", border: "1px solid #ccc", }} >
                             <div className="name">
                                 {item.sku_name}
                             </div>
@@ -54,7 +54,7 @@ class GameDetail extends React.Component {
             </div>
         )
 
-
+        // console.log(banben_list.length)
         return (
             <Fragment>
                 <Header title={game_list.sku_name} lefticon={"\ue645"} righticon={"\ue6a7"} path={this.props} />
@@ -102,13 +102,14 @@ class GameDetail extends React.Component {
                             </div>
                         </div>
 
-                        <div style={{ "marginBottom": "0.08511rem" }} onClick={this.onbanbenOpenChange.bind(this)}>
+                        <div style={{ "marginBottom": "0.08511rem", "display": (banben_list.length) > 1 ? 'block' : 'none' }}
+                            onClick={this.onbanbenOpenChange.bind(this)}>
                             <div className="product-info-entrance">
                                 <div className="entrance-title">
                                     版本
                                 </div>
                                 <div className="entrance-content">
-                                    此游戏有2个版本
+                                    此游戏有{banben_list.length}个版本
                                 </div>
                                 <span className="iconfont  icon-jr">{"\ue604"}</span>
                             </div>
@@ -116,34 +117,18 @@ class GameDetail extends React.Component {
 
                         <Drawer
                             className="my-drawer"
-                            style={{ height: this.state.banben_open ? document.documentElement.clientHeight - 25 : 0 }}
+                            style={{ height: this.state.banben_open ? this.refs.banben_sidebar.offsetHeight + 84 : 0 }}
                             enableDragHandle
                             position={"top"}
-                            contentStyle={{ color: '#A6A6A6', textAlign: 'center', paddingTop: 42 }}
+                            contentStyle={{
+                                color: 'red', backgroundColor: "white", textAlign: 'center', padding: 42, opacity: 1,
+                            }}
+                            sidebar={""}
                             open={this.state.banben_open}
-                            sidebar={banben_sidebar}
-                        // onOpenChange={this.onOpenChange}
+                            children={banben_sidebar}
                         >
 
                         </Drawer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                         <div className="product-info-entrance">
                             <div className="entrance-title">
@@ -247,16 +232,16 @@ class GameDetail extends React.Component {
                         </div>
                     </div>
                 </Footer>
-            </Fragment>
+            </Fragment >
         )
     }
     componentDidMount() {
-        let id = this.state.id
+        let id = this.state.game_id
         this.props.handleGameDetail(id)
     }
     onbanbenOpenChange = (...args) => {
         // console.log(args);
-        console.log(123123);
+        // console.log(123123);
         this.setState({ banben_open: !this.state.banben_open });
     }
 }
