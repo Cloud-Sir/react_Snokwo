@@ -1,5 +1,5 @@
-import { headLineType, headfiveType, acticleType, whatType} from "./cloudActionTypes";
-import { headline_dataApi, headline_fiveApi, article_detailApi, confusionApi} from "api/cloud/headlines";
+import { headLineType, headfiveType, acticleType, whatType, fruitType, hotType, lefttagsType, righttagsType} from "./cloudActionTypes";
+import { headline_dataApi, headline_fiveApi, article_detailApi, confusionApi, fruitpasteApi, hotpasteApi, lefttagsApi, righttagsApi} from "api/cloud/headlines";
 import { createAction } from "redux-actions";
 
 export const headAsyncAction = () => {
@@ -34,6 +34,44 @@ export const whatinfoAction = (id) => {
 
     return async (dispatch) => {
         let data = await confusionApi(id)
+        
         dispatch(whatAction(data))
+    }
+}
+
+export const hotpasteAction = () => {
+    let hotAction = createAction(hotType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await hotpasteApi()
+        dispatch(hotAction(data))
+    }
+}
+
+// 果贴详情拿不到数据
+export const fruitpasteAction = (id) => {
+    let fruitAction = createAction(fruitType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await fruitpasteApi(id)
+        dispatch(fruitAction(data))
+    }
+}
+
+export const lefttagsAction = () => {
+    let leftAction = createAction(lefttagsType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await lefttagsApi()
+        dispatch(leftAction(data))
+    }
+}
+
+export const righttagsAction = (eqid) => {
+    let rightAction = createAction(righttagsType, (data) => data)
+
+    return async (dispatch) => {
+        let data = await righttagsApi(eqid)
+        dispatch(rightAction(data))
     }
 }

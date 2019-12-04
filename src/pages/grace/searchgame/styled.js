@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 
-export const Section=styled.div`
+export const Section = styled.div`
     .container-header-space{
         height:.3519rem;
     }
@@ -17,10 +17,9 @@ export const Section=styled.div`
         box-orient: horizontal;
         flex-direction: row;
         border-bottom: solid 1px #e6e6e6;
-       
         position:fixed;
         z-index:111;
-        a{
+        span{
             width: 20%;
             height: 100%;
             border: 0;
@@ -34,7 +33,6 @@ export const Section=styled.div`
                 color: #ff5722;
                 border-bottom: solid 0.02rem #ff5722;
             }
-            
         }
         .border{
                 height: 100%;
@@ -52,14 +50,12 @@ export const Section=styled.div`
     }
     .border_top{
         border:solid .05rem transparent;
-        border-bottom-color:pink;
         position: absolute;
         right: -.07rem;
         top: .07rem;    
     }
     .border_bottom{
         border:solid .05rem transparent;
-        border-top-color:red;
         position: absolute;
         right: -.07rem;
         top: 0.2rem;
