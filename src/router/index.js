@@ -27,23 +27,6 @@ export const TabBarRoute = [
         },
         icon:"\ue622",
         text:"社区",
-        chaildren:[
-            {
-                path:"/community/fruitpaste",
-                component:Fruitpaste,
-                meta:{
-                    flag:true
-                },
-            },
-            {
-                path:"/community/group",
-                component:Group,
-                meta:{
-                    flag:true
-                },
-            }
-            
-        ]
     },
     {
         path:"/cart",
