@@ -1,6 +1,6 @@
 import React from "react";
-import {Bigbox,Header,Contentbox} from "./styled"
-import { withRouter ,Link} from "react-router-dom"
+import { Bigbox, Header, Contentbox } from "./styled"
+import { withRouter, Link } from "react-router-dom"
 import Searchgroup from "components/cloud/searching/searchgroup"
 import Searchuser from "components/cloud/searching/searchuser"
 import Searchfruit from "components/cloud/searching/searchfruit"
@@ -8,7 +8,7 @@ import Searchyelp from "components/cloud/searching/searchyelp"
 // import { connect } from "react-redux"
 // @connect(mapStateToProps)
 @withRouter
-class Searching extends React.Component{
+class Searching extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,24 +19,24 @@ class Searching extends React.Component{
     }
     render() {
         let { btns, activeIndex } = this.state;
-        return(
+        return (
             <Bigbox>
                 <Header>
                     <div className="top-header">
-                         <i className="iconfont" onClick={this.handleGoBack.bind(this)}>{"\ue645"}</i>
-                         <div className="savekeyword">
+                        <i className="iconfont" onClick={this.handleGoBack.bind(this)}>{"\ue645"}</i>
+                        <div className="savekeyword">
                             <div className="searchres">
                                 {this.url}<span><Link to="/allsearch">✖</Link></span>
                             </div>
-                         </div>
+                        </div>
                     </div>
                     <div className="bottom-header">
                         <ul>
                             {
-                                btns.map((btn,index) => (
+                                btns.map((btn, index) => (
                                     <li key={index} onClick={this.handleLiStyle.bind(this, index)}
-                                        style={{ color: activeIndex == index ? "#ff5722" : ""}}
-                                        >{btn}
+                                        style={{ color: activeIndex == index ? "#ff5722" : "" }}//eslint-disable-line
+                                    >{btn}
                                     </li>
                                 ))
                             }
@@ -46,7 +46,7 @@ class Searching extends React.Component{
                 <Contentbox>
                     <ul>
                         {
-                            activeIndex === 0 ? <Searchgroup url={this.url}/>:""
+                            activeIndex === 0 ? <Searchgroup url={this.url} /> : ""
                         }
                         {
                             activeIndex === 1 ? <Searchuser /> : ""
@@ -64,7 +64,7 @@ class Searching extends React.Component{
     }
     handleLiStyle(index) {
         this.setState({
-            activeIndex:index
+            activeIndex: index
         })
     }
     handleGoBack() {

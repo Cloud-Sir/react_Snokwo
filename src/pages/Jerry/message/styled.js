@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Second=styled.div`
+export const Second = styled.div`
     position:absolute;
     left:0;
     right:0;
@@ -16,6 +16,7 @@ export const Second=styled.div`
         justify-content:center;
         padding: 0rem 0.1276rem;
         border-bottom: solid 0.0125rem whitesmoke;
+         box-sizing: border-box;
         i:first-child{ width: .3rem;font-size:.25rem;margin-right:.08rem;font-weight:bold;}
         i {
             img{

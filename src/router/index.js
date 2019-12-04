@@ -1,58 +1,58 @@
-import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, AroundCart, GameCart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
+import { DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart, Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group, Beingsearch } from "pages";
 
 export const TabBarRoute = [
     {
-        path:"/index",
-        component:Index,
-        meta:{
-            flag:true
+        path: "/index",
+        component: Index,
+        meta: {
+            flag: true
         },
-        icon:"\ue694",
-        text:"商城"
+        icon: "\ue694",
+        text: "商城"
     },
     {
-        path:"/headlines",
-        component:Headlines,
-        meta:{
-            flag:true
+        path: "/headlines",
+        component: Headlines,
+        meta: {
+            flag: true
         },
-        icon:"\ue68b",
-        text:"头条"
+        icon: "\ue68b",
+        text: "头条"
     },
     {
-        path:"/community",
-        component:Community,
-        meta:{
-            flag:true
+        path: "/community",
+        component: Community,
+        meta: {
+            flag: true
         },
-        icon:"\ue622",
-        text:"社区",
-        chaildren:[
+        icon: "\ue622",
+        text: "社区",
+        chaildren: [
             {
-                path:"/community/fruitpaste",
-                component:Fruitpaste,
-                meta:{
-                    flag:true
+                path: "/community/fruitpaste",
+                component: Fruitpaste,
+                meta: {
+                    flag: true
                 },
             },
             {
-                path:"/community/group",
-                component:Group,
-                meta:{
-                    flag:true
+                path: "/community/group",
+                component: Group,
+                meta: {
+                    flag: true
                 },
             }
-            
+
         ]
     },
     {
-        path:"/cart",
-        component:Cart,
-        meta:{
-            flag:true
+        path: "/cart",
+        component: Cart,
+        meta: {
+            flag: true
         },
-        icon:"\ue639",
-        text:"购物车",
+        icon: "\ue639",
+        text: "购物车",
         // children:[
         //     {
         //         path: "/cart/gameCart",
@@ -71,68 +71,68 @@ export const TabBarRoute = [
         // ]
     },
     {
-        path:"/mine",
-        component:Mine,
-        meta:{
-            flag:true,
-            requiredAuth:false 
+        path: "/mine",
+        component: Mine,
+        meta: {
+            flag: true,
+            requiredAuth: false
         },
-        icon:"\ue617",
-        text:"我的"
+        icon: "\ue617",
+        text: "我的"
     }
 ]
 
 export const NoTabBarRoute = [
     {
-        path:"/login",
-        component:Login,
-        meta:{}
+        path: "/login",
+        component: Login,
+        meta: {}
     },
     {
-        path:"/activity",
-        component:Activities,
-        meta:{}
+        path: "/activity",
+        component: Activities,
+        meta: {}
     },
     {
-        path:"/benefit",
-        component:Benefit,
-        meta:{}
+        path: "/benefit",
+        component: Benefit,
+        meta: {}
     },
     {
-        path:"/peripheral",
-        component:Peripheral,
-        meta:{}
+        path: "/peripheral",
+        component: Peripheral,
+        meta: {}
     },
     {
-        path:"/publisher",
-        component:Publisher,
-        meta:{}
+        path: "/publisher",
+        component: Publisher,
+        meta: {}
     },
     {
-        path:"/searchgame",
-        component:Searchgame,
-        meta:{}
+        path: "/searchgame",
+        component: Searchgame,
+        meta: {}
     },
     {
-        path:"/gamedetail",
-        component:Gamedetail,
-        meta:{}
+        path: "/gamedetail",
+        component: Gamedetail,
+        meta: {}
     },
-    
+
     {
-        path:"/articledetail/:id",
-        component:Articledetail,
-        meta:{}
-    },
-    {
-        path:"/headlinesform/:id/:name",
-        component:Headlinesform,
-        meta:{}
+        path: "/articledetail/:id",
+        component: Articledetail,
+        meta: {}
     },
     {
-        path:"/allsearch",
-        component:Allsearch,
-        meta:{}
+        path: "/headlinesform/:id/:name",
+        component: Headlinesform,
+        meta: {}
+    },
+    {
+        path: "/allsearch",
+        component: Allsearch,
+        meta: {}
     },
     {
         path: "/beingsearch",
@@ -140,28 +140,28 @@ export const NoTabBarRoute = [
         meta: {}
     },
     {
-        path:"/fruitpastedetail/:id",
-        component:Fruitpastedetail,
-        meta:{}
-    },
-    {
-        path:"/groups",
-        component:Groups,
+        path: "/fruitpastedetail/:id",
+        component: Fruitpastedetail,
         meta: {}
     },
     {
-        path:"/message",
-        component:Message,
-        meta:{}
+        path: "/groups",
+        component: Groups,
+        meta: {}
+    },
+    {
+        path: "/message",
+        component: Message,
+        meta: {}
     },
     {
         path: "/AroundClassify",
-        component:AroundClassify,
-        meta:{}
+        component: AroundClassify,
+        meta: {}
     },
     {
-        path:"/aroundSearch",
-        component:AroundSearch,
+        path: "/aroundSearch",
+        component: AroundSearch,
         meta: {}
     },
     {

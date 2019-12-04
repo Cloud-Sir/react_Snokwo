@@ -21,7 +21,6 @@ class SearchGame extends Component {
         return (
             <Fragment>
                 <Header lefticon={"\ue645"} righticon={"\ue6a7"} has={"1"} path={this.props} />
-                {/* title={"优惠大厅"}  */}
                 <Section>
                     <div className="container-header-space"></div>
                     <div className="search-title">
@@ -75,7 +74,7 @@ class SearchGame extends Component {
         );
     }
     handleTogle(ind) {
-        switch (ind) {
+        switch (ind) {//eslint-disable-line
             case 0:
                 this.props.handleSearchChange("演唱会")
                 break;

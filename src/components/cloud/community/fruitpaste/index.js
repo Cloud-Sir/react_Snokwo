@@ -14,13 +14,13 @@ class Fruitpaste extends React.Component {
             activeIndex: 0
         }
     }
-    
+
     render() {
-        let { btns, activeIndex} = this.state;
+        let { btns, activeIndex } = this.state;
         return (
             <Fruitpastecontent>
                 <Swipercontainer>
-                    <Carousel autoplay infinite dotActiveStyle={{background:"red"}} style={{ touchAction: "none" }}>
+                    <Carousel autoplay infinite dotActiveStyle={{ background: "red" }} style={{ touchAction: "none" }}>
                         <div>
                             <div>
                                 <img src="https://s3.sonkwo.com/FsDv0CLncqG5yoX2k64YVDjh71eM?imageView2/1/w/320/h/136" alt="" />
@@ -80,21 +80,21 @@ class Fruitpaste extends React.Component {
                 <Todocontainer>
                     <ul>
                         {
-                            btns.map((item,index) => (
-                                <li key={index} style={{ color: activeIndex == index ? "#ff5722" : "", borderBottom: activeIndex == index ? "solid 0.018rem #ff5722" : "" }}
-                                    onClick={this.handleShowpaste.bind(this,index)}
+                            btns.map((item, index) => (
+                                <li key={index} style={{ color: activeIndex == index ? "#ff5722" : "", borderBottom: activeIndex == index ? "solid 0.018rem #ff5722" : "" }}//eslint-disable-line
+                                    onClick={this.handleShowpaste.bind(this, index)}
                                 >{item}</li>
                             ))
                         }
                     </ul>
                     {
-                        activeIndex===0?<Hotpaste />:""
+                        activeIndex === 0 ? <Hotpaste /> : ""
                     }
                     {
-                        activeIndex === 1 ? <Newest/>:""
+                        activeIndex === 1 ? <Newest /> : ""
                     }
                     {
-                        activeIndex === 2 ? <Myconcern/>:""
+                        activeIndex === 2 ? <Myconcern /> : ""
                     }
                 </Todocontainer>
             </Fruitpastecontent>
@@ -102,7 +102,7 @@ class Fruitpaste extends React.Component {
     }
     handleShowpaste(index) {
         this.setState({
-            activeIndex:index
+            activeIndex: index
         })
     }
 }

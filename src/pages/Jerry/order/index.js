@@ -1,20 +1,20 @@
 import React from "react"
-import {connect} from "react-redux"
-import {Header} from "components/Jerry/headers/header.js"
-import {Second,Footer} from "./styled"
-class Order extends React.Component{
-    render(){
-        return(
+// import {connect} from "react-redux"
+import { Header } from "components/Jerry/headers/header.js"
+import { Second, Footer } from "./styled"
+class Order extends React.Component {
+    render() {
+        return (
             <div className="Order">
-                <Header title="确认订单"/>
+                <Header title="确认订单" />
                 <Second>
                     <div className="edit1">
                         <p>未编辑</p>
-                     <i className="iconfont">{'\ue604'}</i>
+                        <i className="iconfont">{'\ue604'}</i>
                     </div>
                     <div className="edit2">
                         <p>配送信息</p>
-                     <i>无</i>
+                        <i>无</i>
                     </div>
                     <div className="edit3">
                         <div>

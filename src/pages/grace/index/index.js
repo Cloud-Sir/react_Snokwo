@@ -40,7 +40,7 @@ class IndexHtml extends React.Component {
                         搜搜你想要的游戏
                     </Link>
                     <div className="header-message">
-                        <i className="iconfont alicon icon_down">{"\ue610"}</i>
+                        <i className="iconfont alicon icon_down" onClick={this.handleClick.bind(this)}>{"\ue610"}</i>
                     </div>
                 </Header>
                 <Section>
@@ -57,7 +57,7 @@ class IndexHtml extends React.Component {
                                 {
                                     home_banners.map((item, index) => (
                                         <a
-
+                                            key={index}
                                             href="/"
                                             style={{ touchAction: 'none', display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                                         >
@@ -285,9 +285,10 @@ class IndexHtml extends React.Component {
         if (!(sessionStorage.getItem('home_new_list'))) {
             this.props.handleAsyncHomeGet()
             this.props.handleAsyncListGet()
-
-
         }
+    }
+    handleClick() {
+        this.props.history.push("/message")
     }
 
 

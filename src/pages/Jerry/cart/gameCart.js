@@ -1,30 +1,45 @@
 import React, { Component } from 'react';
+import Cookies from "js-cookie"
 // import {Second} from "./styled"
 class gameCart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: JSON.parse(Cookies.get("gameTypes")) ? JSON.parse(Cookies.get("gameTypes")) : []
+        }
+    }
+
     render() {
+        // console.log(this.state.data, 1111111111)
+        let { data } = this.state
         return (
             <div className="gameCart">
                 {/* <Second> */}
-                    <div className="game">
-                        <div className="top">
-                            <div className="head">
-                                <input type="checkbox"/>
-                                <h4>国际站（<strong>2</strong>）</h4>
-                                <span>收起<i className="iconfont">{'\ue601'}</i></span>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div className="check"><input type="checkbox"/></div>
-                                    <img  alt="" src="http://s1.sonkwo.hk/medium/910135728720663/file/44813/sonkwo-top-L-Risk-of-Rain-2.jpg?x-oss-process=image/resize,limit_0,m_fill,w_150,h_89"/>
-                                    <div className="goodsName">
-                                        <span>雨中冒险</span>
-                                        <i>￥56.0</i>
-                                    </div>
-                                </li>
-                            </ul>
+                <div className="game">
+                    <div className="top">
+                        <div className="head">
+                            <input type="checkbox" />
+                            <h4>国际站（<strong>2</strong>）</h4>
+                            <span>收起<i className="iconfont">{'\ue601'}</i></span>
                         </div>
-                        
-                    </div>   
+                        <ul>
+                            {
+                                (data ? data : []).map((item) => (
+                                    <li key={item.id}>
+                                        <div className="check"><input type="checkbox" /></div>
+                                        <img alt="" src={item.url} />
+                                        <div className="goodsName">
+                                            <span className="gameName">{item.name}</span>
+                                            <span className="gameEname">{item.ename}</span>
+                                            <i>￥56.0</i>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+
+                        </ul>
+                    </div>
+                </div>
                 {/* </Second> */}
             </div>
         );

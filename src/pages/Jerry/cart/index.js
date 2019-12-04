@@ -1,21 +1,21 @@
 import React from "react"
 import HeaderTitle from "components/Jerry/headers/headerTitle.js"
-import {Nav,Head,Second,Footer} from "./styled"
+import { Nav, Head, Second, Footer } from "./styled"
 import AroundCart from "./aroundCart"
 import GameCart from "./gameCart"
 
-import {connect} from "react-redux";
-import {mapStateToProps,mapDispatchToProps} from "./connect.js"
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from "./connect.js"
 
 
-import {withRouter,NavLink,Switch,Route} from "react-router-dom"
+import { withRouter, NavLink, Switch, Route } from "react-router-dom"
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
-class Cart extends React.Component{
+class Cart extends React.Component {
     constructor() {
         super()
         this.state = {
-            price:""
+            price: ""
         }
     }
     render() {
@@ -44,7 +44,7 @@ class Cart extends React.Component{
                         <span>看看游戏</span>
                         <span>看看周边</span>
                     </div>
-                       
+
                 </Second>
                 <Footer>
                     <div className="account">
