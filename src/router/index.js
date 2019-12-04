@@ -1,4 +1,5 @@
-import {GameCart,AroundCart,OrderBought,DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart,Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
+import {Register,GameCart,AroundCart,OrderBought,DetailGoods, AroundSearch, AroundClassify, Message, Index, Headlines, Community, Cart,Mine, Login, Activities, Benefit, Peripheral, Publisher, Searchgame, Gamedetail, Fruitpastedetail, Groups, Allsearch, Articledetail, Headlinesform, Fruitpaste, Group,Beingsearch} from "pages";
+
 
 export const TabBarRoute = [
     {
@@ -49,7 +50,8 @@ export const TabBarRoute = [
         path:"/cart",
         component:Cart,
         meta:{
-            flag:true
+            flag: true,
+            requiredAuth:true
         },
         icon:"\ue639",
         text: "购物车",
@@ -75,7 +77,7 @@ export const TabBarRoute = [
         component:Mine,
         meta:{
             flag:true,
-            requiredAuth:false 
+            requiredAuth:true 
         },
         icon:"\ue617",
         text:"我的"
@@ -87,6 +89,11 @@ export const NoTabBarRoute = [
         path:"/login",
         component:Login,
         meta:{}
+    }, 
+    {
+        path: "/register",
+        component: Register,
+        meta: {}
     },
     {
         path:"/activity",
@@ -152,7 +159,9 @@ export const NoTabBarRoute = [
     {
         path:"/message",
         component:Message,
-        meta:{}
+        meta: {
+            requiredAuth: true
+        }
     },
     {
         path: "/AroundClassify",

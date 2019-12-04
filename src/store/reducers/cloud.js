@@ -1,5 +1,5 @@
 import { handleActions } from "redux-actions"
-import { headLineType, headfiveType, acticleType, whatType, hotType, lefttagsType, righttagsType, beingType, newestType} from "actions/cloud/cloudActionTypes"
+import { headLineType, headfiveType, acticleType, whatType, hotType, lefttagsType, righttagsType, beingType, newestType, registerType, loginType} from "actions/cloud/cloudActionTypes"
  
 const defaultState = {
     headline_data: [],
@@ -10,7 +10,9 @@ const defaultState = {
     left_tags: [],
     right_tags: [],
     show_list: [],
-    newset_list:[]
+    newset_list: [],
+    judge: "",
+    user_info:[]
 }
 
 
@@ -59,5 +61,15 @@ export default handleActions({
         let newsetState = JSON.parse(JSON.stringify(state));
         newsetState.newset_list = action.payload;
         return newsetState;
+    },
+    [registerType]:(state, action) => {
+        let regState = Object.assign({},state)
+        regState.judge = action.payload;
+        return regState;
+    },
+    [loginType]: (state, action) => {
+        let dluState = JSON.parse(JSON.stringify(state));
+        dluState.user_info = action.payload;
+        return dluState;
     }
 }, defaultState)
